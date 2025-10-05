@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Фронтенд в 2025: путь для русскоязычных</title>
+  <title>Фронтенд в 2025: полный путь</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -26,31 +26,13 @@
         --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
       }
     }
-    .theme-dark {
-      --bg: #0f172a;
-      --surface: #1e293b;
-      --text: #f1f5f9;
-      --text-secondary: #94a3b8;
-      --primary: #818cf8;
-      --border: #334155;
-      --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .theme-light {
-      --bg: #ffffff;
-      --surface: #ffffff;
-      --text: #1e293b;
-      --text-secondary: #64748b;
-      --primary: #4f46e5;
-      --border: #e2e8f0;
-      --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.6;
     }
     header {
       background: var(--surface);
@@ -60,7 +42,7 @@
     header h1 {
       font-size: 2rem;
       font-weight: 800;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       color: var(--primary);
     }
     header p {
@@ -68,11 +50,11 @@
       max-width: 700px;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 0 1.5rem;
     }
-    .card {
+    .topic {
       background: var(--surface);
       border-radius: 16px;
       padding: 1.8rem;
@@ -80,18 +62,44 @@
       box-shadow: var(--card-shadow);
       border: 1px solid var(--border);
     }
-    h2 {
-      font-size: 1.4rem;
-      margin: 1.5rem 0 1rem;
+    .topic h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
       color: var(--primary);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+    }
+    details {
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px dashed var(--border);
+    }
+    details:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      padding: 0.4rem 0;
+    }
+    summary:hover {
+      color: var(--primary);
+    }
+    ul {
+      padding-left: 1.4rem;
+      margin-top: 0.6rem;
+      color: var(--text-secondary);
+    }
+    li {
+      margin-bottom: 0.5rem;
     }
     a {
       color: var(--primary);
       text-decoration: none;
-      font-weight: 600;
     }
     a:hover {
       text-decoration: underline;
@@ -102,68 +110,144 @@
       border-top: 1px solid var(--border);
       color: var(--text-secondary);
       font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.7rem; }
-      .card { padding: 1.4rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1><i class="fas fa-laptop-code"></i> Фронтенд в 2025</h1>
-    <p>Путь для русскоязычных: бесплатные ресурсы, востребованные технологии, реальные собеседования в РФ.</p>
+    <h1><i class="fas fa-project-diagram"></i> Фронтенд в 2025: полный путь</h1>
+    <p>Детализированная карта с русскоязычными ресурсами, актуальными для РФ и СНГ.</p>
   </header>
 
   <div class="container">
-    <div class="card">
-      <h2><i class="fas fa-layer-group"></i> 1. Основы: HTML и CSS</h2>
-      <p>→ <a href="/web/html-css.html">Гайд: создай первую страницу за 1 час</a></p>
-      <p>→ Практика: <a href="https://html5book.ru/" target="_blank">HTML5Book — интерактивные упражнения</a></p>
-      <p>→ Видео: <a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank">Полный курс от freeCodeCamp (с субтитрами)</a></p>
+
+    <!-- Основы -->
+    <div class="topic">
+      <h2><i class="fas fa-seedling"></i> 1. Основы веба</h2>
+      
+      <details open>
+        <summary>Как работает интернет</summary>
+        <ul>
+          <li>HTTP/HTTPS, DNS, клиент-сервер</li>
+          <li><a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web">Основы от Mozilla (на русском)</a></li>
+        </ul>
+      </details>
+
+      <details open>
+        <summary>HTML</summary>
+        <ul>
+          <li>Теги, атрибуты, семантика</li>
+          <li><a href="/web/html-css.html">Гайд: первая страница за 1 час</a></li>
+          <li><a href="https://html5book.ru/">HTML5Book — интерактивно</a></li>
+        </ul>
+      </details>
+
+      <details open>
+        <summary>CSS</summary>
+        <ul>
+          <li>Селекторы, Flexbox, Grid</li>
+          <li><a href="https://webref.ru/">Справочник webref.ru</a></li>
+          <li><a href="https://www.youtube.com/watch?v=Hg0N3L8Jc5U">Курс по Flexbox/Grid (LoftBlog)</a></li>
+        </ul>
+      </details>
     </div>
 
-    <div class="card">
-      <h2><i class="fab fa-js"></i> 2. JavaScript: от основ к DOM</h2>
-      <p>→ <a href="/web/js-basics.html">Как сделать кнопку, которая что-то делает</a></p>
-      <p>→ Курс: <a href="https://learn.javascript.ru/" target="_blank">learn.javascript.ru — лучший русскоязычный ресурс</a></p>
-      <p>→ Практика: <a href="https://freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank">Задачи на freeCodeCamp</a></p>
+    <!-- JavaScript -->
+    <div class="topic">
+      <h2><i class="fab fa-js"></i> 2. JavaScript</h2>
+      
+      <details open>
+        <summary>Основы языка</summary>
+        <ul>
+          <li>Переменные, функции, циклы</li>
+          <li><a href="https://learn.javascript.ru/">learn.javascript.ru — лучший ресурс</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Работа с DOM</summary>
+        <ul>
+          <li>Изменение элементов, события</li>
+          <li><a href="/web/js-dom.html">Как сделать интерактивную кнопку</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Асинхронность</summary>
+        <ul>
+          <li>Promise, async/await, fetch</li>
+          <li><a href="https://learn.javascript.ru/async">Полное руководство</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Инструменты</summary>
+        <ul>
+          <li>npm, Webpack/Vite, ESLint</li>
+          <li><a href="/digital-literacy/npm-basics.html">Гайд по npm для новичков</a></li>
+        </ul>
+      </details>
     </div>
 
-    <div class="card">
-      <h2><i class="fab fa-react"></i> 3. Фреймворки: React или Vue?</h2>
-      <p>→ В РФ чаще требуют <strong>React</strong> (Сбер, Тинькофф, VK, Ozon).</p>
-      <p>→ Начни с: <a href="https://ru.reactjs.org/tutorial/tutorial.html" target="_blank">Официальный туториал на русском</a></p>
-      <p>→ Альтернатива: <a href="https://vuejs.org/guide/introduction.html" target="_blank">Vue 3 (проще для новичков)</a></p>
+    <!-- Фреймворки -->
+    <div class="topic">
+      <h2><i class="fas fa-cube"></i> 3. Фреймворки</h2>
+      
+      <details open>
+        <summary>React</summary>
+        <ul>
+          <li>Компоненты, хуки, маршрутизация</li>
+          <li><a href="https://ru.reactjs.org/">Официальная документация на русском</a></li>
+          <li><a href="https://www.youtube.com/watch?v=KfXrAcQkK5Q">Курс от Дмитрия Гущина (2024)</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Vue.js</summary>
+        <ul>
+          <li>Проще для старта, популярен в Европе</li>
+          <li><a href="https://vuejs.org/guide/introduction.html">Официальный гайд</a> (есть переводы)</li>
+        </ul>
+      </details>
     </div>
 
-    <div class="card">
-      <h2><i class="fas fa-tools"></i> 4. Инструменты: Git, npm, сборка</h2>
-      <p>→ <a href="/digital-literacy/git-basics.html">Как установить Git и делать коммиты</a></p>
-      <p>→ <a href="https://html5book.ru/osnovy-npm/" target="_blank">npm для начинающих (HTML5Book)</a></p>
-      <p>→ Совет: не бойся терминала — в 2025 году он обязателен.</p>
+    <!-- Дополнительно -->
+    <div class="topic">
+      <h2><i class="fas fa-plus-circle"></i> 4. Дополнительно</h2>
+      
+      <details>
+        <summary>Типизация</summary>
+        <ul>
+          <li>TypeScript — обязателен для работы в РФ</li>
+          <li><a href="https://www.typescriptlang.org/ru/">Официальный сайт</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Тестирование</summary>
+        <ul>
+          <li>Jest, Cypress</li>
+          <li>Пока не критично для Junior</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Soft Skills</summary>
+        <ul>
+          <li>Git, командная работа, английский (A2+)</li>
+          <li><a href="/digital-literacy/git-basics.html">Git для новичков</a></li>
+        </ul>
+      </details>
     </div>
 
-    <div class="card">
-      <h2><i class="fas fa-briefcase"></i> 5. Как устроиться на работу?</h2>
-      <p>→ Собеседования в РФ: <strong>React + TypeScript + Git</strong>.</p>
-      <p>→ Портфолио: сделай 3 проекта (лендинг, todo-list, погода).</p>
-      <p>→ Где искать: <a href="https://hh.ru" target="_blank">hh.ru</a>, <a href="https://russianit.community/" target="_blank">Russian IT Community</a>.</p>
-    </div>
   </div>
 
   <div class="container">
     <footer class="attribution">
-      <p>Этот учебный путь вдохновлён проектом <a href="https://roadmap.sh" target="_blank">Roadmap.sh</a> (автор: Kamran Ahmed).<br>
-      Оригинал распространяется под лицензией <a href="https://github.com/kamranahmedse/developer-roadmap/blob/master/LICENSE" target="_blank">MIT</a>.<br>
-      Адаптация и локализация — BridgeLearn, 2025.</p>
+      <p>Этот путь вдохновлён <a href="https://roadmap.sh/frontend" target="_blank">Frontend Roadmap</a> от Kamran Ahmed.<br>
+      Адаптация под русскоязычную аудиторию — BridgeLearn, 2025.<br>
+      Оригинал: MIT License.</p>
     </footer>
   </div>
-
-  <script>
-    // Простой переключатель темы (если хочешь добавить позже)
-    // Пока не включён, чтобы не усложнять
-  </script>
 </body>
 </html>
