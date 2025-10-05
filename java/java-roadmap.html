@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Java для карьеры — BridgeLearn</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -14,8 +15,9 @@
       --text-secondary: #475569;
       --primary: #4f46e5;
       --border: #e2e8f0;
-      --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #0f172a;
@@ -24,34 +26,43 @@
         --text-secondary: #cbd5e1;
         --primary: #818cf8;
         --border: #334155;
-        --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: var(--font-sans);
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
     }
+
     header {
       background: var(--surface);
       padding: 2.5rem 2rem 1.5rem;
       border-bottom: 1px solid var(--border);
       text-align: center;
     }
+
     header h1 {
       font-size: 2.2rem;
       font-weight: 800;
       margin-bottom: 0.8rem;
       color: var(--primary);
     }
+
     .container {
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1.5rem;
     }
+
     .topic {
       background: var(--surface);
       border-radius: 16px;
@@ -60,6 +71,7 @@
       box-shadow: var(--card-shadow);
       border: 1px solid var(--border);
     }
+
     .topic h2 {
       font-size: 1.5rem;
       margin-bottom: 1.2rem;
@@ -68,37 +80,45 @@
       align-items: center;
       gap: 12px;
     }
+
     details {
       margin-bottom: 1.2rem;
       padding-bottom: 1.2rem;
       border-bottom: 1px dashed var(--border);
     }
+
     details:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
+
     summary {
       font-weight: 600;
       cursor: pointer;
       outline: none;
       padding: 0.4rem 0;
     }
+
     ul {
       padding-left: 1.4rem;
       margin-top: 0.6rem;
       color: var(--text-secondary);
     }
+
     li {
       margin-bottom: 0.5rem;
     }
+
     a {
       color: var(--primary);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -109,6 +129,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1><i class="fab fa-java"></i> Java для карьеры</h1>
@@ -119,24 +140,69 @@
 
     <!-- Этап 1 -->
     <div class="topic">
-      <h2><i class="fas fa-seedling"></i> 1. Подготовка: установка Java и инструментов</h2>
-      
+      <h2><i class="fas fa-laptop-code"></i> 1. Подготовка среды</h2>
+
       <details open>
-        <summary>Синтаксис и базовые конструкции</summary>
+        <summary>Понимание экосистемы Java</summary>
         <ul>
-          <li>Что такое JDK, JRE, JVM?</li>
-          <li>Какую версию Java выбрать?</li>
-          <li>Скачиваем и устанавливаем JDK</li>
-          <li>Проверяем установку: java -version</li>
-          <li>Выбираем IDE: IntelliJ IDEA Community или VS Code?</li>
+          <li><a href="java/system/what-is-jdk.html" class="btn">Что такое JVM, JRE, JDK — в чём разница?</a></li>
+          <li>Почему Java кроссплатформенна?</li>
+          <li>Что такое LTS-версии (17, 21)? Какую выбрать в 2025?</li>
         </ul>
       </details>
+
+      <details open>
+        <summary>Установка JDK</summary>
+        <ul>
+          <li>Где скачать: Eclipse Temurin (Adoptium) — официально, бесплатно, без вирусов.</li>
+          <li>
+            <details open>
+              <summary>Пошаговая установка</summary>
+              <ul>
+                <li>Windows: .msi → PATH автоматически</li>
+                <li>Mac: .pkg или через Homebrew</li>
+                <li>Linux: через пакетный менеджер (apt, yum)</li>
+              </ul>
+            </details>
+          </li>
+          <li>Проверка: java -version, javac -version</li>
+        </ul>
+      </details>
+
+      <details open>
+        <summary>Настройка IDE</summary>
+        <ul>
+          <li>
+            <details open>
+              <summary>IntelliJ IDEA Community (рекомендуется)</summary>
+              <ul>
+                <li>Скачать, установить, создать первый проект</li>
+                <li>Настройка кодировки (UTF-8)</li>
+              </ul>
+            </details>
+          </li>
+          <li>Альтернатива: VS Code + Extension Pack for Java</li>
+          <li>Почему не Eclipse для новичков?</li>
+        </ul>
+      </details>
+
+      <details open>
+        <summary>Первый запуск</summary>
+        <ul>
+          <li>Создать Hello.java</li>
+          <li>Скомпилировать: javac Hello.java</li>
+          <li>Запустить: java Hello</li>
+          <li>Типичные ошибки и как их исправить</li>
+
+        </ul>
+      </details>
+
     </div>
 
     <!-- Этап 2 -->
     <div class="topic">
       <h2><i class="fas fa-seedling"></i> 2. Основы Java</h2>
-      
+
       <details open>
         <summary>Синтаксис и базовые конструкции</summary>
         <ul>
@@ -161,13 +227,14 @@
     <!-- Этап 3 -->
     <div class="topic">
       <h2><i class="fas fa-database"></i> 3. Работа с данными</h2>
-      
+
       <details open>
         <summary>Коллекции и потоки (Streams)</summary>
         <ul>
           <li>List, Set, Map, Queue</li>
           <li>Stream API: filter, map, collect</li>
-          <li><a href="https://javarush.ru/quests/lectures/questsyntax.level08" target="_blank">Javarush: коллекции</a></li>
+          <li><a href="https://javarush.ru/quests/lectures/questsyntax.level08" target="_blank">Javarush: коллекции</a>
+          </li>
         </ul>
       </details>
 
@@ -184,7 +251,7 @@
     <!-- Этап 4 -->
     <div class="topic">
       <h2><i class="fas fa-server"></i> 4. Backend и базы данных</h2>
-      
+
       <details open>
         <summary>Основы SQL и JDBC</summary>
         <ul>
@@ -207,14 +274,15 @@
     <!-- Этап 5 -->
     <div class="topic">
       <h2><i class="fas fa-cloud"></i> 5. Веб и REST API</h2>
-      
+
       <details open>
         <summary>Spring Boot</summary>
         <ul>
           <li>Контроллеры, сервисы, репозитории</li>
           <li>RESTful API: @GetMapping, @PostMapping</li>
           <li><a href="https://start.spring.io/">Spring Initializr — генератор проекта</a></li>
-          <li><a href="https://www.youtube.com/watch?v=QhB5dXaAq5Y" target="_blank">Spring Boot для начинающих (LoftBlog)</a></li>
+          <li><a href="https://www.youtube.com/watch?v=QhB5dXaAq5Y" target="_blank">Spring Boot для начинающих
+              (LoftBlog)</a></li>
         </ul>
       </details>
 
@@ -231,7 +299,7 @@
     <!-- Этап 6 -->
     <div class="topic">
       <h2><i class="fas fa-tools"></i> 6. Инструменты и практика</h2>
-      
+
       <details open>
         <summary>Git и сборка</summary>
         <ul>
@@ -255,7 +323,24 @@
 
   <footer>
     <p>Адаптация под русскоязычную аудиторию — BridgeLearn, 2025.<br>
-    Оригинал: <a href="https://roadmap.sh/java" target="_blank">Java Roadmap</a> (MIT License).</p>
+      Оригинал: <a href="https://roadmap.sh/java" target="_blank">Java Roadmap</a> (MIT License).</p>
+
+    <!-- Автоматические хлебные крошки -->
+    <nav id="breadcrumbs" class="breadcrumbs" aria-label="Хлебные крошки" style="display:none;"></nav>
+    <script>
+      // Простая версия крошек для одной страницы
+      document.addEventListener('DOMContentLoaded', () => {
+        const breadcrumbs = document.getElementById('breadcrumbs');
+        breadcrumbs.style.display = 'block';
+        breadcrumbs.style.margin = '1.2rem 0';
+        breadcrumbs.style.padding = '0.6rem 0';
+        breadcrumbs.style.borderBottom = '1px solid var(--border)';
+        breadcrumbs.style.color = 'var(--text-secondary)';
+        breadcrumbs.innerHTML =
+          '<a href="/" style="color:var(--primary); text-decoration:none;">Главная</a>';
+      });
+    </script>
   </footer>
 </body>
+
 </html>

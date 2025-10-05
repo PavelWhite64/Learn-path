@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Что такое JVM, JRE, JDK — в чём разница? — BridgeLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --bg: #ffffff;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --text-secondary: #475569;
+            --primary: #4f46e5;
+            --border: #e2e8f0;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --surface: #1e293b;
+                --text: #f1f5f9;
+                --text-secondary: #cbd5e1;
+                --primary: #818cf8;
+                --border: #334155;
+                --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: var(--surface);
+            padding: 2.5rem 2rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin: 1.8rem 0 1rem;
+            color: var(--primary);
+        }
+
+        p,
+        ul {
+            margin-bottom: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            padding-left: 1.4rem;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+        }
+
+        .analogy {
+            background: var(--bg);
+            border-left: 4px solid var(--primary);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .summary-box {
+            background: rgba(79, 70, 229, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .summary-box h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Что такое JVM, JRE, JDK — в чём разница?</h1>
+    </header>
+
+    <div class="container">
+        <p>Если вы только начинаете изучать Java, вас наверняка запутали эти три аббревиатуры. Давайте разберёмся
+            <strong>просто и без жаргона</strong> — что есть что, и что именно нужно установить, чтобы писать программы
+            на Java в 2025 году.</p>
+
+        <h2>🔹 JVM — Java Virtual Machine</h2>
+        <p><strong>JVM — это «двигатель» Java.</strong> Именно она запускает ваш код.</p>
+        <p>Когда вы компилируете программу на Java, она превращается не в машинный код, а в <strong>байт-код</strong>
+            (файл с расширением <code>.class</code>). JVM читает этот байт-код и выполняет его на любом устройстве —
+            будь то Windows, Mac или сервер в облаке.</p>
+        <p>Благодаря JVM Java — <strong>кроссплатформенный язык</strong>: «написал один раз — запустил где угодно».</p>
+
+        <h2>🔹 JRE — Java Runtime Environment</h2>
+        <p><strong>JRE — это «минимальный набор для запуска».</strong></p>
+        <p>Он включает в себя:
+        <ul>
+            <li>JVM (чтобы запускать код),</li>
+            <li>Стандартные библиотеки Java (например, <code>java.lang</code>, <code>java.util</code>).</li>
+        </ul>
+        </p>
+        <p>Если вы просто хотите <strong>запустить чужую Java-программу</strong> (например, Minecraft или корпоративное
+            приложение), вам нужен только JRE.</p>
+        <p>Но если вы <strong>разработчик</strong> — JRE вам <strong>не хватит</strong>.</p>
+
+        <div class="analogy">
+            <p><strong>Аналогия:</strong>
+                Представьте, что Java-программа — это фильм.
+                → <strong>JVM</strong> — это проектор.
+                → <strong>JRE</strong> — это проектор + экран + колонки.
+                → А <strong>JDK</strong> — это ещё и камера, свет, сценарий — всё, чтобы <strong>снять фильм
+                    самому</strong>.</p>
+        </div>
+
+        <h2>🔹 JDK — Java Development Kit</h2>
+        <p><strong>JDK — это полный комплект для разработчика.</strong> Именно его вы должны установить.</p>
+        <p>JDK включает в себя:
+        <ul>
+            <li><strong>JRE</strong> (а значит, и JVM),</li>
+            <li><strong>Компилятор</strong> <code>javac</code> (превращает <code>.java</code> в <code>.class</code>),
+            </li>
+            <li><strong>Инструменты отладки</strong> (jconsole, jvisualvm),</li>
+            <li><strong>Документацию</strong> (JavaDocs).</li>
+        </ul>
+        </p>
+        <p>Без JDK вы не сможете <strong>написать и скомпилировать</strong> ни одной Java-программы.</p>
+
+        <div class="summary-box">
+            <h3>💡 Что устанавливать в 2025 году?</h3>
+            <p><strong>Только JDK.</strong> Современные дистрибутивы (например, <a href="https://adoptium.net/"
+                    target="_blank">Eclipse Temurin</a>) поставляются как JDK — и включают всё необходимое.</p>
+            <p>Вам <strong>не нужно</strong> отдельно ставить JRE или JVM — они уже внутри JDK.</p>
+        </div>
+
+        <h2>🔹 Где скачать JDK?</h2>
+        <p>Рекомендуемый источник — <strong><a href="https://adoptium.net/" target="_blank">Eclipse Temurin</a></strong>
+            (бывш. AdoptOpenJDK):
+        <ul>
+            <li>Бесплатный и открытый,</li>
+            <li>Поддерживается сообществом Eclipse,</li>
+            <li>Доступен для Windows, Mac, Linux,</li>
+            <li>Используется в Сбере, Тинькофф и других компаниях РФ.</li>
+        </ul>
+        </p>
+        <p>Выбирайте версию <strong>Java 17 или 21 (LTS)</strong> — они стабильны и будут поддерживаться годы.</p>
+
+        <h2>Что дальше?</h2>
+        <p>→ <a href="/java/install-jdk.html">Установите JDK за 5 минут</a><br>
+            → <a href="/java/java-roadmap.html">Вернитесь к дорожной карте Java</a></p>
+    </div>
+
+    <footer>
+        <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+    </footer>
+
+    <!-- Автоматические хлебные крошки -->
+    <nav id="breadcrumbs" class="breadcrumbs" aria-label="Хлебные крошки" style="display:none;"></nav>
+    <script>
+        // Простая версия крошек для одной страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            const breadcrumbs = document.getElementById('breadcrumbs');
+            breadcrumbs.style.display = 'block';
+            breadcrumbs.style.margin = '1.2rem 0';
+            breadcrumbs.style.padding = '0.6rem 0';
+            breadcrumbs.style.borderBottom = '1px solid var(--border)';
+            breadcrumbs.style.color = 'var(--text-secondary)';
+            breadcrumbs.innerHTML =
+                '<a href="/" style="color:var(--primary); text-decoration:none;">Главная</a> → ' +
+                '<a href="/java/java-roadmap.html" style="color:var(--primary); text-decoration:none;">Java для карьеры</a> → ' +
+                '<span style="color:var(--text);">Что такое JDK?</span>';
+        });
+    </script>
+</body>
+
+</html>
