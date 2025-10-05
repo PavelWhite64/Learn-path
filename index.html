@@ -3,251 +3,410 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Фронтенд в 2025: полный путь</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>BridgeLearn — Обучайся свободно</title>
+  <meta name="description" content="Бесплатные, легальные, оффлайн-дружелюбные гайды по IT, цифровой грамотности и офисным навыкам для русскоязычных.">
+  
+  <!-- Шрифты -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+  
+  <!-- Иконки -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <style>
+    /* ===== СОВРЕМЕННЫЕ ПЕРЕМЕННЫЕ ===== */
     :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+      
+      /* Светлая тема */
       --bg: #ffffff;
       --surface: #ffffff;
-      --text: #1e293b;
-      --text-secondary: #64748b;
+      --text: #0f172a;
+      --text-secondary: #475569;
+      --text-tertiary: #94a3b8;
       --primary: #4f46e5;
+      --primary-dark: #4338ca;
       --border: #e2e8f0;
-      --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.07), 0 8px 10px -6px rgba(0,0,0,0.04);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0f172a;
-        --surface: #1e293b;
+        /* Тёмная тема */
+        --bg: #020617;
+        --surface: #0f172a;
         --text: #f1f5f9;
-        --text-secondary: #94a3b8;
+        --text-secondary: #cbd5e1;
+        --text-tertiary: #94a3b8;
         --primary: #818cf8;
-        --border: #334155;
-        --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        --primary-dark: #6366f1;
+        --border: #1e293b;
+        --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.3), 0 8px 10px -6px rgba(0,0,0,0.2);
       }
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .theme-dark {
+      --bg: #020617;
+      --surface: #0f172a;
+      --text: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-tertiary: #94a3b8;
+      --primary: #818cf8;
+      --primary-dark: #6366f1;
+      --border: #1e293b;
+      --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.3), 0 8px 10px -6px rgba(0,0,0,0.2);
+    }
+
+    .theme-light {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-secondary: #475569;
+      --text-tertiary: #94a3b8;
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --border: #e2e8f0;
+      --card-shadow: 0 10px 25px -5px rgba(0,0,0,0.07), 0 8px 10px -6px rgba(0,0,0,0.04);
+    }
+
+    /* ===== БАЗОВЫЕ СТИЛИ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: var(--font-sans);
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-    }
-    header {
-      background: var(--surface);
-      padding: 2.5rem 2rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-    header h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 0.8rem;
-      color: var(--primary);
-    }
-    header p {
-      color: var(--text-secondary);
-      max-width: 700px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-    .topic {
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 1.8rem;
-      margin-bottom: 2rem;
-      box-shadow: var(--card-shadow);
-      border: 1px solid var(--border);
-    }
-    .topic h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1.2rem;
-      color: var(--primary);
+      transition: var(--transition);
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== ШАПКА ===== */
+    header {
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: inline-flex;
       align-items: center;
       gap: 12px;
+      margin-bottom: 1.5rem;
     }
-    details {
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--primary), #7c3aed);
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.1;
       margin-bottom: 1.2rem;
-      padding-bottom: 1.2rem;
-      border-bottom: 1px dashed var(--border);
+      background: linear-gradient(to right, var(--text), var(--primary-dark));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    details:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
     }
-    summary {
-      font-weight: 600;
+
+    /* Переключатель темы */
+    .theme-toggle {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 52px;
+      height: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      padding: 2px;
       cursor: pointer;
-      outline: none;
-      padding: 0.4rem 0;
+      transition: var(--transition);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
-    summary:hover {
-      color: var(--primary);
+
+    .theme-toggle::before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary);
+      transition: transform 0.3s ease;
     }
-    ul {
-      padding-left: 1.4rem;
-      margin-top: 0.6rem;
+
+    body.theme-dark .theme-toggle::before {
+      transform: translateX(22px);
+      background: #fbbf24;
+    }
+
+    /* ===== КОНТЕНТ ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+      flex: 1;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .intro p {
+      font-size: 1.125rem;
       color: var(--text-secondary);
+      line-height: 1.7;
     }
-    li {
-      margin-bottom: 0.5rem;
+
+    /* Сетка направлений */
+    .paths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
-    a {
+
+    .path-card {
+      background: var(--surface);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .path-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -6px rgba(0,0,0,0.05);
+    }
+
+    .path-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(79, 70, 229, 0.1);
       color: var(--primary);
+      border-radius: 18px;
+      font-size: 1.75rem;
+    }
+
+    body.theme-dark .path-icon {
+      background: rgba(129, 140, 248, 0.15);
+      color: var(--primary);
+    }
+
+    .path-card h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .path-card p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      min-height: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+      padding: 0.65rem 1.5rem;
+      border-radius: 14px;
       text-decoration: none;
+      transition: var(--transition);
+      font-size: 1rem;
+      border: 2px solid var(--primary);
     }
-    a:hover {
-      text-decoration: underline;
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.3);
     }
-    footer.attribution {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
+
+    body.theme-dark .btn:hover {
+      box-shadow: 0 10px 20px -5px rgba(129, 140, 248, 0.3);
+    }
+
+    /* ===== ФУТЕР ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-tertiary);
+      font-size: 0.95rem;
       border-top: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 0.9rem;
+      margin-top: auto;
     }
+
+    /* Адаптив */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+      }
+      .container {
+        padding: 0 1.5rem 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+      .logo-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+      }
+      .path-card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Анимация появления */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .path-card {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .path-card:nth-child(1) { animation-delay: 0.1s; }
+    .path-card:nth-child(2) { animation-delay: 0.2s; }
+    .path-card:nth-child(3) { animation-delay: 0.3s; }
+    .path-card:nth-child(4) { animation-delay: 0.4s; }
   </style>
 </head>
 <body>
+  <!-- Переключатель темы -->
+  <div class="theme-toggle" id="themeToggle" aria-label="Сменить тему">
+  </div>
+
   <header>
-    <h1><i class="fas fa-project-diagram"></i> Фронтенд в 2025: полный путь</h1>
-    <p>Детализированная карта с русскоязычными ресурсами, актуальными для РФ и СНГ.</p>
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="fas fa-archway"></i>
+      </div>
+    </div>
+    <h1>BridgeLearn</h1>
+    <p class="subtitle">Обучайся свободно. Даже когда всё заблокировано.</p>
   </header>
 
   <div class="container">
-
-    <!-- Основы -->
-    <div class="topic">
-      <h2><i class="fas fa-seedling"></i> 1. Основы веба</h2>
-      
-      <details open>
-        <summary>Как работает интернет</summary>
-        <ul>
-          <li>HTTP/HTTPS, DNS, клиент-сервер</li>
-          <li><a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web">Основы от Mozilla (на русском)</a></li>
-        </ul>
-      </details>
-
-      <details open>
-        <summary>HTML</summary>
-        <ul>
-          <li>Теги, атрибуты, семантика</li>
-          <li><a href="/web/html-css.html">Гайд: первая страница за 1 час</a></li>
-          <li><a href="https://html5book.ru/">HTML5Book — интерактивно</a></li>
-        </ul>
-      </details>
-
-      <details open>
-        <summary>CSS</summary>
-        <ul>
-          <li>Селекторы, Flexbox, Grid</li>
-          <li><a href="https://webref.ru/">Справочник webref.ru</a></li>
-          <li><a href="https://www.youtube.com/watch?v=Hg0N3L8Jc5U">Курс по Flexbox/Grid (LoftBlog)</a></li>
-        </ul>
-      </details>
+    <div class="intro">
+      <p>Практические гайды по IT, цифровой грамотности и офисным навыкам — без подписок, регистрации и цензуры. Всё работает офлайн.</p>
     </div>
 
-    <!-- JavaScript -->
-    <div class="topic">
-      <h2><i class="fab fa-js"></i> 2. JavaScript</h2>
-      
-      <details open>
-        <summary>Основы языка</summary>
-        <ul>
-          <li>Переменные, функции, циклы</li>
-          <li><a href="https://learn.javascript.ru/">learn.javascript.ru — лучший ресурс</a></li>
-        </ul>
-      </details>
+    <div class="paths-grid">
+      <div class="path-card">
+        <div class="path-icon">
+          <i class="fab fa-java"></i>
+        </div>
+        <h3>Java для карьеры</h3>
+        <p>Для студентов и начинающих разработчиков в СНГ. От установки JDK до собеседования в банке.</p>
+        <a href="java/install-jdk.html" class="btn">Начать →</a>
+      </div>
 
-      <details>
-        <summary>Работа с DOM</summary>
-        <ul>
-          <li>Изменение элементов, события</li>
-          <li><a href="/web/js-dom.html">Как сделать интерактивную кнопку</a></li>
-        </ul>
-      </details>
+      <div class="path-card">
+        <div class="path-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3>Веб-разработка</h3>
+        <p>С нуля до первого проекта. HTML, CSS, JavaScript — без фреймворков и воды.</p>
+        <a href="web/frontend-path.html" class="btn">Начать →</a>
+      </div>
 
-      <details>
-        <summary>Асинхронность</summary>
-        <ul>
-          <li>Promise, async/await, fetch</li>
-          <li><a href="https://learn.javascript.ru/async">Полное руководство</a></li>
-        </ul>
-      </details>
+      <div class="path-card">
+        <div class="path-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Цифровая грамотность</h3>
+        <p>Как учиться и работать, когда YouTube, GitHub и Coursera недоступны.</p>
+        <a href="digital-literacy/tor-basics.html" class="btn">Начать →</a>
+      </div>
 
-      <details>
-        <summary>Инструменты</summary>
-        <ul>
-          <li>npm, Webpack/Vite, ESLint</li>
-          <li><a href="/digital-literacy/npm-basics.html">Гайд по npm для новичков</a></li>
-        </ul>
-      </details>
+      <div class="path-card">
+        <div class="path-icon">
+          <i class="fas fa-file-excel"></i>
+        </div>
+        <h3>Офисные навыки</h3>
+        <p>Excel, Google Таблицы, PDF — для работы, учёбы и повседневных задач.</p>
+        <a href="office/excel-pivot.html" class="btn">Начать →</a>
+      </div>
     </div>
-
-    <!-- Фреймворки -->
-    <div class="topic">
-      <h2><i class="fas fa-cube"></i> 3. Фреймворки</h2>
-      
-      <details open>
-        <summary>React</summary>
-        <ul>
-          <li>Компоненты, хуки, маршрутизация</li>
-          <li><a href="https://ru.reactjs.org/">Официальная документация на русском</a></li>
-          <li><a href="https://www.youtube.com/watch?v=KfXrAcQkK5Q">Курс от Дмитрия Гущина (2024)</a></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Vue.js</summary>
-        <ul>
-          <li>Проще для старта, популярен в Европе</li>
-          <li><a href="https://vuejs.org/guide/introduction.html">Официальный гайд</a> (есть переводы)</li>
-        </ul>
-      </details>
-    </div>
-
-    <!-- Дополнительно -->
-    <div class="topic">
-      <h2><i class="fas fa-plus-circle"></i> 4. Дополнительно</h2>
-      
-      <details>
-        <summary>Типизация</summary>
-        <ul>
-          <li>TypeScript — обязателен для работы в РФ</li>
-          <li><a href="https://www.typescriptlang.org/ru/">Официальный сайт</a></li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Тестирование</summary>
-        <ul>
-          <li>Jest, Cypress</li>
-          <li>Пока не критично для Junior</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Soft Skills</summary>
-        <ul>
-          <li>Git, командная работа, английский (A2+)</li>
-          <li><a href="/digital-literacy/git-basics.html">Git для новичков</a></li>
-        </ul>
-      </details>
-    </div>
-
   </div>
 
-  <div class="container">
-    <footer class="attribution">
-      <p>Этот путь вдохновлён <a href="https://roadmap.sh/frontend" target="_blank">Frontend Roadmap</a> от Kamran Ahmed.<br>
-      Адаптация под русскоязычную аудиторию — BridgeLearn, 2025.<br>
-      Оригинал: MIT License.</p>
-    </footer>
-  </div>
+  <footer>
+    <p>BridgeLearn — проект свободного доступа к знаниям. Открытый исходный код. Никакой рекламы.</p>
+  </footer>
+
+  <script>
+    // Переключение темы
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Проверка сохранённой темы
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.classList.add('theme-' + savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      body.classList.add('theme-dark');
+    }
+
+    // Переключение
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('theme-dark');
+      body.classList.toggle('theme-light');
+      
+      if (body.classList.contains('theme-dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Уважение к пользователям с prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.style.setProperty('--transition', 'none');
+    }
+  </script>
 </body>
 </html>
