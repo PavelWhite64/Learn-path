@@ -3,177 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BridgeLearn</title>
+  <title>BridgeLearn — Пути к знаниям без границ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* ===== ЦВЕТОВЫЕ СХЕМЫ ===== */
     :root {
-      /* Светлая тема (по умолчанию) */
       --bg: #ffffff;
       --surface: #ffffff;
       --text: #1e293b;
       --text-secondary: #64748b;
       --primary: #4f46e5;
-      --primary-light: #818cf8;
       --border: #e2e8f0;
       --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-
     @media (prefers-color-scheme: dark) {
       :root {
-        /* Тёмная тема (автоматически) */
         --bg: #0f172a;
         --surface: #1e293b;
         --text: #f1f5f9;
         --text-secondary: #94a3b8;
         --primary: #818cf8;
-        --primary-light: #c7d2fe;
         --border: #334155;
         --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
       }
     }
-
-    /* Принудительная тема (если пользователь выбрал вручную) */
     .theme-dark {
       --bg: #0f172a;
       --surface: #1e293b;
       --text: #f1f5f9;
       --text-secondary: #94a3b8;
       --primary: #818cf8;
-      --primary-light: #c7d2fe;
       --border: #334155;
       --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-
     .theme-light {
       --bg: #ffffff;
       --surface: #ffffff;
       --text: #1e293b;
       --text-secondary: #64748b;
       --primary: #4f46e5;
-      --primary-light: #818cf8;
       --border: #e2e8f0;
       --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    /* ===== БАЗОВЫЕ СТИЛИ ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
-      transition: background 0.3s, color 0.3s;
+      line-height: 1.6;
     }
     header {
       background: var(--surface);
-      padding: 2.5rem 2rem;
+      padding: 3rem 2rem 2rem;
       text-align: center;
       border-bottom: 1px solid var(--border);
       position: relative;
     }
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 800;
+      margin-bottom: 1rem;
       background: linear-gradient(135deg, var(--primary), #7c3aed);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 0.5rem;
     }
     header p {
       color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.15rem;
+    }
+    .tagline {
+      background: var(--primary);
+      color: white;
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-top: 1rem;
     }
 
-    /* Переключатель темы */
     .theme-toggle {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 25px;
+      right: 25px;
       background: var(--surface);
       border: 1px solid var(--border);
-      width: 44px;
-      height: 26px;
-      border-radius: 13px;
+      width: 52px;
+      height: 30px;
+      border-radius: 15px;
       display: flex;
       align-items: center;
       padding: 2px;
       cursor: pointer;
       transition: all 0.3s;
     }
+    .theme-toggle span {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-left: 6px;
+    }
     .theme-toggle::before {
       content: "";
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background: var(--primary);
       transition: transform 0.3s;
     }
     body.theme-dark .theme-toggle::before {
-      transform: translateX(18px);
+      transform: translateX(22px);
       background: #fbbf24;
     }
 
     .container {
-      max-width: 800px;
-      margin: 2rem auto;
+      max-width: 1000px;
+      margin: 2.5rem auto;
       padding: 0 1.5rem;
     }
-    .card {
+    .intro {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: var(--text-secondary);
+    }
+    .paths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+    .path-card {
       background: var(--surface);
       border-radius: 20px;
       padding: 2rem;
-      margin-bottom: 2rem;
       box-shadow: var(--card-shadow);
       border: 1px solid var(--border);
+      transition: transform 0.2s;
     }
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 1.5rem 0 1rem;
+    .path-card:hover {
+      transform: translateY(-4px);
+    }
+    .path-card h3 {
+      font-size: 1.4rem;
+      margin: 1rem 0;
       color: var(--primary);
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
-    iframe {
-      width: 100%;
-      height: 340px;
-      border-radius: 16px;
+    .path-card ul {
+      padding-left: 1.2rem;
       margin: 1.2rem 0;
-      border: none;
+      color: var(--text-secondary);
     }
-    .conspect {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-      border-radius: 16px;
-      margin: 1.5rem 0;
+    .path-card ul li {
+      margin-bottom: 0.5rem;
     }
-    pre {
-      background: var(--surface);
-      color: var(--text);
-      padding: 1.2rem;
-      border-radius: 12px;
-      overflow-x: auto;
-      font-family: 'SF Mono', 'Monaco', monospace;
-      font-size: 0.95rem;
-      margin: 1rem 0;
-      border: 1px solid var(--border);
-    }
-    a {
+    .path-card a {
+      display: inline-block;
+      margin-top: 1rem;
       color: var(--primary);
-      text-decoration: none;
       font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    a:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
     footer {
       text-align: center;
@@ -183,87 +174,98 @@
       border-top: 1px solid var(--border);
       margin-top: 2rem;
     }
-
-    /* Адаптив */
     @media (max-width: 600px) {
-      header h1 { font-size: 1.8rem; }
-      .card { padding: 1.5rem; }
-      iframe { height: 220px; }
+      header h1 { font-size: 1.9rem; }
+      .paths-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- Переключатель темы -->
-  <div class="theme-toggle" id="themeToggle" title="Сменить тему">
-    <i class="fas fa-moon"></i>
+  <div class="theme-toggle" id="themeToggle">
+    <span>🌙</span>
   </div>
 
   <header>
-    <h1><i class="fas fa-graduation-cap"></i> BridgeLearn</h1>
-    <p>Свободное образование без блокировок. Только лучшее — бесплатно.</p>
+    <h1><i class="fas fa-archway"></i> BridgeLearn</h1>
+    <p>Практические навыки без блокировок, подписок и регистрации</p>
+    <div class="tagline">Всё бесплатно. Всё легально. Всё работает.</div>
   </header>
 
   <div class="container">
-    <div class="card">
-      <h2><i class="fas fa-video"></i> 1. Посмотри видео</h2>
-      <iframe src="https://www.youtube-nocookie.com/embed/UB1O30fR-EE" allowfullscreen></iframe>
-      <p><small>От freeCodeCamp — начни с первых 15 минут, чтобы создать свою первую страницу.</small></p>
+    <div class="intro">
+      <p>Выбери направление — и начни учиться уже сегодня. Каждый путь состоит из коротких, пошаговых гайдов, которые можно пройти за 10–15 минут.</p>
     </div>
 
-    <div class="card">
-      <h2><i class="fas fa-book"></i> 2. Кратко — что делать</h2>
-      <div class="conspect">
-        <p>HTML — это основа веба. Чтобы начать:</p>
-        <ol>
-          <li>Открой <strong>Блокнот</strong> (или VS Code).</li>
-          <li>Вставь простой код:</li>
-        </ol>
-        <pre><!DOCTYPE html>
-<html>
-<body>
-  <h1>Привет, мир!</h1>
-</body>
-</html></pre>
-        <p>3. Сохрани файл как <code>index.html</code> (важно: не .txt!).<br>
-        4. Дважды кликни по нему — страница откроется в браузере.</p>
+    <div class="paths-grid">
+      
+      <div class="path-card">
+        <i class="fab fa-java fa-2x" style="color:#f47100"></i>
+        <h3>Java для карьеры</h3>
+        <p>Для студентов и начинающих разработчиков в СНГ.</p>
+        <ul>
+          <li>Установка JDK</li>
+          <li>Hello World за 5 минут</li>
+          <li>Собеседования в банках</li>
+        </ul>
+        <a href="java/index.html">Начать →</a>
       </div>
-    </div>
 
-    <div class="card">
-      <h2><i class="fas fa-check-circle"></i> 3. Попробуй сам</h2>
-      <p>→ <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics" target="_blank">Официальное руководство от Mozilla</a></p>
-      <p>→ <a href="https://freecodecamp.org/learn/2022/responsive-web-design/" target="_blank">Практика: первые шаги на freeCodeCamp</a></p>
+      <div class="path-card">
+        <i class="fas fa-laptop-code fa-2x" style="color:#4f46e5"></i>
+        <h3>Веб-разработка</h3>
+        <p>С нуля до первого проекта — без фреймворков.</p>
+        <ul>
+          <li>HTML/CSS</li>
+          <li>JavaScript: основы</li>
+          <li>Верстка лендинга</li>
+        </ul>
+        <a href="web/index.html">Начать →</a>
+      </div>
+
+      <div class="path-card">
+        <i class="fas fa-shield-alt fa-2x" style="color:#10b981"></i>
+        <h3>Цифровая грамотность</h3>
+        <p>Как учиться и работать, когда всё заблокировано.</p>
+        <ul>
+          <li>Tor без риска</li>
+          <li>Приватный браузер</li>
+          <li>Резервные копии</li>
+        </ul>
+        <a href="digital-literacy/index.html">Начать →</a>
+      </div>
+
+      <div class="path-card">
+        <i class="fas fa-file-excel fa-2x" style="color:#22c55e"></i>
+        <h3>Офисные навыки</h3>
+        <p>Для работы, учёбы и повседневных задач.</p>
+        <ul>
+          <li>Excel: сводные</li>
+          <li>Google Таблицы</li>
+          <li>Работа с PDF</li>
+        </ul>
+        <a href="office/index.html">Начать →</a>
+      </div>
+
     </div>
   </div>
 
   <footer>
-    <p>Все материалы взяты из открытых источников. Мы не храним контент — только направляем к знаниям.</p>
+    <p>BridgeLearn — проект свободного доступа к знаниям. Мы не храним контент, не требуем регистрации и не показываем рекламу.</p>
   </footer>
 
   <script>
-    // Сохранение выбора темы
     const toggle = document.getElementById('themeToggle');
     const body = document.body;
-
-    // Проверяем сохранённую тему
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       body.classList.add('theme-' + savedTheme);
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       body.classList.add('theme-dark');
     }
-
-    // Переключение
     toggle.addEventListener('click', () => {
       body.classList.toggle('theme-dark');
       body.classList.toggle('theme-light');
-
-      // Сохраняем выбор
-      if (body.classList.contains('theme-dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
+      localStorage.setItem('theme', body.classList.contains('theme-dark') ? 'dark' : 'light');
     });
   </script>
 </body>
