@@ -1,5 +1,5 @@
 // sw.js
-const CACHE_NAME = 'bridgelearn-v0.0.5';
+const CACHE_NAME = 'bridgelearn-v0.0.6';
 const urlsToCache = [
   '/',
   '/index.html',
