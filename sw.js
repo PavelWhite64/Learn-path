@@ -1,8 +1,9 @@
 // sw.js
-const CACHE_NAME = 'bridgelearn-v1';
+const CACHE_NAME = 'bridgelearn-v0.0.2';
 const urlsToCache = [
   '/',
   '/index.html'
+  'java/java-roadmap.html'
   // Добавь сюда другие страницы по мере создания:
   // '/web/frontend-path.html',
   // '/java/install-jdk.html'
