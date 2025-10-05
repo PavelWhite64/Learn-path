@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BridgeLearn — Пути к знаниям без границ</title>
+  <title>Фронтенд в 2025: путь для русскоязычных</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -50,223 +50,120 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     header {
       background: var(--surface);
-      padding: 3rem 2rem 2rem;
-      text-align: center;
+      padding: 2.5rem 2rem 1.5rem;
       border-bottom: 1px solid var(--border);
-      position: relative;
     }
     header h1 {
-      font-size: 2.4rem;
+      font-size: 2rem;
       font-weight: 800;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--primary), #7c3aed);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: var(--primary);
     }
     header p {
       color: var(--text-secondary);
       max-width: 700px;
-      margin: 0 auto 1.5rem;
-      font-size: 1.15rem;
     }
-    .tagline {
-      background: var(--primary);
-      color: white;
-      display: inline-block;
-      padding: 0.4rem 1.2rem;
-      border-radius: 30px;
-      font-weight: 600;
-      margin-top: 1rem;
-    }
-
-    .theme-toggle {
-      position: absolute;
-      top: 25px;
-      right: 25px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      width: 52px;
-      height: 30px;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      padding: 2px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .theme-toggle span {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      margin-left: 6px;
-    }
-    .theme-toggle::before {
-      content: "";
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--primary);
-      transition: transform 0.3s;
-    }
-    body.theme-dark .theme-toggle::before {
-      transform: translateX(22px);
-      background: #fbbf24;
-    }
-
     .container {
-      max-width: 1000px;
-      margin: 2.5rem auto;
+      max-width: 800px;
+      margin: 2rem auto;
       padding: 0 1.5rem;
     }
-    .intro {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      color: var(--text-secondary);
-    }
-    .paths-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.8rem;
-    }
-    .path-card {
+    .card {
       background: var(--surface);
-      border-radius: 20px;
-      padding: 2rem;
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
       box-shadow: var(--card-shadow);
       border: 1px solid var(--border);
-      transition: transform 0.2s;
     }
-    .path-card:hover {
-      transform: translateY(-4px);
-    }
-    .path-card h3 {
+    h2 {
       font-size: 1.4rem;
-      margin: 1rem 0;
+      margin: 1.5rem 0 1rem;
       color: var(--primary);
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .path-card ul {
-      padding-left: 1.2rem;
-      margin: 1.2rem 0;
-      color: var(--text-secondary);
-    }
-    .path-card ul li {
-      margin-bottom: 0.5rem;
-    }
-    .path-card a {
-      display: inline-block;
-      margin-top: 1rem;
+    a {
       color: var(--primary);
-      font-weight: 600;
       text-decoration: none;
+      font-weight: 600;
     }
-    footer {
-      text-align: center;
-      padding: 2.5rem 1.5rem 1.5rem;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
+    a:hover {
+      text-decoration: underline;
+    }
+    footer.attribution {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
       border-top: 1px solid var(--border);
-      margin-top: 2rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
     @media (max-width: 600px) {
-      header h1 { font-size: 1.9rem; }
-      .paths-grid { grid-template-columns: 1fr; }
+      header h1 { font-size: 1.7rem; }
+      .card { padding: 1.4rem; }
     }
   </style>
 </head>
 <body>
-  <div class="theme-toggle" id="themeToggle">
-    <span>🌙</span>
-  </div>
-
   <header>
-    <h1><i class="fas fa-archway"></i> BridgeLearn</h1>
-    <p>Практические навыки без блокировок, подписок и регистрации</p>
-    <div class="tagline">Всё бесплатно. Всё легально. Всё работает.</div>
+    <h1><i class="fas fa-laptop-code"></i> Фронтенд в 2025</h1>
+    <p>Путь для русскоязычных: бесплатные ресурсы, востребованные технологии, реальные собеседования в РФ.</p>
   </header>
 
   <div class="container">
-    <div class="intro">
-      <p>Выбери направление — и начни учиться уже сегодня. Каждый путь состоит из коротких, пошаговых гайдов, которые можно пройти за 10–15 минут.</p>
+    <div class="card">
+      <h2><i class="fas fa-layer-group"></i> 1. Основы: HTML и CSS</h2>
+      <p>→ <a href="/web/html-css.html">Гайд: создай первую страницу за 1 час</a></p>
+      <p>→ Практика: <a href="https://html5book.ru/" target="_blank">HTML5Book — интерактивные упражнения</a></p>
+      <p>→ Видео: <a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank">Полный курс от freeCodeCamp (с субтитрами)</a></p>
     </div>
 
-    <div class="paths-grid">
-      
-      <div class="path-card">
-        <i class="fab fa-java fa-2x" style="color:#f47100"></i>
-        <h3>Java для карьеры</h3>
-        <p>Для студентов и начинающих разработчиков в СНГ.</p>
-        <ul>
-          <li>Установка JDK</li>
-          <li>Hello World за 5 минут</li>
-          <li>Собеседования в банках</li>
-        </ul>
-        <a href="java/index.html">Начать →</a>
-      </div>
+    <div class="card">
+      <h2><i class="fab fa-js"></i> 2. JavaScript: от основ к DOM</h2>
+      <p>→ <a href="/web/js-basics.html">Как сделать кнопку, которая что-то делает</a></p>
+      <p>→ Курс: <a href="https://learn.javascript.ru/" target="_blank">learn.javascript.ru — лучший русскоязычный ресурс</a></p>
+      <p>→ Практика: <a href="https://freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank">Задачи на freeCodeCamp</a></p>
+    </div>
 
-      <div class="path-card">
-        <i class="fas fa-laptop-code fa-2x" style="color:#4f46e5"></i>
-        <h3>Веб-разработка</h3>
-        <p>С нуля до первого проекта — без фреймворков.</p>
-        <ul>
-          <li>HTML/CSS</li>
-          <li>JavaScript: основы</li>
-          <li>Верстка лендинга</li>
-        </ul>
-        <a href="web/index.html">Начать →</a>
-      </div>
+    <div class="card">
+      <h2><i class="fab fa-react"></i> 3. Фреймворки: React или Vue?</h2>
+      <p>→ В РФ чаще требуют <strong>React</strong> (Сбер, Тинькофф, VK, Ozon).</p>
+      <p>→ Начни с: <a href="https://ru.reactjs.org/tutorial/tutorial.html" target="_blank">Официальный туториал на русском</a></p>
+      <p>→ Альтернатива: <a href="https://vuejs.org/guide/introduction.html" target="_blank">Vue 3 (проще для новичков)</a></p>
+    </div>
 
-      <div class="path-card">
-        <i class="fas fa-shield-alt fa-2x" style="color:#10b981"></i>
-        <h3>Цифровая грамотность</h3>
-        <p>Как учиться и работать, когда всё заблокировано.</p>
-        <ul>
-          <li>Tor без риска</li>
-          <li>Приватный браузер</li>
-          <li>Резервные копии</li>
-        </ul>
-        <a href="digital-literacy/index.html">Начать →</a>
-      </div>
+    <div class="card">
+      <h2><i class="fas fa-tools"></i> 4. Инструменты: Git, npm, сборка</h2>
+      <p>→ <a href="/digital-literacy/git-basics.html">Как установить Git и делать коммиты</a></p>
+      <p>→ <a href="https://html5book.ru/osnovy-npm/" target="_blank">npm для начинающих (HTML5Book)</a></p>
+      <p>→ Совет: не бойся терминала — в 2025 году он обязателен.</p>
+    </div>
 
-      <div class="path-card">
-        <i class="fas fa-file-excel fa-2x" style="color:#22c55e"></i>
-        <h3>Офисные навыки</h3>
-        <p>Для работы, учёбы и повседневных задач.</p>
-        <ul>
-          <li>Excel: сводные</li>
-          <li>Google Таблицы</li>
-          <li>Работа с PDF</li>
-        </ul>
-        <a href="office/index.html">Начать →</a>
-      </div>
-
+    <div class="card">
+      <h2><i class="fas fa-briefcase"></i> 5. Как устроиться на работу?</h2>
+      <p>→ Собеседования в РФ: <strong>React + TypeScript + Git</strong>.</p>
+      <p>→ Портфолио: сделай 3 проекта (лендинг, todo-list, погода).</p>
+      <p>→ Где искать: <a href="https://hh.ru" target="_blank">hh.ru</a>, <a href="https://russianit.community/" target="_blank">Russian IT Community</a>.</p>
     </div>
   </div>
 
-  <footer>
-    <p>BridgeLearn — проект свободного доступа к знаниям. Мы не храним контент, не требуем регистрации и не показываем рекламу.</p>
-  </footer>
+  <div class="container">
+    <footer class="attribution">
+      <p>Этот учебный путь вдохновлён проектом <a href="https://roadmap.sh" target="_blank">Roadmap.sh</a> (автор: Kamran Ahmed).<br>
+      Оригинал распространяется под лицензией <a href="https://github.com/kamranahmedse/developer-roadmap/blob/master/LICENSE" target="_blank">MIT</a>.<br>
+      Адаптация и локализация — BridgeLearn, 2025.</p>
+    </footer>
+  </div>
 
   <script>
-    const toggle = document.getElementById('themeToggle');
-    const body = document.body;
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      body.classList.add('theme-' + savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      body.classList.add('theme-dark');
-    }
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('theme-dark');
-      body.classList.toggle('theme-light');
-      localStorage.setItem('theme', body.classList.contains('theme-dark') ? 'dark' : 'light');
-    });
+    // Простой переключатель темы (если хочешь добавить позже)
+    // Пока не включён, чтобы не усложнять
   </script>
 </body>
 </html>
