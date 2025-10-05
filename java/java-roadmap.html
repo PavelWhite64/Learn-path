@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java для карьеры — BridgeLearn</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-secondary: #475569;
+      --primary: #4f46e5;
+      --border: #e2e8f0;
+      --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --surface: #1e293b;
+        --text: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --primary: #818cf8;
+        --border: #334155;
+        --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      background: var(--surface);
+      padding: 2.5rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .topic {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border);
+    }
+    .topic h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    details {
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px dashed var(--border);
+    }
+    details:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      padding: 0.4rem 0;
+    }
+    ul {
+      padding-left: 1.4rem;
+      margin-top: 0.6rem;
+      color: var(--text-secondary);
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fab fa-java"></i> Java для карьеры</h1>
+    <p>Путь от новичка до Junior-разработчика в РФ и СНГ. Без воды, только практика.</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Этап 1 -->
+    <div class="topic">
+      <h2><i class="fas fa-seedling"></i> 1. Основы Java</h2>
+      
+      <details open>
+        <summary>Синтаксис и базовые конструкции</summary>
+        <ul>
+          <li>Переменные, типы данных, операторы</li>
+          <li>Условия (if/else), циклы (for, while)</li>
+          <li>Методы, классы, объекты</li>
+          <li><a href="https://javarush.ru" target="_blank">Javarush — интерактивные уроки</a></li>
+          <li><a href="https://metanit.com/java/tutorial/" target="_blank">Учебник от Metanit</a></li>
+        </ul>
+      </details>
+
+      <details open>
+        <summary>Объектно-ориентированное программирование (ООП)</summary>
+        <ul>
+          <li>Наследование, полиморфизм, инкапсуляция</li>
+          <li>Абстрактные классы, интерфейсы</li>
+          <li><a href="/java/oop-basics.html">Гайд: как проектировать классы</a></li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- Этап 2 -->
+    <div class="topic">
+      <h2><i class="fas fa-database"></i> 2. Работа с данными</h2>
+      
+      <details open>
+        <summary>Коллекции и потоки (Streams)</summary>
+        <ul>
+          <li>List, Set, Map, Queue</li>
+          <li>Stream API: filter, map, collect</li>
+          <li><a href="https://javarush.ru/quests/lectures/questsyntax.level08" target="_blank">Javarush: коллекции</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Работа с файлами и JSON</summary>
+        <ul>
+          <li>Чтение/запись файлов</li>
+          <li>Библиотека Jackson для JSON</li>
+          <li><a href="/java/json-guide.html">Как парсить JSON в Java</a></li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- Этап 3 -->
+    <div class="topic">
+      <h2><i class="fas fa-server"></i> 3. Backend и базы данных</h2>
+      
+      <details open>
+        <summary>Основы SQL и JDBC</summary>
+        <ul>
+          <li>SELECT, INSERT, UPDATE, JOIN</li>
+          <li>Подключение к PostgreSQL через JDBC</li>
+          <li><a href="https://sql-academy.org/ru" target="_blank">SQL Academy — практика на русском</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>ORM: Hibernate / JPA</summary>
+        <ul>
+          <li>Сущности, аннотации, связи</li>
+          <li>Как избежать N+1 проблемы</li>
+          <li><a href="https://www.youtube.com/watch?v=KfXrAcQkK5Q" target="_blank">Курс по Hibernate (2024)</a></li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- Этап 4 -->
+    <div class="topic">
+      <h2><i class="fas fa-cloud"></i> 4. Веб и REST API</h2>
+      
+      <details open>
+        <summary>Spring Boot</summary>
+        <ul>
+          <li>Контроллеры, сервисы, репозитории</li>
+          <li>RESTful API: @GetMapping, @PostMapping</li>
+          <li><a href="https://start.spring.io/">Spring Initializr — генератор проекта</a></li>
+          <li><a href="https://www.youtube.com/watch?v=QhB5dXaAq5Y" target="_blank">Spring Boot для начинающих (LoftBlog)</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Тестирование</summary>
+        <ul>
+          <li>JUnit 5, Mockito</li>
+          <li>Тестирование контроллеров и сервисов</li>
+          <li><a href="/java/junit-guide.html">Как писать тесты за 10 минут</a></li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- Этап 5 -->
+    <div class="topic">
+      <h2><i class="fas fa-tools"></i> 5. Инструменты и практика</h2>
+      
+      <details open>
+        <summary>Git и сборка</summary>
+        <ul>
+          <li>Коммиты, ветки, pull request</li>
+          <li>Maven / Gradle — управление зависимостями</li>
+          <li><a href="/digital-literacy/git-basics.html">Git для новичков</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Подготовка к собеседованию</summary>
+        <ul>
+          <li>Что спрашивают в Сбере, Тинькофф, VK</li>
+          <li>Типичные задачи: коллекции, многопоточность</li>
+          <li><a href="/java/interview-checklist.html">Чек-лист Junior Java</a></li>
+        </ul>
+      </details>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Адаптация под русскоязычную аудиторию — BridgeLearn, 2025.<br>
+    Оригинал: <a href="https://roadmap.sh/java" target="_blank">Java Roadmap</a> (MIT License).</p>
+  </footer>
+</body>
+</html>
