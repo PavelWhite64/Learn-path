@@ -5,190 +5,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Java для карьеры — BridgeLearn</title>
-  <meta name="description" content="Полная дорожная карта Java-разработчика для СНГ: от установки JDK до собеседования в банке. Офлайн-гайд без регистрации.">
+  <meta name="description"
+    content="Полная дорожная карта Java-разработчика для СНГ: от установки JDK до собеседования в банке. Офлайн-гайд без регистрации.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Java Roadmap — BridgeLearn">
   <meta property="og:description" content="Офлайн-гайд по Java для начинающих в РФ и СНГ">
   <meta property="og:type" content="article">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <!-- Шрифт Inter (с оптимизацией) -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome (можно оставить CDN — он кэшируется) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --bg: #ffffff;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --text-secondary: #475569;
-      --text-tertiary: #94a3b8;
-      --primary: #4f46e5;
-      --border: #e2e8f0;
-      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --surface: #1e293b;
-        --text: #f1f5f9;
-        --text-secondary: #cbd5e1;
-        --text-tertiary: #94a3b8;
-        --primary: #818cf8;
-        --border: #334155;
-        --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header {
-      background: var(--surface);
-      padding: 2rem 2rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-      position: relative;
-    }
-
-    .back-link {
-      position: absolute;
-      left: 2rem;
-      top: 2rem;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    header h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 0.8rem;
-      color: var(--primary);
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      flex: 1;
-    }
-
-    .topic {
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 1.8rem;
-      margin-bottom: 2rem;
-      box-shadow: var(--card-shadow);
-      border: 1px solid var(--border);
-    }
-
-    .topic h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1.2rem;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    details {
-      margin-bottom: 1.2rem;
-      padding-bottom: 1.2rem;
-      border-bottom: 1px dashed var(--border);
-    }
-
-    details:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    summary {
-      font-weight: 600;
-      cursor: pointer;
-      outline: none;
-      padding: 0.4rem 0;
-    }
-
-    ul {
-      padding-left: 1.4rem;
-      margin-top: 0.6rem;
-      color: var(--text-secondary);
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    code {
-      background: var(--border);
-      padding: 0.15em 0.4em;
-      border-radius: 4px;
-      font-family: monospace;
-      font-size: 0.95em;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border);
-      margin-top: auto;
-    }
-
-    .breadcrumbs {
-      margin: 1rem 0;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-
-    .breadcrumbs a {
-      color: var(--primary);
-    }
-  </style>
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="/css/bridgelearn.css">
 </head>
 
 <body>
   <header>
-    <a href="/" class="back-link" aria-label="Вернуться на главную страницу BridgeLearn">
-      <i class="fas fa-arrow-left" aria-hidden="true"></i> Все гайды
-    </a>
-    <h1><i class="fab fa-java" aria-hidden="true"></i> Java для карьеры</h1>
-    <p>Путь от новичка до Junior-разработчика в РФ и СНГ. Без воды, только практика.</p>
+    <div class="header-content">
+      <a href="/" class="back-link" aria-label="Вернуться на главную страницу BridgeLearn">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Все гайды
+      </a>
+      <h1><i class="fab fa-java" aria-hidden="true"></i> Java для карьеры</h1>
+      <p>Путь от новичка до Junior-разработчика в РФ и СНГ. Без воды, только практика.</p>
+    </div>
   </header>
 
-  <div class="container">
+  <div class="container roadmap-container">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a href="/">Главная</a> → Java для карьеры
     </nav>

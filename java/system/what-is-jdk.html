@@ -5,176 +5,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Что такое JVM, JRE, JDK — в чём разница? — BridgeLearn</title>
-  <meta name="description" content="Простое объяснение разницы между JVM, JRE и JDK для начинающих Java-разработчиков в СНГ. Узнайте, что именно нужно установить в 2025 году.">
+  <meta name="description"
+    content="Простое объяснение разницы между JVM, JRE и JDK для начинающих Java-разработчиков в СНГ. Узнайте, что именно нужно установить в 2025 году.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="JVM vs JRE vs JDK — BridgeLearn">
   <meta property="og:description" content="Что установить новичку: JDK, JRE или JVM? Простой гайд без воды.">
   <meta property="og:type" content="article">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <!-- Шрифт Inter (с оптимизацией) -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome (можно оставить CDN — он кэшируется) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --bg: #ffffff;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --text-secondary: #475569;
-      --text-tertiary: #94a3b8;
-      --primary: #4f46e5;
-      --border: #e2e8f0;
-      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --surface: #1e293b;
-        --text: #f1f5f9;
-        --text-secondary: #cbd5e1;
-        --text-tertiary: #94a3b8;
-        --primary: #818cf8;
-        --border: #334155;
-        --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header {
-      background: var(--surface);
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .header-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin: 0;
-      color: var(--primary);
-      text-align: center;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      flex: 1;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin: 1.8rem 0 1rem;
-      color: var(--primary);
-    }
-
-    p,
-    ul {
-      margin-bottom: 1.2rem;
-      color: var(--text-secondary);
-    }
-
-    ul {
-      padding-left: 1.4rem;
-    }
-
-    li {
-      margin-bottom: 0.6rem;
-    }
-
-    code {
-      background: var(--border);
-      padding: 0.15em 0.4em;
-      border-radius: 4px;
-      font-family: monospace;
-      font-size: 0.95em;
-    }
-
-    .analogy {
-      background: var(--bg);
-      border-left: 4px solid var(--primary);
-      padding: 1.2rem;
-      margin: 1.5rem 0;
-      border-radius: 0 8px 8px 0;
-    }
-
-    .summary-box {
-      background: rgba(79, 70, 229, 0.05);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .summary-box h3 {
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border);
-      margin-top: auto;
-    }
-
-    .breadcrumbs {
-      margin: 1rem 0;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    .breadcrumbs a {
-      color: var(--primary);
-    }
-  </style>
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="/css/bridgelearn.css">
 </head>
 
 <body>
@@ -190,14 +45,15 @@
   <main>
     <div class="container">
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
-        <a href="/">Главная</a> → 
-        <a href="/java/java-roadmap.html">Java для карьеры</a> → 
+        <a href="/">Главная</a> →
+        <a href="/java/java-roadmap.html">Java для карьеры</a> →
         Что такое JDK?
       </nav>
 
       <p>Если вы только начинаете изучать Java, вас наверняка запутали эти три аббревиатуры. Давайте разберёмся
         <strong>просто и без жаргона</strong> — что есть что, и что именно нужно установить, чтобы писать программы
-        на Java в 2025 году.</p>
+        на Java в 2025 году.
+      </p>
 
       <h2>🔹 JVM — Java Virtual Machine</h2>
       <p><strong>JVM — это «двигатель» Java.</strong> Именно она запускает ваш код.</p>
@@ -224,7 +80,7 @@
           → <strong>JVM</strong> — это проектор.<br>
           → <strong>JRE</strong> — это проектор + экран + колонки.<br>
           → А <strong>JDK</strong> — это ещё и камера, свет, сценарий — всё, чтобы <strong>снять фильм
-              самому</strong>.</p>
+            самому</strong>.</p>
       </div>
 
       <h2>🔹 JDK — Java Development Kit</h2>
@@ -242,7 +98,8 @@
 
       <div class="summary-box">
         <h3>💡 Что устанавливать в 2025 году?</h3>
-        <p><strong>Только JDK.</strong> Современные дистрибутивы (например, <a href="https://adoptium.net/">Eclipse Temurin</a>) поставляются как JDK — и включают всё необходимое.</p>
+        <p><strong>Только JDK.</strong> Современные дистрибутивы (например, <a href="https://adoptium.net/">Eclipse
+            Temurin</a>) поставляются как JDK — и включают всё необходимое.</p>
         <p>Вам <strong>не нужно</strong> отдельно ставить JRE или JVM — они уже внутри JDK.</p>
       </div>
 
