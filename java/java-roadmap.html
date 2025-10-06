@@ -5,14 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Java для карьеры — BridgeLearn</title>
+  <meta name="description" content="Полная дорожная карта Java-разработчика для СНГ: от установки JDK до собеседования в банке. Офлайн-гайд без регистрации.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Java Roadmap — BridgeLearn">
+  <meta property="og:description" content="Офлайн-гайд по Java для начинающих в РФ и СНГ">
+  <meta property="og:type" content="article">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --bg: #ffffff;
       --surface: #ffffff;
       --text: #0f172a;
       --text-secondary: #475569;
+      --text-tertiary: #94a3b8;
       --primary: #4f46e5;
       --border: #e2e8f0;
       --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -24,6 +32,7 @@
         --surface: #1e293b;
         --text: #f1f5f9;
         --text-secondary: #cbd5e1;
+        --text-tertiary: #94a3b8;
         --primary: #818cf8;
         --border: #334155;
         --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -41,13 +50,33 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
       background: var(--surface);
-      padding: 2.5rem 2rem 1.5rem;
+      padding: 2rem 2rem 1.5rem;
       border-bottom: 1px solid var(--border);
       text-align: center;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      left: 2rem;
+      top: 2rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
     }
 
     header h1 {
@@ -61,6 +90,7 @@
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1.5rem;
+      flex: 1;
     }
 
     .topic {
@@ -110,6 +140,14 @@
       margin-bottom: 0.5rem;
     }
 
+    code {
+      background: var(--border);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.95em;
+    }
+
     a {
       color: var(--primary);
       text-decoration: none;
@@ -125,25 +163,42 @@
       color: var(--text-secondary);
       font-size: 0.9rem;
       border-top: 1px solid var(--border);
-      margin-top: 2rem;
+      margin-top: auto;
+    }
+
+    .breadcrumbs {
+      margin: 1rem 0;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .breadcrumbs a {
+      color: var(--primary);
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1><i class="fab fa-java"></i> Java для карьеры</h1>
+    <a href="/" class="back-link" aria-label="Вернуться на главную страницу BridgeLearn">
+      <i class="fas fa-arrow-left" aria-hidden="true"></i> Все гайды
+    </a>
+    <h1><i class="fab fa-java" aria-hidden="true"></i> Java для карьеры</h1>
     <p>Путь от новичка до Junior-разработчика в РФ и СНГ. Без воды, только практика.</p>
   </header>
 
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="/">Главная</a> → Java для карьеры
+    </nav>
 
     <!-- Этап 1 -->
     <div class="topic">
-      <h2><i class="fas fa-laptop-code"></i> 1. Подготовка среды</h2>
+      <h2><i class="fas fa-laptop-code" aria-hidden="true"></i> 1. Подготовка среды</h2>
 
-      <details open>
-        <summary>Понимание экосистемы Java</summary>
+      <details open role="group" aria-labelledby="env-1">
+        <summary id="env-1">Понимание экосистемы Java</summary>
         <ul>
           <li><a href="system/what-is-jdk.html">Что такое JVM, JRE, JDK — в чём разница?</a></li>
           <li><a href="system/why-java-is-cross-platform.html">Почему Java кроссплатформенна?</a></li>
@@ -151,13 +206,13 @@
         </ul>
       </details>
 
-      <details open>
-        <summary>Установка JDK</summary>
+      <details open role="group" aria-labelledby="env-2">
+        <summary id="env-2">Установка JDK</summary>
         <ul>
           <li>Где скачать: Eclipse Temurin (Adoptium) — официально, бесплатно, без вирусов.</li>
           <li>
-            <details open>
-              <summary>Пошаговая установка</summary>
+            <details open role="group" aria-labelledby="install-sub">
+              <summary id="install-sub">Пошаговая установка</summary>
               <ul>
                 <li>Windows: .msi → PATH автоматически</li>
                 <li>Mac: .pkg или через Homebrew</li>
@@ -165,16 +220,16 @@
               </ul>
             </details>
           </li>
-          <li>Проверка: java -version</li>
+          <li>Проверка: <code>java -version</code></li>
         </ul>
       </details>
 
-      <details open>
-        <summary>Настройка IDE</summary>
+      <details open role="group" aria-labelledby="env-3">
+        <summary id="env-3">Настройка IDE</summary>
         <ul>
           <li>
-            <details open>
-              <summary>IntelliJ IDEA Community (рекомендуется)</summary>
+            <details open role="group" aria-labelledby="ide-intellij">
+              <summary id="ide-intellij">IntelliJ IDEA Community (рекомендуется)</summary>
               <ul>
                 <li>Скачать, установить, создать первый проект</li>
                 <li>Настройка кодировки (UTF-8)</li>
@@ -186,36 +241,34 @@
         </ul>
       </details>
 
-      <details open>
-        <summary>Первый запуск</summary>
+      <details open role="group" aria-labelledby="env-4">
+        <summary id="env-4">Первый запуск</summary>
         <ul>
           <li>Создать Hello.java</li>
-          <li>Скомпилировать: javac Hello.java</li>
-          <li>Запустить: java Hello</li>
+          <li>Скомпилировать: <code>javac Hello.java</code></li>
+          <li>Запустить: <code>java Hello</code></li>
           <li>Типичные ошибки и как их исправить</li>
-
         </ul>
       </details>
-
     </div>
 
     <!-- Этап 2 -->
     <div class="topic">
-      <h2><i class="fas fa-seedling"></i> 2. Основы Java</h2>
+      <h2><i class="fas fa-seedling" aria-hidden="true"></i> 2. Основы Java</h2>
 
-      <details open>
-        <summary>Синтаксис и базовые конструкции</summary>
+      <details open role="group" aria-labelledby="basics-1">
+        <summary id="basics-1">Синтаксис и базовые конструкции</summary>
         <ul>
           <li>Переменные, типы данных, операторы</li>
           <li>Условия (if/else), циклы (for, while)</li>
           <li>Методы, классы, объекты</li>
-          <li><a href="https://javarush.ru" target="_blank">Javarush — интерактивные уроки</a></li>
-          <li><a href="https://metanit.com/java/tutorial/" target="_blank">Учебник от Metanit</a></li>
+          <li><a href="https://javarush.ru">Javarush — интерактивные уроки</a></li>
+          <li><a href="https://metanit.com/java/tutorial/">Учебник от Metanit</a></li>
         </ul>
       </details>
 
-      <details open>
-        <summary>Объектно-ориентированное программирование (ООП)</summary>
+      <details open role="group" aria-labelledby="basics-2">
+        <summary id="basics-2">Объектно-ориентированное программирование (ООП)</summary>
         <ul>
           <li>Наследование, полиморфизм, инкапсуляция</li>
           <li>Абстрактные классы, интерфейсы</li>
@@ -226,20 +279,19 @@
 
     <!-- Этап 3 -->
     <div class="topic">
-      <h2><i class="fas fa-database"></i> 3. Работа с данными</h2>
+      <h2><i class="fas fa-database" aria-hidden="true"></i> 3. Работа с данными</h2>
 
-      <details open>
-        <summary>Коллекции и потоки (Streams)</summary>
+      <details open role="group" aria-labelledby="data-1">
+        <summary id="data-1">Коллекции и потоки (Streams)</summary>
         <ul>
           <li>List, Set, Map, Queue</li>
           <li>Stream API: filter, map, collect</li>
-          <li><a href="https://javarush.ru/quests/lectures/questsyntax.level08" target="_blank">Javarush: коллекции</a>
-          </li>
+          <li><a href="https://javarush.ru/quests/lectures/questsyntax.level08">Javarush: коллекции</a></li>
         </ul>
       </details>
 
-      <details>
-        <summary>Работа с файлами и JSON</summary>
+      <details role="group" aria-labelledby="data-2">
+        <summary id="data-2">Работа с файлами и JSON</summary>
         <ul>
           <li>Чтение/запись файлов</li>
           <li>Библиотека Jackson для JSON</li>
@@ -250,44 +302,43 @@
 
     <!-- Этап 4 -->
     <div class="topic">
-      <h2><i class="fas fa-server"></i> 4. Backend и базы данных</h2>
+      <h2><i class="fas fa-server" aria-hidden="true"></i> 4. Backend и базы данных</h2>
 
-      <details open>
-        <summary>Основы SQL и JDBC</summary>
+      <details open role="group" aria-labelledby="backend-1">
+        <summary id="backend-1">Основы SQL и JDBC</summary>
         <ul>
           <li>SELECT, INSERT, UPDATE, JOIN</li>
           <li>Подключение к PostgreSQL через JDBC</li>
-          <li><a href="https://sql-academy.org/ru" target="_blank">SQL Academy — практика на русском</a></li>
+          <li><a href="https://sql-academy.org/ru">SQL Academy — практика на русском</a></li>
         </ul>
       </details>
 
-      <details>
-        <summary>ORM: Hibernate / JPA</summary>
+      <details role="group" aria-labelledby="backend-2">
+        <summary id="backend-2">ORM: Hibernate / JPA</summary>
         <ul>
           <li>Сущности, аннотации, связи</li>
           <li>Как избежать N+1 проблемы</li>
-          <li><a href="https://www.youtube.com/watch?v=KfXrAcQkK5Q" target="_blank">Курс по Hibernate (2024)</a></li>
+          <li><a href="https://www.youtube.com/watch?v=KfXrAcQkK5Q">Курс по Hibernate (2024)</a></li>
         </ul>
       </details>
     </div>
 
     <!-- Этап 5 -->
     <div class="topic">
-      <h2><i class="fas fa-cloud"></i> 5. Веб и REST API</h2>
+      <h2><i class="fas fa-cloud" aria-hidden="true"></i> 5. Веб и REST API</h2>
 
-      <details open>
-        <summary>Spring Boot</summary>
+      <details open role="group" aria-labelledby="web-1">
+        <summary id="web-1">Spring Boot</summary>
         <ul>
           <li>Контроллеры, сервисы, репозитории</li>
           <li>RESTful API: @GetMapping, @PostMapping</li>
           <li><a href="https://start.spring.io/">Spring Initializr — генератор проекта</a></li>
-          <li><a href="https://www.youtube.com/watch?v=QhB5dXaAq5Y" target="_blank">Spring Boot для начинающих
-              (LoftBlog)</a></li>
+          <li><a href="https://www.youtube.com/watch?v=QhB5dXaAq5Y">Spring Boot для начинающих (LoftBlog)</a></li>
         </ul>
       </details>
 
-      <details>
-        <summary>Тестирование</summary>
+      <details role="group" aria-labelledby="web-2">
+        <summary id="web-2">Тестирование</summary>
         <ul>
           <li>JUnit 5, Mockito</li>
           <li>Тестирование контроллеров и сервисов</li>
@@ -298,10 +349,10 @@
 
     <!-- Этап 6 -->
     <div class="topic">
-      <h2><i class="fas fa-tools"></i> 6. Инструменты и практика</h2>
+      <h2><i class="fas fa-tools" aria-hidden="true"></i> 6. Инструменты и практика</h2>
 
-      <details open>
-        <summary>Git и сборка</summary>
+      <details open role="group" aria-labelledby="tools-1">
+        <summary id="tools-1">Git и сборка</summary>
         <ul>
           <li>Коммиты, ветки, pull request</li>
           <li>Maven / Gradle — управление зависимостями</li>
@@ -309,8 +360,8 @@
         </ul>
       </details>
 
-      <details>
-        <summary>Подготовка к собеседованию</summary>
+      <details role="group" aria-labelledby="tools-2">
+        <summary id="tools-2">Подготовка к собеседованию</summary>
         <ul>
           <li>Что спрашивают в Сбере, Тинькофф, VK</li>
           <li>Типичные задачи: коллекции, многопоточность</li>
@@ -318,28 +369,11 @@
         </ul>
       </details>
     </div>
-
   </div>
 
   <footer>
     <p>Адаптация под русскоязычную аудиторию — BridgeLearn, 2025.<br>
-      Оригинал: <a href="https://roadmap.sh/java" target="_blank">Java Roadmap</a> (MIT License).</p>
-
-    <!-- Автоматические хлебные крошки -->
-    <nav id="breadcrumbs" class="breadcrumbs" aria-label="Хлебные крошки" style="display:none;"></nav>
-    <script>
-      // Простая версия крошек для одной страницы
-      document.addEventListener('DOMContentLoaded', () => {
-        const breadcrumbs = document.getElementById('breadcrumbs');
-        breadcrumbs.style.display = 'block';
-        breadcrumbs.style.margin = '1.2rem 0';
-        breadcrumbs.style.padding = '0.6rem 0';
-        breadcrumbs.style.borderBottom = '1px solid var(--border)';
-        breadcrumbs.style.color = 'var(--text-secondary)';
-        breadcrumbs.innerHTML =
-          '<a href="/" style="color:var(--primary); text-decoration:none;">Главная</a>';
-      });
-    </script>
+      Оригинал: <a href="https://roadmap.sh/java">Java Roadmap</a> (MIT License).</p>
   </footer>
 </body>
 

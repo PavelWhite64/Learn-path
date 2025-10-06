@@ -101,6 +101,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
     body::before {
@@ -139,6 +140,8 @@
       text-align: center;
       max-width: 800px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .logo {
@@ -179,7 +182,7 @@
     }
 
     .theme-toggle {
-      position: absolute;
+      position: fixed;
       top: 24px;
       right: 24px;
       width: 52px;
@@ -193,6 +196,7 @@
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      z-index: 100;
     }
 
     .theme-toggle::before {
@@ -411,6 +415,7 @@
 </head>
 
 <body>
+  <!-- Переключатель темы — теперь fixed, всегда в углу -->
   <div class="theme-toggle" id="themeToggle" aria-label="Сменить тему (светлая/тёмная)" role="button" tabindex="0"></div>
 
   <header>
@@ -468,6 +473,16 @@
             <p>Как учиться и работать, когда YouTube, GitHub и Coursera недоступны.</p>
             <a href="#" class="btn" aria-label="Гайд в разработке" style="opacity: 0.7; pointer-events: none;">Скоро</a>
           </div>
+
+          <div class="path-card">
+            <div class="path-icon" aria-hidden="true">
+              <i class="fas fa-file-excel"></i>
+            </div>
+            <h3>Офисные навыки</h3>
+            <p>Excel, Google Таблицы, PDF — для работы, учёбы и повседневных задач.</p>
+            <a href="#" class="btn" aria-label="Гайд в разработке" style="opacity: 0.7; pointer-events: none;">Скоро</a>
+          </div>
+        </div>
       </section>
     </div>
   </main>
@@ -498,7 +513,6 @@
       }
     });
 
-    // Поддержка клавиатуры
     toggle.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();

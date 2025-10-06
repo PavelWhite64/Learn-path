@@ -1,71 +1,129 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Почему Java кроссплатформенна? — BridgeLearn</title>
+  <meta name="description" content="Простое объяснение принципа «Write Once, Run Anywhere» в Java: как JVM и байт-код обеспечивают кроссплатформенность. Для начинающих разработчиков в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Почему Java кроссплатформенна? — BridgeLearn">
+  <meta property="og:description" content="Как работает принцип «Написал один раз — запустил где угодно» в Java.">
+  <meta property="og:type" content="article">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --bg: #ffffff;
       --surface: #ffffff;
       --text: #0f172a;
       --text-secondary: #475569;
+      --text-tertiary: #94a3b8;
       --primary: #4f46e5;
       --border: #e2e8f0;
-      --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #0f172a;
         --surface: #1e293b;
         --text: #f1f5f9;
         --text-secondary: #cbd5e1;
+        --text-tertiary: #94a3b8;
         --primary: #818cf8;
         --border: #334155;
-        --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: var(--font-sans);
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
     header {
       background: var(--surface);
-      padding: 2.5rem 2rem 1.5rem;
+      padding: 1.5rem 2rem;
       border-bottom: 1px solid var(--border);
     }
+
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0;
+      color: var(--primary);
+      text-align: center;
+    }
+
     .container {
       max-width: 800px;
       margin: 2rem auto;
       padding: 0 1.5rem;
+      flex: 1;
     }
-    h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-    }
+
     h2 {
       font-size: 1.4rem;
       margin: 1.8rem 0 1rem;
       color: var(--primary);
     }
-    p, ul {
+
+    p,
+    ul {
       margin-bottom: 1.2rem;
       color: var(--text-secondary);
     }
+
     ul {
       padding-left: 1.4rem;
     }
+
     li {
       margin-bottom: 0.6rem;
     }
+
+    code {
+      background: var(--border);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.95em;
+    }
+
     .key-point {
       background: rgba(79, 70, 229, 0.05);
       border-left: 4px solid var(--primary);
@@ -73,6 +131,7 @@
       margin: 1.5rem 0;
       border-radius: 0 8px 8px 0;
     }
+
     .analogy {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -81,93 +140,106 @@
       margin: 1.5rem 0;
       font-style: italic;
     }
+
     a {
       color: var(--primary);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
       color: var(--text-secondary);
       font-size: 0.9rem;
       border-top: 1px solid var(--border);
-      margin-top: 2rem;
+      margin-top: auto;
+    }
+
+    .breadcrumbs {
+      margin: 1rem 0;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .breadcrumbs a {
+      color: var(--primary);
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Почему Java кроссплатформенна?</h1>
+    <div class="header-content">
+      <a href="/java/java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1>Почему Java кроссплатформенна?</h1>
+    </div>
   </header>
 
-  <div class="container">
-    <p>Вы наверняка слышали фразу: <strong>«Написал один раз — запустил где угодно»</strong> (Write Once, Run Anywhere). Это главный девиз Java. Но как это работает на самом деле?</p>
+  <main>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="/">Главная</a> → 
+        <a href="/java/java-roadmap.html">Java для карьеры</a> → 
+        Почему Java кроссплатформенна?
+      </nav>
 
-    <h2>🔹 Секрет — в JVM и байт-коде</h2>
-    <p>Когда вы компилируете программу на Java, она <strong>не превращается в машинный код</strong> (как в C++ или Go). Вместо этого компилятор <code>javac</code> создаёт <strong>байт-код</strong> — промежуточный код, понятный только <strong>Java Virtual Machine (JVM)</strong>.</p>
+      <p>Вы наверняка слышали фразу: <strong>«Написал один раз — запустил где угодно»</strong> (Write Once, Run Anywhere). Это главный девиз Java. Но как это работает на самом деле?</p>
 
-    <p>А JVM — это программа, которая <strong>уже скомпилирована под каждую ОС</strong>:
-      <ul>
-        <li>Есть JVM для Windows,</li>
-        <li>JVM для macOS,</li>
-        <li>JVM для Linux,</li>
-        <li>Даже для Raspberry Pi и Android.</li>
-      </ul>
-    </p>
+      <h2>🔹 Секрет — в JVM и байт-коде</h2>
+      <p>Когда вы компилируете программу на Java, она <strong>не превращается в машинный код</strong> (как в C++ или Go). Вместо этого компилятор <code>javac</code> создаёт <strong>байт-код</strong> — промежуточный код, понятный только <strong>Java Virtual Machine (JVM)</strong>.</p>
 
-    <p>Именно JVM <strong>интерпретирует байт-код</strong> и выполняет его на конкретной машине. Поэтому ваш <code>.class</code>-файл запустится везде, где установлена JVM.</p>
+      <p>А JVM — это программа, которая <strong>уже скомпилирована под каждую ОС</strong>:
+        <ul>
+          <li>Есть JVM для Windows,</li>
+          <li>JVM для macOS,</li>
+          <li>JVM для Linux,</li>
+          <li>Даже для Raspberry Pi и Android.</li>
+        </ul>
+      </p>
 
-    <div class="analogy">
-      <p><strong>Аналогия:</strong>  
-      Представьте, что байт-код — это партитура музыки.  
-      А JVM — это музыкант, который умеет читать эту партитуру и играть на любом инструменте (ОС).  
-      Одна и та же партитура зазвучит и на скрипке (Windows), и на пианино (Mac), и на гитаре (Linux).</p>
+      <p>Именно JVM <strong>интерпретирует байт-код</strong> и выполняет его на конкретной машине. Поэтому ваш <code>.class</code>-файл запустится везде, где установлена JVM.</p>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong>  
+        Представьте, что байт-код — это партитура музыки.  
+        А JVM — это музыкант, который умеет читать эту партитуру и играть на любом инструменте (ОС).  
+        Одна и та же партитура зазвучит и на скрипке (Windows), и на пианино (Mac), и на гитаре (Linux).</p>
+      </div>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong>  
+        Кроссплатформенность — это свойство <strong>не языка Java, а JVM</strong>.  
+        Сам код на Java может содержать вызовы к системе (например, через <code>Runtime.exec()</code>), и тогда он перестанет быть переносимым.  
+        Но в 95% случаев — особенно на собеседованиях в Сбере или Тинькофф — под «кроссплатформенностью» имеют в виду именно работу через JVM.</p>
+      </div>
+
+      <h2>🔹 Почему это важно на практике?</h2>
+      <p>В корпоративной среде (банки, госсектор, крупные IT-компании РФ):
+        <ul>
+          <li>Разработка ведётся на Windows или Mac,</li>
+          <li>Тестирование — на Linux-серверах,</li>
+          <li>Продакшен — в облаке (Kubernetes, Docker).</li>
+        </ul>
+      </p>
+      <p>Благодаря JVM <strong>ваш код работает везде без перекомпиляции</strong>. Это экономит время, снижает ошибки и упрощает деплой.</p>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="/java/system/what-is-jdk.html">Что такое JVM, JRE, JDK?</a><br>
+        → <a href="/java/java-roadmap.html">Вернитесь к дорожной карте Java</a></p>
     </div>
-
-    <div class="key-point">
-      <p><strong>Важно:</strong>  
-      Кроссплатформенность — это свойство <strong>не языка Java, а JVM</strong>.  
-      Сам код на Java может содержать вызовы к системе (например, через <code>Runtime.exec()</code>), и тогда он перестанет быть переносимым.  
-      Но в 95% случаев — особенно на собеседованиях в Сбере или Тинькофф — под «кроссплатформенностью» имеют в виду именно работу через JVM.</p>
-    </div>
-
-    <h2>🔹 Почему это важно на практике?</h2>
-    <p>В корпоративной среде (банки, госсектор, крупные IT-компании РФ):
-      <ul>
-        <li>Разработка ведётся на Windows или Mac,</li>
-        <li>Тестирование — на Linux-серверах,</li>
-        <li>Продакшен — в облаке (Kubernetes, Docker).</li>
-      </ul>
-    </p>
-    <p>Благодаря JVM <strong>ваш код работает везде без перекомпиляции</strong>. Это экономит время, снижает ошибки и упрощает деплой.</p>
-
-    <h2>Что дальше?</h2>
-    <p>→ <a href="/java/what-is-jdk.html">Что такое JVM, JRE, JDK?</a><br>
-    → <a href="/java/java-roadmap.html">Вернитесь к дорожной карте Java</a></p>
-  </div>
+  </main>
 
   <footer>
     <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
   </footer>
-
-  <!-- Хлебные крошки -->
-  <nav id="breadcrumbs" class="breadcrumbs" aria-label="Хлебные крошки" style="display:none;"></nav>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const breadcrumbs = document.getElementById('breadcrumbs');
-      breadcrumbs.style.display = 'block';
-      breadcrumbs.style.margin = '1.2rem 0';
-      breadcrumbs.style.padding = '0.6rem 0';
-      breadcrumbs.style.borderBottom = '1px solid var(--border)';
-      breadcrumbs.style.color = 'var(--text-secondary)';
-      breadcrumbs.innerHTML = 
-        '<a href="/" style="color:var(--primary); text-decoration:none;">Главная</a> → ' +
-        '<a href="/java/java-roadmap.html" style="color:var(--primary); text-decoration:none;">Java для карьеры</a> → ' +
-        '<span style="color:var(--text);">Почему Java кроссплатформенна?</span>';
-    });
-  </script>
 </body>
+
 </html>
