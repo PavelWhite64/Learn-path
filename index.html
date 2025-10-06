@@ -4,15 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BridgeLearn — Обучайся свободно</title>
+  <title>BridgeLearn — Обучайся свободно. Офлайн-гайды по IT без регистрации</title>
   <meta name="description"
-    content="Бесплатные, легальные, оффлайн-дружелюбные гайды по IT, цифровой грамотности и офисным навыкам для русскоязычных." />
+    content="Бесплатные, легальные, офлайн-дружелюбные гайды по Java, веб-разработке, цифровой грамотности и Excel. Без подписок, без цензуры. Для студентов и IT-новичков в СНГ." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="BridgeLearn — Обучайся свободно">
+  <meta property="og:description" content="Офлайн-гайды по IT без регистрации и цензуры">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pavelwhite64.github.io/Learn-path/">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 
-  <!-- Ленивая загрузка шрифтов (оптимизация скорости) -->
+  <!-- Шрифт Inter -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
@@ -20,13 +26,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
   </noscript>
 
-  <!-- Font Awesome для иконок -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     /* ===== ЦВЕТОВЫЕ ПЕРЕМЕННЫЕ ===== */
     :root {
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
       --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 
       /* Светлая тема */
@@ -43,7 +49,6 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        /* Тёмная тема */
         --bg: #020617;
         --surface: #0f172a;
         --text: #f1f5f9;
@@ -92,13 +97,12 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: background-color 0.3s ease, color 0.3s ease;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Анимированный фон */
     body::before {
       content: '';
       position: fixed;
@@ -121,13 +125,8 @@
     }
 
     @keyframes fadeInBg {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 0.7;
-      }
+      from { opacity: 0; }
+      to { opacity: 0.7; }
     }
 
     body::before {
@@ -179,7 +178,6 @@
       margin: 0 auto 2.5rem;
     }
 
-    /* Переключатель темы */
     .theme-toggle {
       position: absolute;
       top: 24px;
@@ -222,13 +220,52 @@
     .intro {
       text-align: center;
       max-width: 700px;
-      margin: 0 auto 3.5rem;
+      margin: 0 auto 3rem;
     }
 
     .intro p {
       font-size: 1.125rem;
       color: var(--text-secondary);
       line-height: 1.7;
+    }
+
+    /* Почему BridgeLearn? */
+    .why {
+      background: var(--surface);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2.5rem auto;
+      max-width: 800px;
+      border: 1px solid var(--border);
+      box-shadow: var(--card-shadow);
+    }
+
+    .why h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+      color: var(--text);
+    }
+
+    .why ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .why li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text-secondary);
+    }
+
+    .why li i {
+      color: var(--primary);
+      margin-top: 4px;
     }
 
     .paths-grid {
@@ -253,21 +290,10 @@
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -6px rgba(0, 0, 0, 0.05);
     }
 
-    .path-card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .path-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .path-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .path-card:nth-child(4) {
-      animation-delay: 0.4s;
-    }
+    .path-card:nth-child(1) { animation-delay: 0.1s; }
+    .path-card:nth-child(2) { animation-delay: 0.2s; }
+    .path-card:nth-child(3) { animation-delay: 0.3s; }
+    .path-card:nth-child(4) { animation-delay: 0.4s; }
 
     .path-icon {
       width: 64px;
@@ -305,12 +331,13 @@
       background: var(--primary);
       color: white;
       font-weight: 600;
-      padding: 0.65rem 1.5rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 14px;
       text-decoration: none;
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       font-size: 1rem;
       border: 2px solid var(--primary);
+      min-width: 140px;
     }
 
     .btn:hover {
@@ -323,6 +350,13 @@
       box-shadow: 0 10px 20px -5px rgba(129, 140, 248, 0.3);
     }
 
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
     /* ===== ФУТЕР ===== */
     footer {
       text-align: center;
@@ -331,71 +365,57 @@
       font-size: 0.95rem;
       border-top: 1px solid var(--border);
       margin-top: auto;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Адаптив */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .subtitle {
-        font-size: 1.1rem;
-      }
-
-      .container {
-        padding: 0 1.5rem 3rem;
-      }
+      h1 { font-size: 2.5rem; }
+      .subtitle { font-size: 1.1rem; }
+      .container { padding: 0 1.5rem 3rem; }
+      .why { padding: 1.5rem; }
     }
 
     @media (max-width: 480px) {
-      h1 {
-        font-size: 2.1rem;
-      }
-
-      .logo-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 1.25rem;
-      }
-
-      .path-card {
-        padding: 1.5rem;
-      }
+      h1 { font-size: 2.1rem; }
+      .logo-icon { width: 48px; height: 48px; font-size: 1.25rem; }
+      .path-card { padding: 1.5rem; }
+      .btn { padding: 0.65rem 1.25rem; font-size: 0.95rem; }
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Поддержка prefers-reduced-motion */
     @media (prefers-reduced-motion: reduce) {
-      body {
-        transition: none;
-      }
+      body { transition: none; }
+      body::before { animation: none; }
+      .path-card { animation: none; opacity: 1; transform: none; }
+    }
 
-      body::before {
-        animation: none;
-      }
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
     }
   </style>
 </head>
 
 <body>
-  <!-- Переключатель темы -->
-  <div class="theme-toggle" id="themeToggle" aria-label="Сменить тему"></div>
+  <div class="theme-toggle" id="themeToggle" aria-label="Сменить тему (светлая/тёмная)" role="button" tabindex="0"></div>
 
   <header>
-    <div class="logo">
-      <div class="logo-icon">
+    <div class="logo" aria-label="Логотип BridgeLearn">
+      <div class="logo-icon" aria-hidden="true">
         <i class="fas fa-archway"></i>
       </div>
     </div>
@@ -403,61 +423,63 @@
     <p class="subtitle">Обучайся свободно. Даже когда всё заблокировано.</p>
   </header>
 
-  <div class="container">
-    <div class="intro">
-      <p>Практические гайды по IT, цифровой грамотности и офисным навыкам — без подписок, регистрации и цензуры. Всё
-        работает офлайн.</p>
+  <main>
+    <div class="container">
+      <div class="intro">
+        <p>Практические гайды по IT, цифровой грамотности и офисным навыкам — без подписок, регистрации и цензуры. Всё работает офлайн.</p>
+      </div>
+
+      <section class="why" aria-labelledby="why-heading">
+        <h2 id="why-heading">Почему это работает</h2>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> <strong>Офлайн-доступ</strong> — сохраняй и учи без интернета</li>
+          <li><i class="fas fa-lock"></i> <strong>Без регистрации</strong> — никаких email и паролей</li>
+          <li><i class="fas fa-file-alt"></i> <strong>Чистый контент</strong> — только практика, без воды</li>
+          <li><i class="fas fa-globe"></i> <strong>Для СНГ</strong> — учёт реалий региона</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="paths-heading">
+        <h2 id="paths-heading" class="visually-hidden">Направления обучения</h2>
+        <div class="paths-grid">
+          <div class="path-card">
+            <div class="path-icon" aria-hidden="true">
+              <i class="fab fa-java"></i>
+            </div>
+            <h3>Java для карьеры</h3>
+            <p>Для студентов и начинающих разработчиков в СНГ. От установки JDK до собеседования в банке.</p>
+            <a href="java/java-roadmap.html" class="btn" aria-label="Начать обучение по Java (офлайн-гайд)">Начать →</a>
+          </div>
+
+          <div class="path-card">
+            <div class="path-icon" aria-hidden="true">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Веб-разработка</h3>
+            <p>С нуля до первого проекта. HTML, CSS, JavaScript — без фреймворков и воды.</p>
+            <a href="#" class="btn" aria-label="Гайд в разработке" style="opacity: 0.7; pointer-events: none;">Скоро</a>
+          </div>
+
+          <div class="path-card">
+            <div class="path-icon" aria-hidden="true">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Цифровая грамотность</h3>
+            <p>Как учиться и работать, когда YouTube, GitHub и Coursera недоступны.</p>
+            <a href="#" class="btn" aria-label="Гайд в разработке" style="opacity: 0.7; pointer-events: none;">Скоро</a>
+          </div>
+      </section>
     </div>
-
-    <div class="paths-grid">
-      <div class="path-card">
-        <div class="path-icon">
-          <i class="fab fa-java"></i>
-        </div>
-        <h3>Java для карьеры</h3>
-        <p>Для студентов и начинающих разработчиков в СНГ. От установки JDK до собеседования в банке.</p>
-        <a href="java/java-roadmap.html" class="btn">Начать →</a>
-      </div>
-
-      <div class="path-card">
-        <div class="path-icon">
-          <i class="fas fa-laptop-code"></i>
-        </div>
-        <h3>Веб-разработка</h3>
-        <p>С нуля до первого проекта. HTML, CSS, JavaScript — без фреймворков и воды.</p>
-        <a href="web/frontend-path.html" class="btn">Начать →</a>
-      </div>
-
-      <div class="path-card">
-        <div class="path-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3>Цифровая грамотность</h3>
-        <p>Как учиться и работать, когда YouTube, GitHub и Coursera недоступны.</p>
-        <a href="digital-literacy/tor-basics.html" class="btn">Начать →</a>
-      </div>
-
-      <div class="path-card">
-        <div class="path-icon">
-          <i class="fas fa-file-excel"></i>
-        </div>
-        <h3>Офисные навыки</h3>
-        <p>Excel, Google Таблицы, PDF — для работы, учёбы и повседневных задач.</p>
-        <a href="office/excel-pivot.html" class="btn">Начать →</a>
-      </div>
-    </div>
-  </div>
+  </main>
 
   <footer>
     <p>BridgeLearn — проект свободного доступа к знаниям. Открытый исходный код. Никакой рекламы.</p>
   </footer>
 
   <script>
-    // Переключение темы
     const toggle = document.getElementById('themeToggle');
     const body = document.body;
 
-    // Проверка сохранённой темы
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       body.classList.add('theme-' + savedTheme);
@@ -465,7 +487,6 @@
       body.classList.add('theme-dark');
     }
 
-    // Переключение
     toggle.addEventListener('click', () => {
       body.classList.toggle('theme-dark');
       body.classList.toggle('theme-light');
@@ -477,17 +498,19 @@
       }
     });
 
-    // Поддержка prefers-reduced-motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.style.setProperty('--transition', 'none');
-    }
+    // Поддержка клавиатуры
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
   </script>
 
-  <!-- PWA: Service Worker для офлайн-режима -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js');
+        navigator.serviceWorker.register('/sw.js').catch(console.warn);
       });
     }
   </script>
