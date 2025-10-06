@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Настройка кодировки (UTF-8) — BridgeLearn</title>
+  <meta name="description" content="Как настроить UTF-8 в IntelliJ IDEA, чтобы русский текст отображался корректно. Для новичков в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Настройка кодировки (UTF-8) — BridgeLearn">
+  <meta property="og:description" content="Как настроить UTF-8 в IntelliJ IDEA, чтобы русский текст отображался корректно. Для новичков в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Настройка кодировки (UTF-8)</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Настройка кодировки (UTF-8)
+      </nav>
+
+      <p>Если вы пишете программы на русском языке (например, выводите <code>System.out.println("Привет!");</code>), важно, чтобы IntelliJ IDEA использовала правильную кодировку — <strong>UTF-8</strong>. Иначе вы увидите «кракозябры» вроде <code>ÐŸÑ€Ð¸Ð²ÐµÑ‚!</code>.</p>
+
+      <h2>Почему именно UTF-8?</h2>
+      <p>UTF-8 — современный стандарт кодировки, который поддерживает все языки мира, включая русский, и используется по умолчанию в большинстве систем. Java 17+ и современные ОС (Windows 10/11, macOS, Linux) также используют UTF-8 как стандарт.</p>
+
+      <h2>Как настроить UTF-8 в IntelliJ IDEA</h2>
+      <p>Сделайте это один раз — и забудьте о проблемах с текстом навсегда:</p>
+      <ol>
+        <li>Откройте IntelliJ IDEA.</li>
+        <li>Зайдите в настройки:
+          <ul>
+            <li><strong>Windows/Linux:</strong> <code>File → Settings</code></li>
+            <li><strong>macOS:</strong> <code>IntelliJ IDEA → Preferences</code></li>
+          </ul>
+        </li>
+        <li>В левом меню перейдите: <code>Editor → File Encodings</code>.</li>
+        <li>Установите следующие значения:
+          <ul>
+            <li><strong>Global Encoding:</strong> <code>UTF-8</code></li>
+            <li><strong>Project Encoding:</strong> <code>UTF-8</code></li>
+            <li><strong>Default encoding for properties files:</strong> <code>UTF-8</code></li>
+          </ul>
+        </li>
+        <li>Поставьте галочку: <strong>✓ Transparent native-to-ascii conversion</strong> (особенно важно для файлов <code>.properties</code>).</li>
+        <li>Нажмите <strong>OK</strong> и перезапустите IDE (рекомендуется).</li>
+      </ol>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Эта настройка влияет только на <em>новые</em> проекты. Если у вас уже есть проект с «битым» текстом — откройте нужный файл, нажмите на текущую кодировку в правом нижнем углу (например, «Windows-1251») и выберите «Convert to UTF-8».</p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Кодировка — как язык перевода. Если вы говорите по-русски, а собеседник слушает через переводчик с английского, он услышит бессмыслицу. UTF-8 — это «универсальный переводчик», понятный всем.</p>
+      </div>
+
+      <h2>Проверка: работает ли UTF-8?</h2>
+      <p>Создайте новый класс и добавьте:</p>
+      <pre><code>public class TestEncoding {
+    public static void main(String[] args) {
+        System.out.println("Привет, мир! 🌍");
+    }
+}</code></pre>
+      <p>Запустите программу. Если в консоли отображается читаемый русский текст и эмодзи — всё настроено правильно!</p>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="install-intellij-idea.html">Скачать, установить, создать первый проект</a><br>
+        → <a href="../system/check-java-version.html">Проверьте, что JDK работает</a><br>
+        → <a href="../java-roadmap.html">Вернуться к дорожной карте</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>
