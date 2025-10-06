@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Windows: .msi → PATH автоматически — BridgeLearn</title>
+  <meta name="description" content="Как установить JDK на Windows через .msi и почему PATH настраивается сам. Для новичков в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Windows: .msi → PATH автоматически — BridgeLearn">
+  <meta property="og:description" content="Как установить JDK на Windows через .msi и почему PATH настраивается сам. Для новичков в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="/css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Windows: .msi → PATH автоматически</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Windows: .msi → PATH автоматически
+      </nav>
+
+      <p>Если вы скачали JDK для Windows в формате <code>.msi</code> (например, Eclipse Temurin), то при установке вам <strong>не нужно вручную настраивать переменную PATH</strong>. Установщик делает это за вас — автоматически и безопасно.</p>
+
+      <h2>Почему .msi — лучший выбор для Windows</h2>
+      <p>Формат <code>.msi</code> — это стандартный установочный пакет Windows. В отличие от архивов (<code>.zip</code>, <code>.tar.gz</code>), он:</p>
+      <ul>
+        <li>✅ Автоматически добавляет <code>java</code> и <code>javac</code> в системный <code>PATH</code></li>
+        <li>✅ Регистрирует JDK в списке установленных программ («Панель управления → Программы»)</li>
+        <li>✅ Позволяет легко обновлять или удалять JDK через стандартные средства Windows</li>
+      </ul>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Убедитесь, что вы скачали именно файл с расширением <code>.msi</code>, а не <code>.zip</code>. Только <code>.msi</code> настраивает PATH автоматически.</p>
+      </div>
+
+      <h2>Как проверить, что PATH настроен?</h2>
+      <p>После установки:</p>
+      <ol>
+        <li>Закройте все открытые окна терминала (если были открыты до установки).</li>
+        <li>Откройте новое окно командной строки: нажмите <kbd>Win + R</kbd>, введите <code>cmd</code> и нажмите Enter.</li>
+        <li>Выполните команды:</li>
+      </ol>
+      <pre><code>java -version</code></pre>
+      <pre><code>javac -version</code></pre>
+      <p>Если вы видите версию (например, <code>Temurin-17.0.12</code>), значит — всё работает! PATH настроен корректно.</p>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Установка через <code>.msi</code> — как поставить принтер через «Добавить устройство»: Windows сама найдёт драйверы и настроит подключение. А архив — как вручную копировать файлы драйверов и править реестр. Зачем, если можно проще?</p>
+      </div>
+
+      <h2>Что делать, если команды не работают?</h2>
+      <p>Возможные причины:</p>
+      <ul>
+        <li>Вы установили архив (<code>.zip</code>), а не <code>.msi</code></li>
+        <li>Вы не перезапустили терминал после установки</li>
+        <li>Антивирус или корпоративная политика заблокировала изменение PATH</li>
+      </ul>
+      <p>В этом случае: переустановите JDK, выбрав именно <code>.msi</code>-файл с сайта <a href="https://adoptium.net/temurin/releases/" target="_blank" rel="noopener">adoptium.net</a>.</p>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="what-is-jdk.html">Что такое JVM, JRE, JDK — простыми словами</a><br>
+        → <a href="first-run.html">Создайте и запустите свой первый Java-файл</a><br>
+        → <a href="../java-roadmap.html">Вернуться к дорожной карте</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

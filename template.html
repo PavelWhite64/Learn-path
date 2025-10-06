@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
   <title>ЗАГОЛОВОК СТАТЬИ — BridgeLearn</title>
   <meta name="description" content="КРАТКОЕ ОПИСАНИЕ СТАТЬИ (до 160 символов). Для начинающих в СНГ.">
 
-  <!-- Open Graph (для шеринга) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="ЗАГОЛОВОК СТАТЬИ — BridgeLearn">
   <meta property="og:description" content="КРАТКОЕ ОПИСАНИЕ">
   <meta property="og:type" content="article">
@@ -16,7 +17,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 
-  <!-- Шрифт Inter (с оптимизацией) -->
+  <!-- Шрифт Inter -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
@@ -24,7 +25,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
   </noscript>
 
-  <!-- Font Awesome (можно оставить CDN — он кэшируется) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Общий стиль -->
@@ -34,20 +35,20 @@
 <body>
   <header>
     <div class="header-content">
-      <!-- ⬅️ ЗАМЕНИТЕ ССЫЛКУ И ТЕКСТ НА АКТУАЛЬНЫЙ ПУТЬ -->
-      <a href="/java/java-roadmap.html" class="back-link" aria-label="Вернуться к предыдущей странице">
+      <a href="../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
         <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
       </a>
-      <h1>ЗАГОЛОВОК СТАТЬИ</h1>
+      <h1 id="page-title">ЗАГОЛОВОК СТАТЬИ</h1>
     </div>
   </header>
 
-  <main>
+  <main aria-labelledby="page-title">
     <div class="container">
-      <!-- 🍞 ХЛЕБНЫЕ КРОШКИ: замените названия -->
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
-        <a href="/">Главная</a> →
-        <a href="/java/java-roadmap.html">Java для карьеры</a> →
+        <a href="../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
         ЗАГОЛОВОК СТАТЬИ
       </nav>
 
