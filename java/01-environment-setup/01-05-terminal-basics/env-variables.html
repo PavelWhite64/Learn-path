@@ -56,13 +56,15 @@
 
       <p>Когда вы устанавливаете JDK, система должна «знать», где его искать. За это отвечают <strong>переменные
           окружения</strong> — специальные настройки операционной системы. Две из них критически важны для Java:
-        <code>PATH</code> и <code>JAVA_HOME</code>.</p>
+        <code>PATH</code> и <code>JAVA_HOME</code>.
+      </p>
 
       <h2>Что такое <code>PATH</code>?</h2>
       <p><code>PATH</code> — это список папок, в которых система ищет исполняемые файлы (команды), когда вы что-то
         вводите в терминале.</p>
       <p>Например, когда вы пишете <code>java -version</code>, ОС ищет файл <code>java.exe</code> (Windows) или
-        <code>java</code> (macOS/Linux) в папках, перечисленных в <code>PATH</code>.</p>
+        <code>java</code> (macOS/Linux) в папках, перечисленных в <code>PATH</code>.
+      </p>
       <p>Если JDK установлен правильно (через <code>.msi</code>, <code>.pkg</code> или пакетный менеджер), он
         автоматически добавляет свои команды (<code>java</code>, <code>javac</code>) в <code>PATH</code>.</p>
 
@@ -113,10 +115,16 @@ $env:JAVA_HOME    # Windows (PowerShell)</code></pre>
       <p>Как настроить <code>JAVA_HOME</code> вручную — отдельная тема (см. документацию вашей ОС). Но для старта —
         достаточно, чтобы работали команды <code>java</code> и <code>javac</code>.</p>
 
-      <h2>Что дальше?</h2>
-      <p>→ <a href="../01-05-terminal-basics/terminal-basics.html">Базовые команды (`cd`, `ls`, `mkdir`, `cat`)</a><br>
-        → <a href="../01-05-terminal-basics/why-no-gui.html">Работа без GUI: зачем это нужно?</a></p>
-    </div>
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../01-05-terminal-basics/terminal-basics.html">← Базовые команды (`cd`, `ls`, `mkdir`, `cat`)</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../01-05-terminal-basics/why-no-gui.html">Работа без GUI: зачем это нужно? →</a>
+          →</a>
+        </div>
+      </div>
   </main>
 
   <footer>

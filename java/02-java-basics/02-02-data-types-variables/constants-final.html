@@ -56,7 +56,8 @@
 
       <p>В Java есть способ создать переменную, значение которой <strong>нельзя изменить</strong> после присваивания.
         Такие переменные называются <strong>константами</strong>, и объявляются они с помощью ключевого слова
-        <code>final</code>.</p>
+        <code>final</code>.
+      </p>
 
       <h2>Как объявить константу?</h2>
       <p>Просто добавьте <code>final</code> перед типом переменной:</p>
@@ -70,7 +71,8 @@ final String APP_NAME = "BridgeLearn";</code></pre>
       <ul>
         <li>✅ <strong>Безопасность</strong> — вы не случайно перезапишете важное значение.</li>
         <li>✅ <strong>Читаемость</strong> — имя вроде <code>MAX_LOGIN_ATTEMPTS</code> понятнее, чем просто
-          <code>3</code>.</li>
+          <code>3</code>.
+        </li>
         <li>✅ <strong>Поддержка</strong> — если нужно изменить значение (например, увеличить лимит), править нужно в
           одном месте.</li>
       </ul>
@@ -85,7 +87,8 @@ final String DEFAULT_ENCODING = "UTF-8";</code></pre>
       <div class="key-point">
         <p><strong>Важно:</strong> <code>final</code> делает неизменяемой <em>ссылку</em>, а не объект. Например, если у
           вас <code>final List<String> names = new ArrayList<>();</code>, вы не сможете присвоить
-          <code>names = другойСписок</code>, но сможете изменять содержимое списка: <code>names.add("Анна")</code>.</p>
+          <code>names = другойСписок</code>, но сможете изменять содержимое списка: <code>names.add("Анна")</code>.
+        </p>
       </div>
 
       <div class="analogy">
@@ -106,12 +109,18 @@ final String DEFAULT_ENCODING = "UTF-8";</code></pre>
         System.out.println("Налог: " + tax);
         System.out.println("Секунд в сутках: " + secondsInDay);
     }
-}</code></pre>
+  }</code></pre>
 
-      <h2>Что дальше?</h2>
-      <p>→ <a href="../02-02-data-types-variables/reference-types.html">Ссылочные типы (`String`, обёртки)</a><br>
-        → <a href="../02-03-operators-expressions/arithmetic-logical-comparison.html">Арифметические, логические, сравнения</a></p>
-    </div>
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../02-02-data-types-variables/reference-types.html">← Ссылочные типы (`String`, обёртки)</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../02-03-operators-expressions/arithmetic-logical-comparison.html">Арифметические, логические,
+            сравнения →</a>
+        </div>
+      </div>
   </main>
 
   <footer>

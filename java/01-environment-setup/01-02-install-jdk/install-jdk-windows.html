@@ -56,11 +56,13 @@
 
       <p>Если вы скачали JDK для Windows в формате <code>.msi</code> (например, Eclipse Temurin), то при установке вам
         <strong>не нужно вручную настраивать переменную PATH</strong>. Установщик делает это за вас — автоматически и
-        безопасно.</p>
+        безопасно.
+      </p>
 
       <h2>Почему .msi — лучший выбор для Windows</h2>
       <p>Формат <code>.msi</code> — это стандартный установочный пакет Windows. В отличие от архивов (<code>.zip</code>,
-        <code>.tar.gz</code>), он:</p>
+        <code>.tar.gz</code>), он:
+      </p>
       <ul>
         <li>✅ Автоматически добавляет <code>java</code> и <code>javac</code> в системный <code>PATH</code></li>
         <li>✅ Регистрирует JDK в списке установленных программ («Панель управления → Программы»)</li>
@@ -69,7 +71,8 @@
 
       <div class="key-point">
         <p><strong>Важно:</strong> Убедитесь, что вы скачали именно файл с расширением <code>.msi</code>, а не
-          <code>.zip</code>. Только <code>.msi</code> настраивает PATH автоматически.</p>
+          <code>.zip</code>. Только <code>.msi</code> настраивает PATH автоматически.
+        </p>
       </div>
 
       <h2>Как проверить, что PATH настроен?</h2>
@@ -101,12 +104,17 @@
       <p>В этом случае: переустановите JDK, выбрав именно <code>.msi</code>-файл с сайта <a
           href="https://adoptium.net/temurin/releases/" target="_blank" rel="noopener">adoptium.net</a>.</p>
 
-      <h2>Что дальше?</h2>
-      <p>→ <a href="../01-02-install-jdk/dowload-eclipse.html">Где скачать: Eclipse Temurin
-              (Adoptium) — официально, бесплатно, без вирусов.</a><br>
-        → <a href="../01-02-install-jdk/check-java-version.html">Проверка:
-              <code>java -version, javac -version</code></a></p>
-    </div>
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../01-02-install-jdk/dowload-eclipse.html">← Где скачать: Eclipse Temurin
+            (Adoptium) — официально, бесплатно, без вирусов.</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../01-02-install-jdk/check-java-version.html">Проверка:
+            <code>java -version, javac -version</code> →</a>
+        </div>
+      </div>
   </main>
 
   <footer>
