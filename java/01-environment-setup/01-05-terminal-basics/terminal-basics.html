@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Базовые команды (`cd`, `ls`, `mkdir`, `cat`) — BridgeLearn</title>
+  <meta name="description" content="Основные команды терминала для работы с файлами и папками. Для новичков в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Базовые команды (`cd`, `ls`, `mkdir`, `cat`) — BridgeLearn">
+  <meta property="og:description" content="Основные команды терминала для работы с файлами и папками. Для новичков в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Базовые команды (<code>cd, ls, mkdir, cat</code>)</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Базовые команды (<code>cd</code>, <code>ls</code>, <code>mkdir</code>, <code>cat</code>)
+      </nav>
+
+      <p>При работе с Java вам часто придётся использовать терминал (командную строку): чтобы компилировать код, запускать программы, управлять проектами. Даже если вы используете IDE, понимание базовых команд сэкономит вам часы времени. Ниже — четыре ключевые команды, которые нужно знать с самого начала.</p>
+
+      <h2>1. <code>pwd</code> — где я?</h2>
+      <p>Показывает текущую директорию (путь к папке, в которой вы находитесь).</p>
+      <pre><code>$ pwd
+/home/user/java-projects</code></pre>
+
+      <h2>2. <code>ls</code> — что здесь есть? (Linux/macOS)</h2>
+      <p>Выводит список файлов и папок в текущей директории.</p>
+      <pre><code>$ ls
+Hello.java  README.md  src/</code></pre>
+      <p>На Windows в PowerShell или CMD используйте: <code>dir</code>.</p>
+
+      <h2>3. <code>cd</code> — перейти в другую папку</h2>
+      <p>Команда <code>cd</code> (change directory) позволяет перемещаться по файловой системе.</p>
+      <ul>
+        <li><code>cd имя_папки</code> — войти в папку</li>
+        <li><code>cd ..</code> — подняться на уровень выше</li>
+        <li><code>cd ~</code> — вернуться в домашнюю папку (Linux/macOS)</li>
+        <li><code>cd C:\projects</code> — перейти по абсолютному пути (Windows)</li>
+      </ul>
+      <pre><code>$ cd hello
+$ pwd
+/home/user/java-projects/hello</code></pre>
+
+      <h2>4. <code>mkdir</code> — создать папку</h2>
+      <p>Создаёт новую директорию.</p>
+      <pre><code>$ mkdir my-java-app
+$ ls
+my-java-app/</code></pre>
+
+      <h2>5. <code>cat</code> — посмотреть содержимое файла (Linux/macOS)</h2>
+      <p>Выводит текст файла прямо в терминал.</p>
+      <pre><code>$ cat Hello.java
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Привет!");
+    }
+}</code></pre>
+      <p>На Windows используйте: <code>type Hello.java</code>.</p>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> В терминале регистр важен! <code>Hello.java</code> ≠ <code>hello.java</code>. Также пробелы в именах файлов требуют экранирования (лучше их избегать).</p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Терминал — как GPS для файловой системы. <code>pwd</code> — «где я?», <code>ls</code> — «что вокруг?», <code>cd</code> — «ехать туда», <code>mkdir</code> — «построить новый дом», <code>cat</code> — «заглянуть внутрь».</p>
+      </div>
+
+      <h2>Практика: создайте проект вручную</h2>
+      <p>Попробуйте выполнить в терминале:</p>
+      <pre><code>mkdir ~/java/hello
+cd ~/java/hello
+echo 'public class Hello { public static void main(String[] args) { System.out.println("Терминал работает!"); } }' > Hello.java
+javac Hello.java
+java Hello</code></pre>
+      <p>Если вы видите сообщение — вы всё сделали правильно!</p>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="env-variables.html">Переменные окружения: PATH и JAVA_HOME</a><br>
+        → <a href="../first-run/create-hello-java.html">Создать <code>Hello.java</code></a><br>
+        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>
