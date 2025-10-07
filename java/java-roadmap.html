@@ -52,66 +52,84 @@
     <div class="topic">
       <h2><i class="fas fa-laptop-code" aria-hidden="true"></i> 1. Подготовка среды</h2>
 
-      <details open role="group" aria-labelledby="env-1">
+      <details role="group" aria-labelledby="env-1">
         <summary id="env-1">1.1 Понимание экосистемы Java</summary>
         <ul>
-          <li><a href="../java/01-environment-setup/01-01-java-ecosystem/what-is-jdk.html">Что такое JVM, JRE, JDK — в чём разница?</a></li>
-          <li><a href="../java/01-environment-setup/01-01-java-ecosystem/why-java-is-cross-platform.html">Почему Java кроссплатформенна?</a></li>
-          <li><a href="../java/01-environment-setup/01-01-java-ecosystem/java-lts-versions.html">Что такое LTS-версии (17, 21)? Какую выбрать в 2025?</a></li>
+          <li><a href="../java/01-environment-setup/01-01-java-ecosystem/what-is-jdk.html">Что такое JVM, JRE, JDK — в
+              чём разница?</a></li>
+          <li><a href="../java/01-environment-setup/01-01-java-ecosystem/why-java-is-cross-platform.html">Почему Java
+              кроссплатформенна?</a></li>
+          <li><a href="../java/01-environment-setup/01-01-java-ecosystem/java-lts-versions.html">Что такое LTS-версии
+              (17, 21)? Какую выбрать в 2025?</a></li>
         </ul>
       </details>
 
-      <details open role="group" aria-labelledby="env-2">
+      <details role="group" aria-labelledby="env-2">
         <summary id="env-2">1.2 Установка JDK</summary>
         <ul>
-          <li><a href="../java/01-environment-setup/01-02-install-jdk/dowload-eclipse.html">Где скачать: Eclipse Temurin (Adoptium) — официально, бесплатно, без вирусов.</a></li>
+          <li><a href="../java/01-environment-setup/01-02-install-jdk/dowload-eclipse.html">Где скачать: Eclipse Temurin
+              (Adoptium) — официально, бесплатно, без вирусов.</a></li>
           <li>
-            <details open role="group" aria-labelledby="install-sub">
+            <details role="group" aria-labelledby="install-sub">
               <summary id="install-sub">Пошаговая установка</summary>
               <ul>
-                <li><a href="../java/01-environment-setup/01-02-install-jdk/install-jdk-windows.html">Windows: .msi → PATH автоматически</a></li>
-                <li><a href="../java/01-environment-setup/01-02-install-jdk/install-jdk-mac.html">Mac: .pkg или через Homebrew</a></li>
-                <li><a href="../java/01-environment-setup/01-02-install-jdk/install-jdk-linux.html">Linux: через пакетный менеджер (apt, yum)</a></li>
+                <li><a href="../java/01-environment-setup/01-02-install-jdk/install-jdk-windows.html">Windows: .msi →
+                    PATH автоматически</a></li>
+                <li><a href="../java/01-environment-setup/01-02-install-jdk/install-jdk-mac.html">Mac: .pkg или через
+                    Homebrew</a></li>
+                <li><a href="../java/01-environment-setup/01-02-install-jdk/install-jdk-linux.html">Linux: через
+                    пакетный менеджер (apt, yum)</a></li>
               </ul>
             </details>
           </li>
-          <li><a href="../java/01-environment-setup/01-02-install-jdk/check-java-version.html">Проверка: <code>java -version, javac -version</code></a></li>
+          <li><a href="../java/01-environment-setup/01-02-install-jdk/check-java-version.html">Проверка:
+              <code>java -version, javac -version</code></a></li>
         </ul>
       </details>
 
-      <details open role="group" aria-labelledby="env-3">
+      <details role="group" aria-labelledby="env-3">
         <summary id="env-3">1.3 Настройка IDE</summary>
         <ul>
           <li>
-            <details open role="group" aria-labelledby="ide-intellij">
+            <details role="group" aria-labelledby="ide-intellij">
               <summary id="ide-intellij">IntelliJ IDEA Community (рекомендуется)</summary>
               <ul>
-                <li><a href="../java/01-environment-setup/01-03-setup-ide/install-intellij-idea.html">Скачать, установить, создать первый проект</a></li>
-                <li><a href="../java/01-environment-setup/01-03-setup-ide/intellij-utf8-setup.html">Настройка кодировки (UTF-8)</a></li>
+                <li><a href="../java/01-environment-setup/01-03-setup-ide/install-intellij-idea.html">Скачать,
+                    установить, создать первый проект</a></li>
+                <li><a href="../java/01-environment-setup/01-03-setup-ide/intellij-utf8-setup.html">Настройка кодировки
+                    (UTF-8)</a></li>
               </ul>
             </details>
           </li>
-          <li><a href="../java/01-environment-setup/01-03-setup-ide/vscode-java-setup.html">Альтернатива: VS Code + Extension Pack for Java</a></li>
-          <li><a href="../java/01-environment-setup/01-03-setup-ide/why-not-eclipse.html">Почему не Eclipse для новичков?</a></li>
+          <li><a href="../java/01-environment-setup/01-03-setup-ide/vscode-java-setup.html">Альтернатива: VS Code +
+              Extension Pack for Java</a></li>
+          <li><a href="../java/01-environment-setup/01-03-setup-ide/why-not-eclipse.html">Почему не Eclipse для
+              новичков?</a></li>
         </ul>
       </details>
 
-      <details open role="group" aria-labelledby="env-4">
+      <details role="group" aria-labelledby="env-4">
         <summary id="env-4">1.4 Первый запуск</summary>
         <ul>
           <li><a href="../java/01-environment-setup/01-04-first-run/create-hello-java.html">Создать Hello.java</a></li>
-          <li><a href="../java/01-environment-setup/01-04-first-run/compile-hello.html">Скомпилировать: <code>javac Hello.java</code></a></li>
-          <li><a href="../java/01-environment-setup/01-04-first-run/run-hello.html">Запустить: <code>java Hello</code></a></li>
-          <li><a href="../java/01-environment-setup/01-04-first-run/common-errors.html">Типичные ошибки и как их исправить</a></li>
+          <li><a href="../java/01-environment-setup/01-04-first-run/compile-hello.html">Скомпилировать:
+              <code>javac Hello.java</code></a></li>
+          <li><a href="../java/01-environment-setup/01-04-first-run/run-hello.html">Запустить:
+              <code>java Hello</code></a></li>
+          <li><a href="../java/01-environment-setup/01-04-first-run/common-errors.html">Типичные ошибки и как их
+              исправить</a></li>
         </ul>
       </details>
 
-      <details open role="group" aria-labelledby="env-4">
-        <summary id="env-4">1.5 Основы работы с терминалом и ОС</summary>
+      <details role="group" aria-labelledby="env-5">
+        <summary id="env-5">1.5 Основы работы с терминалом и ОС</summary>
         <ul>
-          <li><a href="../java/01-environment-setup/01-05-terminal-basics/terminal-basics.html">Базовые команды (`cd`, `ls`, `mkdir`, `cat`)</a></li>
-          <li><a href="../java/01-environment-setup/01-05-terminal-basics/env-variables.html">Переменные окружения (`PATH`, `JAVA_HOME`)</a></li>
-          <li><a href="../java/01-environment-setup/01-05-terminal-basics/why-no-gui.html">Работа без GUI: зачем это нужно?</a></li>
+          <li><a href="../java/01-environment-setup/01-05-terminal-basics/terminal-basics.html">Базовые команды (`cd`,
+              `ls`, `mkdir`, `cat`)</a></li>
+          <li><a href="../java/01-environment-setup/01-05-terminal-basics/env-variables.html">Переменные окружения
+              (`PATH`, `JAVA_HOME`)</a></li>
+          <li><a href="../java/01-environment-setup/01-05-terminal-basics/why-no-gui.html">Работа без GUI: зачем это
+              нужно?</a></li>
         </ul>
       </details>
     </div>
@@ -120,116 +138,185 @@
     <div class="topic">
       <h2><i class="fas fa-seedling" aria-hidden="true"></i> 2. Основы Java</h2>
 
-      <details open role="group" aria-labelledby="basics-1">
-        <summary id="basics-1">Синтаксис и базовые конструкции</summary>
+      <details role="group" aria-labelledby="basics-1">
+        <summary id="basics-1">Синтаксис и структура программы</summary>
         <ul>
-          <li>Переменные, типы данных, операторы</li>
-          <li>Условия (if/else), циклы (for, while)</li>
-          <li>Методы, классы, объекты</li>
-          <li><a href="https://javarush.ru">Javarush — интерактивные уроки</a></li>
-          <li><a href="https://metanit.com/java/tutorial/">Учебник от Metanit</a></li>
+          <li><a href="../java/02-java-basics/02-01-syntax-structure/class-main-packages.html">Класс, метод `main`,
+              пакеты, импорты</a></li>
+          <li><a href="../java/02-java-basics/02-01-syntax-structure/comments-types.html">Виды комментариев</a></li>
         </ul>
       </details>
 
-      <details open role="group" aria-labelledby="basics-2">
-        <summary id="basics-2">Объектно-ориентированное программирование (ООП)</summary>
+      <details role="group" aria-labelledby="basics-2">
+        <summary id="basics-2">Типы данных и переменные</summary>
         <ul>
-          <li>Наследование, полиморфизм, инкапсуляция</li>
-          <li>Абстрактные классы, интерфейсы</li>
-          <li><a href="/java/oop-basics.html">Гайд: как проектировать классы</a></li>
+          <li><a href="../java/02-java-basics/02-02-data-types-variables/primitive-types.html">Примитивы (`int`,
+              `double`, `boolean`, `char`)</a></li>
+          <li><a href="../java/02-java-basics/02-02-data-types-variables/reference-types.html">Ссылочные типы (`String`,
+              обёртки)</a></li>
+          <li><a href="../java/02-java-basics/02-02-data-types-variables/constants-final.html">Константы (`final`)</a>
+          </li>
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="basics-3">
+        <summary id="basics-3">Операторы и выражения</summary>
+        <ul>
+          <li><a
+              href="../java/02-java-basics/02-03-operators-expressions/arithmetic-logical-comparison.html">Арифметические,
+              логические, сравнения</a></li>
+          <li><a href="../java/02-java-basics/02-03-operators-expressions/operator-precedence.html">Приоритет
+              операций</a></li>
+          <li><a href="../java/02-java-basics/02-03-operators-expressions/ternary-operator.html">Тернарный оператор</a>
+          </li>
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="basics-4">
+        <summary id="basics-4">Управляющие конструкции</summary>
+        <ul>
+          <li><a href="../java/02-java-basics/02-04-control-flow/if-else-switch.html">Условия: `if`, `else if`,
+              `switch`</a></li>
+          <li><a href="../java/02-java-basics/02-04-control-flow/loops.html">Циклы: `for`, `while`, `do-while`</a></li>
+          <li><a href="../java/02-java-basics/02-04-control-flow/break-continue.html">`break`, `continue`</a></li>
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="basics-5">
+        <summary id="basics-5">Методы</summary>
+        <ul>
+          <li><a href="../java/02-java-basics/02-05-methods/methods-declaration-params-return.html">Объявление,
+              параметры, возврат</a></li>
+          <li><a href="../java/02-java-basics/02-05-methods/method-overloading.html">Перегрузка методов</a></li>
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="basics-6">
+        <summary id="basics-6">Практика: мини-проекты</summary>
+        <ul>
+          <li><a href="../java/02-java-basics/02-06-mini-projects/project-calculator.html">Калькулятор</a></li>
+          <li><a href="../java/02-java-basics/02-06-mini-projects/project-temperature.html">Конвертер температуры</a>
+          </li>
+          <li><a href="../java/02-java-basics/02-06-mini-projects/project-quiz.html">Консольная викторина</a></li>
         </ul>
       </details>
     </div>
 
     <!-- Этап 3 -->
     <div class="topic">
-      <h2><i class="fas fa-database" aria-hidden="true"></i> 3. Работа с данными</h2>
+      <h2><i class="fas fa-database" aria-hidden="true"></i> 3. Объектно-ориентированное программирование (ООП)</h2>
 
-      <details open role="group" aria-labelledby="data-1">
-        <summary id="data-1">Коллекции и потоки (Streams)</summary>
+      <details role="group" aria-labelledby="oop-1">
+        <summary id="oop-1">Классы и объекты</summary>
         <ul>
-          <li>List, Set, Map, Queue</li>
-          <li>Stream API: filter, map, collect</li>
-          <li><a href="https://javarush.ru/quests/lectures/questsyntax.level08">Javarush: коллекции</a></li>
+          <li>Поля, методы, конструкторы</li>
+          <li>Ключевое слово `this`</li>
+          <li>Инкапсуляция: `private`/`public`, геттеры/сеттеры</li>
         </ul>
       </details>
 
-      <details role="group" aria-labelledby="data-2">
-        <summary id="data-2">Работа с файлами и JSON</summary>
+      <details role="group" aria-labelledby="oop-2">
+        <summary id="oop-2">Наследование</summary>
         <ul>
-          <li>Чтение/запись файлов</li>
-          <li>Библиотека Jackson для JSON</li>
-          <li><a href="/java/json-guide.html">Как парсить JSON в Java</a></li>
+          <li>`extends`, `super`</li>
+          <li>Переопределение методов (`@Override`)</li>
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="oop-3">
+        <summary id="oop-3">Полиморфизм</summary>
+        <ul>
+          <li>Приведение типов</li>
+          <li>Динамическая диспетчеризация</li>
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="oop-4">
+        <summary id="oop-4">Абстракция</summary>
+        <ul>
+          <li>Абстрактные классы (`abstract class`)</li>
+          <li>Интерфейсы (`interface`)</li>
+          <li>Когда что использовать?</li>
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="oop-5">
+        <summary id="oop-5">Исключения (Exceptions)</summary>
+        <ul>
+          <li>Checked vs unchecked</li>
+          <li>`try-catch-finally`, `throws`</li>
+          <li>Создание своих исключений</li>
+          <li>Best practices</li>
+
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="oop-6">
+        <summary id="oop-6">Практика: система учёта</summary>
+        <ul>
+          <li>Классы: `Student`, `Course`, `University`</li>
+          <li>Наследование: `FullTimeStudent` / `PartTimeStudent`</li>
+          <li>Интерфейс: `Graduable`</li>
         </ul>
       </details>
     </div>
 
     <!-- Этап 4 -->
     <div class="topic">
-      <h2><i class="fas fa-server" aria-hidden="true"></i> 4. Backend и базы данных</h2>
+      <h2><i class="fas fa-database" aria-hidden="true"></i> 3. Работа с данными</h2>
 
-      <details open role="group" aria-labelledby="backend-1">
-        <summary id="backend-1">Основы SQL и JDBC</summary>
+      <details role="group" aria-labelledby="data-1">
+        <summary id="data-1">Коллекции</summary>
         <ul>
-          <li>SELECT, INSERT, UPDATE, JOIN</li>
-          <li>Подключение к PostgreSQL через JDBC</li>
-          <li><a href="https://sql-academy.org/ru">SQL Academy — практика на русском</a></li>
+          <li>`List` (ArrayList, LinkedList)</li>
+          <li>`Set` (HashSet, TreeSet)</li>
+          <li>`Map` (HashMap, TreeMap)</li>
+          <li>Итераторы, `for-each`</li>
         </ul>
       </details>
 
-      <details role="group" aria-labelledby="backend-2">
-        <summary id="backend-2">ORM: Hibernate / JPA</summary>
+      <details role="group" aria-labelledby="data-2">
+        <summary id="data-2">Stream API и лямбды</summary>
         <ul>
-          <li>Сущности, аннотации, связи</li>
-          <li>Как избежать N+1 проблемы</li>
-          <li><a href="https://www.youtube.com/watch?v=KfXrAcQkK5Q">Курс по Hibernate (2024)</a></li>
-        </ul>
-      </details>
-    </div>
-
-    <!-- Этап 5 -->
-    <div class="topic">
-      <h2><i class="fas fa-cloud" aria-hidden="true"></i> 5. Веб и REST API</h2>
-
-      <details open role="group" aria-labelledby="web-1">
-        <summary id="web-1">Spring Boot</summary>
-        <ul>
-          <li>Контроллеры, сервисы, репозитории</li>
-          <li>RESTful API: @GetMapping, @PostMapping</li>
-          <li><a href="https://start.spring.io/">Spring Initializr — генератор проекта</a></li>
-          <li><a href="https://www.youtube.com/watch?v=QhB5dXaAq5Y">Spring Boot для начинающих (LoftBlog)</a></li>
+          <li>`filter`, `map`, `sorted`, `collect`</li>
+          <li>Лямбда-выражения</li>
+          <li>Пример: фильтрация студентов</li>
         </ul>
       </details>
 
-      <details role="group" aria-labelledby="web-2">
-        <summary id="web-2">Тестирование</summary>
+      <details role="group" aria-labelledby="data-3">
+        <summary id="data-3">Работа с файлами</summary>
         <ul>
-          <li>JUnit 5, Mockito</li>
-          <li>Тестирование контроллеров и сервисов</li>
-          <li><a href="/java/junit-guide.html">Как писать тесты за 10 минут</a></li>
-        </ul>
-      </details>
-    </div>
-
-    <!-- Этап 6 -->
-    <div class="topic">
-      <h2><i class="fas fa-tools" aria-hidden="true"></i> 6. Инструменты и практика</h2>
-
-      <details open role="group" aria-labelledby="tools-1">
-        <summary id="tools-1">Git и сборка</summary>
-        <ul>
-          <li>Коммиты, ветки, pull request</li>
-          <li>Maven / Gradle — управление зависимостями</li>
-          <li><a href="/digital-literacy/git-basics.html">Git для новичков</a></li>
+          <li>Чтение/запись текста</li>
+          <li>`try-with-resources`</li>
+          <li>Обработка исключений</li>
         </ul>
       </details>
 
-      <details role="group" aria-labelledby="tools-2">
-        <summary id="tools-2">Подготовка к собеседованию</summary>
+      <details role="group" aria-labelledby="data-4">
+        <summary id="data-4">Логгирование</summary>
         <ul>
-          <li>Что спрашивают в Сбере, Тинькофф, VK</li>
-          <li>Типичные задачи: коллекции, многопоточность</li>
-          <li><a href="/java/interview-checklist.html">Чек-лист Junior Java</a></li>
+          <li>SLF4J + Logback</li>
+          <li>Уровни: `DEBUG`, `INFO`, `WARN`, `ERROR`</li>
+          <li>Конфигурация через `logback.xml`</li>
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="data-5">
+        <summary id="data-5">JSON</summary>
+        <ul>
+          <li>Библиотека Jackson</li>
+          <li>Аннотации: `@JsonProperty`</li>
+          <li>Сериализация/десериализация</li>
+        </ul>
+      </details>
+
+      <details role="group" aria-labelledby="data-6">
+        <summary id="data-6">Практика: парсер логов</summary>
+        <ul>
+          <li>Чтение лог-файла</li>
+          <li>Извлечение структурированных данных</li>
+          <li>Сохранение в JSON</li>
         </ul>
       </details>
     </div>

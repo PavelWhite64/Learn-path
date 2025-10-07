@@ -30,6 +30,13 @@
 
   <!-- Общий стиль -->
   <link rel="stylesheet" href="../../../css/bridgelearn.css">
+
+  <!-- Prism.js — подсветка синтаксиса -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
 </head>
 
 <body>
@@ -53,17 +60,39 @@
       </nav>
 
       <!-- 📝 ОСНОВНОЙ КОНТЕНТ -->
-      <p>Здесь размещайте ваш текст. Используйте <code>код</code>, списки, заголовки h2 и т.д.</p>
+      <p>Здесь размещайте ваш текст. Используйте <code>код</code> для коротких фрагментов.</p>
+
+      <h2>Как оформлять код</h2>
+      <p>✅ <strong>Короткий код</strong> (внутри текста): оберните в <code><code></code>.</p>
+      <p>✅ <strong>Полный файл или большой блок</strong>: используйте структуру ниже.</p>
+
+      <!--
+        ПРИМЕР: ПОЛНЫЙ КОД В СТИЛЕ INTELLIJ IDEA
+        Замените имя файла и содержимое под вашу задачу.
+      -->
+      <div class="ide-window">
+        <div class="ide-header">
+          <span class="ide-dot red"></span>
+          <span class="ide-dot yellow"></span>
+          <span class="ide-dot green"></span>
+          <span class="ide-title">Example.java</span>
+        </div>
+        <pre><code class="language-java">public class Example {
+    public static void main(String[] args) {
+        System.out.println("Привет, BridgeLearn!");
+    }
+}</code></pre>
+      </div>
 
       <h2>Пример раздела</h2>
-      <p>Обычный абзац с пояснением.</p>
+      <p>Обычный абзац с пояснением. Например, метод <code>main()</code> — точка входа в программу.</p>
 
       <div class="key-point">
-        <p><strong>Важно:</strong> ключевая мысль или предупреждение.</p>
+        <p><strong>Важно:</strong> Всегда закрывайте <code>Scanner</code> и другие ресурсы!</p>
       </div>
 
       <div class="analogy">
-        <p><strong>Аналогия:</strong> сравнение для лучшего понимания.</p>
+        <p><strong>Аналогия:</strong> Класс в Java — как чертёж дома, а объект — сам дом.</p>
       </div>
 
       <h2>Что дальше?</h2>

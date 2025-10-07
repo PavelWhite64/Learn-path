@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Перегрузка методов — BridgeLearn</title>
+  <meta name="description"
+    content="Как создавать несколько версий одного метода с разными параметрами в Java. Для начинающих в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Перегрузка методов — BridgeLearn">
+  <meta property="og:description"
+    content="Как создавать несколько версий одного метода с разными параметрами в Java. Для начинающих в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Перегрузка методов</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Перегрузка методов
+      </nav>
+
+      <p>В Java можно создать несколько методов с <strong>одинаковым именем</strong>, но <strong>разными
+          параметрами</strong>. Это называется <strong>перегрузкой методов</strong> (method overloading). Компилятор сам
+        определит, какой метод вызвать, по количеству и типу аргументов.</p>
+
+      <h2>Зачем это нужно?</h2>
+      <p>Перегрузка делает API удобнее: вы можете вызывать один и тот же метод с разными данными, не запоминая разные
+        имена.</p>
+      <p>Пример из стандартной библиотеки:</p>
+      <pre><code>System.out.println("Привет");   // принимает String
+System.out.println(42);           // принимает int
+System.out.println(true);         // принимает boolean</code></pre>
+      <p>Это — один и тот же метод <code>println</code>, но перегруженный под разные типы.</p>
+
+      <h2>Как перегрузить метод?</h2>
+      <p>Методы считаются разными, если отличаются:</p>
+      <ul>
+        <li>Количеством параметров</li>
+        <li>Типами параметров</li>
+        <li>Порядком параметров (если типы разные)</li>
+      </ul>
+      <p>Возвращаемый тип <strong>не учитывается</strong> при перегрузке!</p>
+
+      <h2>Пример: перегрузка метода приветствия</h2>
+      <pre><code>public static void greet() {
+    System.out.println("Привет!");
+}
+
+public static void greet(String name) {
+    System.out.println("Привет, " + name + "!");
+}
+
+public static void greet(String name, int age) {
+    System.out.println("Привет, " + name + "! Вам " + age + " лет.");
+}</code></pre>
+      <p>Вызовы:</p>
+      <pre><code>greet();                // Привет!
+greet("Анна");          // Привет, Анна!
+greet("Иван", 25);      // Привет, Иван! Вам 25 лет.</code></pre>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong>
+        <ul>
+          <li>Перегрузка — это <strong>компиляторный механизм</strong>: выбор метода происходит на этапе компиляции.
+          </li>
+          <li>Нельзя перегрузить метод только по возвращаемому типу — будет ошибка.</li>
+          <li>Имена параметров не влияют на перегрузку.</li>
+        </ul>
+        </p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Перегрузка — как функция «напечатать документ» в принтере:
+          → можно отправить PDF,
+          → можно — текстовый файл,
+          → можно — фото.
+          Имя действия одно, но обработка зависит от типа входных данных.</p>
+      </div>
+
+      <h2>Практика: перегрузите метод вычисления площади</h2>
+      <pre><code>public static double area(double radius) {
+    return Math.PI * radius * radius; // круг
+}
+
+public static double area(double a, double b) {
+    return a * b; // прямоугольник
+}
+
+// Использование:
+System.out.println(area(5));      // площадь круга
+System.out.println(area(4, 6));   // площадь прямоугольника</code></pre>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="methods-declaration-params-return.html">Объявление, параметры, возврат</a><br>
+        → <a href="../oop/classes-objects.html">Классы и объекты</a><br>
+        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

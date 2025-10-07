@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow">
   <title>Windows: .msi → PATH автоматически — BridgeLearn</title>
-  <meta name="description" content="Как установить JDK на Windows через .msi и почему PATH настраивается сам. Для новичков в СНГ.">
+  <meta name="description"
+    content="Как установить JDK на Windows через .msi и почему PATH настраивается сам. Для новичков в СНГ.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Windows: .msi → PATH автоматически — BridgeLearn">
-  <meta property="og:description" content="Как установить JDK на Windows через .msi и почему PATH настраивается сам. Для новичков в СНГ.">
+  <meta property="og:description"
+    content="Как установить JDK на Windows через .msi и почему PATH настраивается сам. Для новичков в СНГ.">
   <meta property="og:type" content="article">
 
   <!-- Favicon -->
@@ -52,10 +54,13 @@
         Windows: .msi → PATH автоматически
       </nav>
 
-      <p>Если вы скачали JDK для Windows в формате <code>.msi</code> (например, Eclipse Temurin), то при установке вам <strong>не нужно вручную настраивать переменную PATH</strong>. Установщик делает это за вас — автоматически и безопасно.</p>
+      <p>Если вы скачали JDK для Windows в формате <code>.msi</code> (например, Eclipse Temurin), то при установке вам
+        <strong>не нужно вручную настраивать переменную PATH</strong>. Установщик делает это за вас — автоматически и
+        безопасно.</p>
 
       <h2>Почему .msi — лучший выбор для Windows</h2>
-      <p>Формат <code>.msi</code> — это стандартный установочный пакет Windows. В отличие от архивов (<code>.zip</code>, <code>.tar.gz</code>), он:</p>
+      <p>Формат <code>.msi</code> — это стандартный установочный пакет Windows. В отличие от архивов (<code>.zip</code>,
+        <code>.tar.gz</code>), он:</p>
       <ul>
         <li>✅ Автоматически добавляет <code>java</code> и <code>javac</code> в системный <code>PATH</code></li>
         <li>✅ Регистрирует JDK в списке установленных программ («Панель управления → Программы»)</li>
@@ -63,22 +68,27 @@
       </ul>
 
       <div class="key-point">
-        <p><strong>Важно:</strong> Убедитесь, что вы скачали именно файл с расширением <code>.msi</code>, а не <code>.zip</code>. Только <code>.msi</code> настраивает PATH автоматически.</p>
+        <p><strong>Важно:</strong> Убедитесь, что вы скачали именно файл с расширением <code>.msi</code>, а не
+          <code>.zip</code>. Только <code>.msi</code> настраивает PATH автоматически.</p>
       </div>
 
       <h2>Как проверить, что PATH настроен?</h2>
       <p>После установки:</p>
       <ol>
         <li>Закройте все открытые окна терминала (если были открыты до установки).</li>
-        <li>Откройте новое окно командной строки: нажмите <kbd>Win + R</kbd>, введите <code>cmd</code> и нажмите Enter.</li>
+        <li>Откройте новое окно командной строки: нажмите <kbd>Win + R</kbd>, введите <code>cmd</code> и нажмите Enter.
+        </li>
         <li>Выполните команды:</li>
       </ol>
       <pre><code>java -version</code></pre>
       <pre><code>javac -version</code></pre>
-      <p>Если вы видите версию (например, <code>Temurin-17.0.12</code>), значит — всё работает! PATH настроен корректно.</p>
+      <p>Если вы видите версию (например, <code>Temurin-17.0.12</code>), значит — всё работает! PATH настроен корректно.
+      </p>
 
       <div class="analogy">
-        <p><strong>Аналогия:</strong> Установка через <code>.msi</code> — как поставить принтер через «Добавить устройство»: Windows сама найдёт драйверы и настроит подключение. А архив — как вручную копировать файлы драйверов и править реестр. Зачем, если можно проще?</p>
+        <p><strong>Аналогия:</strong> Установка через <code>.msi</code> — как поставить принтер через «Добавить
+          устройство»: Windows сама найдёт драйверы и настроит подключение. А архив — как вручную копировать файлы
+          драйверов и править реестр. Зачем, если можно проще?</p>
       </div>
 
       <h2>Что делать, если команды не работают?</h2>
@@ -88,7 +98,8 @@
         <li>Вы не перезапустили терминал после установки</li>
         <li>Антивирус или корпоративная политика заблокировала изменение PATH</li>
       </ul>
-      <p>В этом случае: переустановите JDK, выбрав именно <code>.msi</code>-файл с сайта <a href="https://adoptium.net/temurin/releases/" target="_blank" rel="noopener">adoptium.net</a>.</p>
+      <p>В этом случае: переустановите JDK, выбрав именно <code>.msi</code>-файл с сайта <a
+          href="https://adoptium.net/temurin/releases/" target="_blank" rel="noopener">adoptium.net</a>.</p>
 
       <h2>Что дальше?</h2>
       <p>→ <a href="what-is-jdk.html">Что такое JVM, JRE, JDK — простыми словами</a><br>

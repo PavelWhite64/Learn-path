@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Арифметические, логические, сравнения — BridgeLearn</title>
+  <meta name="description"
+    content="Основные операторы в Java: арифметические, логические и сравнения. Для начинающих в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Арифметические, логические, сравнения — BridgeLearn">
+  <meta property="og:description"
+    content="Основные операторы в Java: арифметические, логические и сравнения. Для начинающих в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Арифметические, логические, сравнения</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Арифметические, логические, сравнения
+      </nav>
+
+      <p>Операторы — это символы, которые выполняют операции над данными. В Java они делятся на несколько групп. Три
+        самые важные для новичков — это <strong>арифметические</strong>, <strong>операторы сравнения</strong> и
+        <strong>логические операторы</strong>. Они лежат в основе всех вычислений и условий.</p>
+
+      <h2>1. Арифметические операторы</h2>
+      <p>Используются для математических вычислений с числами:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Оператор</th>
+            <th>Название</th>
+            <th>Пример</th>
+            <th>Результат</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>+</code></td>
+            <td>Сложение</td>
+            <td><code>5 + 3</code></td>
+            <td><code>8</code></td>
+          </tr>
+          <tr>
+            <td><code>-</code></td>
+            <td>Вычитание</td>
+            <td><code>10 - 4</code></td>
+            <td><code>6</code></td>
+          </tr>
+          <tr>
+            <td><code>*</code></td>
+            <td>Умножение</td>
+            <td><code>7 * 6</code></td>
+            <td><code>42</code></td>
+          </tr>
+          <tr>
+            <td><code>/</code></td>
+            <td>Деление</td>
+            <td><code>15 / 3</code></td>
+            <td><code>5</code></td>
+          </tr>
+          <tr>
+            <td><code>%</code></td>
+            <td>Остаток от деления</td>
+            <td><code>10 % 3</code></td>
+            <td><code>1</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Важно: при делении целых чисел результат тоже целый: <code>7 / 2 == 3</code>.</p>
+
+      <h2>2. Операторы сравнения</h2>
+      <p>Сравнивают два значения и возвращают <code>boolean</code> (<code>true</code> или <code>false</code>):</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Оператор</th>
+            <th>Значение</th>
+            <th>Пример</th>
+            <th>Результат</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>==</code></td>
+            <td>Равно</td>
+            <td><code>5 == 5</code></td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code>!=</code></td>
+            <td>Не равно</td>
+            <td><code>5 != 3</code></td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code>></code></td>
+            <td>Больше</td>
+            <td><code>10 > 5</code></td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code><</code></td>
+            <td>Меньше</td>
+            <td><code>2 < 1</code></td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>>=</code></td>
+            <td>Больше или равно</td>
+            <td><code>5 >= 5</code></td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code><=</code></td>
+            <td>Меньше или равно</td>
+            <td><code>4 <= 3</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Логические операторы</h2>
+      <p>Работают с логическими значениями (<code>boolean</code>) и позволяют строить сложные условия:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Оператор</th>
+            <th>Название</th>
+            <th>Пример</th>
+            <th>Результат</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&amp;&amp;</code></td>
+            <td>И (AND)</td>
+            <td><code>true &amp;&amp; false</code></td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>||</code></td>
+            <td>ИЛИ (OR)</td>
+            <td><code>true || false</code></td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code>!</code></td>
+            <td>НЕ (NOT)</td>
+            <td><code>!true</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Пример в коде:</p>
+      <pre><code>int age = 20;
+boolean hasLicense = true;
+boolean canDrive = (age >= 18) && hasLicense; // true</code></pre>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Не путайте <code>=</code> (присваивание) и <code>==</code> (сравнение)!
+          <code>int x = 5;</code> — присвоить значение.
+          <code>if (x == 5)</code> — проверить равенство.
+        </p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Арифметические операторы — как калькулятор. Операторы сравнения — как весы
+          («тяжелее/легче»). Логические операторы — как выключатели: «включить свет, если день И дверь открыта».</p>
+      </div>
+
+      <h2>Практика: проверка возраста и доступа</h2>
+      <pre><code>public class OperatorsDemo {
+    public static void main(String[] args) {
+        int userAge = 17;
+        boolean isVerified = true;
+
+        boolean isAdult = userAge >= 18;
+        boolean hasAccess = isAdult || isVerified;
+
+        System.out.println("Совершеннолетний? " + isAdult);
+        System.out.println("Доступ разрешён? " + hasAccess);
+    }
+}</code></pre>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="operator-precedence.html">Приоритет операций и скобки</a><br>
+        → <a href="../control-flow/if-else.html">Условия: <code>if</code>, <code>else if</code>,
+          <code>switch</code></a><br>
+        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

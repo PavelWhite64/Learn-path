@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow">
   <title>Linux: через пакетный менеджер (apt, yum) — BridgeLearn</title>
-  <meta name="description" content="Как установить JDK на Linux через apt (Ubuntu) или yum/dnf (CentOS/Fedora). Для новичков в СНГ.">
+  <meta name="description"
+    content="Как установить JDK на Linux через apt (Ubuntu) или yum/dnf (CentOS/Fedora). Для новичков в СНГ.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Linux: через пакетный менеджер (apt, yum) — BridgeLearn">
-  <meta property="og:description" content="Как установить JDK на Linux через apt (Ubuntu) или yum/dnf (CentOS/Fedora). Для новичков в СНГ.">
+  <meta property="og:description"
+    content="Как установить JDK на Linux через apt (Ubuntu) или yum/dnf (CentOS/Fedora). Для новичков в СНГ.">
   <meta property="og:type" content="article">
 
   <!-- Favicon -->
@@ -52,13 +54,17 @@
         Linux: через пакетный менеджер (apt, yum)
       </nav>
 
-      <p>На Linux JDK можно установить быстро и безопасно — с помощью встроенного пакетного менеджера. Выбор команды зависит от вашего дистрибутива: <code>apt</code> для Ubuntu/Debian, <code>dnf</code> или <code>yum</code> для Fedora/CentOS/RHEL.</p>
+      <p>На Linux JDK можно установить быстро и безопасно — с помощью встроенного пакетного менеджера. Выбор команды
+        зависит от вашего дистрибутива: <code>apt</code> для Ubuntu/Debian, <code>dnf</code> или <code>yum</code> для
+        Fedora/CentOS/RHEL.</p>
 
       <h2>Шаг 1: Определите ваш дистрибутив</h2>
       <p>Откройте терминал и выполните:</p>
       <pre><code>cat /etc/os-release</code></pre>
-      <p>Если в строке <code>ID=</code> указано <code>ubuntu</code> или <code>debian</code> — используйте <code>apt</code>.<br>
-        Если <code>fedora</code>, <code>rhel</code> или <code>centos</code> — используйте <code>dnf</code> (новые версии) или <code>yum</code> (старые).</p>
+      <p>Если в строке <code>ID=</code> указано <code>ubuntu</code> или <code>debian</code> — используйте
+        <code>apt</code>.<br>
+        Если <code>fedora</code>, <code>rhel</code> или <code>centos</code> — используйте <code>dnf</code> (новые
+        версии) или <code>yum</code> (старые).</p>
 
       <h2>Способ 1: Ubuntu / Debian (через apt)</h2>
       <p>Обновите список пакетов и установите Eclipse Temurin (рекомендуется):</p>
@@ -80,18 +86,23 @@ sudo yum install -y https://packages.adoptium.net/artifactory/rpm/centos7/adopti
 sudo yum install -y temurin-17-jdk</code></pre>
 
       <div class="key-point">
-        <p><strong>Важно:</strong> Устанавливайте именно <code>-jdk</code> (а не <code>-jre</code>), чтобы получить компилятор <code>javac</code>. Для разработки нужен JDK — как объяснялось в статье «Что такое JVM, JRE, JDK».</p>
+        <p><strong>Важно:</strong> Устанавливайте именно <code>-jdk</code> (а не <code>-jre</code>), чтобы получить
+          компилятор <code>javac</code>. Для разработки нужен JDK — как объяснялось в статье «Что такое JVM, JRE, JDK».
+        </p>
       </div>
 
       <div class="analogy">
-        <p><strong>Аналогия:</strong> Пакетный менеджер — как официальный магазин приложений. Вы не скачиваете .exe с сайта, а ставите программу через проверенный канал, который сам обновляет зависимости и следит за безопасностью.</p>
+        <p><strong>Аналогия:</strong> Пакетный менеджер — как официальный магазин приложений. Вы не скачиваете .exe с
+          сайта, а ставите программу через проверенный канал, который сам обновляет зависимости и следит за
+          безопасностью.</p>
       </div>
 
       <h2>Проверка установки</h2>
       <p>После установки выполните в терминале:</p>
       <pre><code>java -version</code></pre>
       <pre><code>javac -version</code></pre>
-      <p>Если вы видите версию вроде <code>Temurin-17.0.12</code> — всё готово! Вы можете писать и компилировать Java-код.</p>
+      <p>Если вы видите версию вроде <code>Temurin-17.0.12</code> — всё готово! Вы можете писать и компилировать
+        Java-код.</p>
 
       <h2>Что дальше?</h2>
       <p>→ <a href="what-is-jdk.html">Что такое JVM, JRE, JDK — простыми словами</a><br>

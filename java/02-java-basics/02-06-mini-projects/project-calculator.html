@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow">
+    <title>Калькулятор — BridgeLearn</title>
+    <meta name="description"
+        content="Создайте консольный калькулятор на Java: практика основ синтаксиса, условий и методов. Для новичков в СНГ.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Калькулятор — BridgeLearn">
+    <meta property="og:description"
+        content="Создайте консольный калькулятор на Java: практика основ синтаксиса, условий и методов. Для новичков в СНГ.">
+    <meta property="og:type" content="article">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+    <!-- Шрифт Inter -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Общий стиль -->
+    <link rel="stylesheet" href="../../../css/bridgelearn.css">
+
+    <!-- Prism.js — подсветка синтаксиса -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+            </a>
+            <h1 id="page-title">Калькулятор</h1>
+        </div>
+    </header>
+
+    <main aria-labelledby="page-title">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <a href="../../../">Главная</a>
+                <span aria-hidden="true"> → </span>
+                <a href="../../java-roadmap.html">Java для карьеры</a>
+                <span aria-hidden="true"> → </span>
+                Калькулятор
+            </nav>
+
+            <p>Консольный калькулятор — отличный первый проект, чтобы закрепить основы Java: переменные, типы данных,
+                условия, циклы и методы. В этой статье вы создадите простую программу, которая запрашивает два числа и
+                операцию, а затем выводит результат.</p>
+
+            <h2>Что будет уметь наш калькулятор?</h2>
+            <ul>
+                <li>Складывать (<code>+</code>)</li>
+                <li>Вычитать (<code>-</code>)</li>
+                <li>Умножать (<code>*</code>)</li>
+                <li>Делить (<code>/</code>)</li>
+            </ul>
+            <p>Всё это — через консоль, без графического интерфейса.</p>
+
+            <h2>Шаг 1: Подключите Scanner для ввода</h2>
+            <p>Чтобы читать данные с клавиатуры, используем класс <code>Scanner</code>:</p>
+            <pre><code class="language-java">import java.util.Scanner;</code></pre>
+
+            <h2>Шаг 2: Полный код калькулятора</h2>
+
+            <div class="ide-window">
+                <div class="ide-header">
+                    <span class="ide-dot red"></span>
+                    <span class="ide-dot yellow"></span>
+                    <span class="ide-dot green"></span>
+                    <span class="ide-title">Calculator.java</span>
+                </div>
+                <pre><code class="language-java">import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите первое число: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Введите операцию (+, -, *, /): ");
+        char op = scanner.next().charAt(0);
+
+        System.out.print("Введите второе число: ");
+        double b = scanner.nextDouble();
+
+        double result;
+        switch (op) {
+            case '+':
+                result = a + b;
+                break;
+            case '-':
+                result = a - b;
+                break;
+            case '*':
+                result = a * b;
+                break;
+            case '/':
+                if (b != 0) {
+                    result = a / b;
+                } else {
+                    System.out.println("Ошибка: деление на ноль!");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Неизвестная операция: " + op);
+                return;
+        }
+
+        System.out.println("Результат: " + result);
+        scanner.close();
+    }
+}</code></pre>
+            </div>
+
+            <div class="key-point">
+                <p><strong>Важно:</strong></p>
+                <ul>
+                    <li>Используем <code>double</code>, чтобы поддерживать дробные числа.</li>
+                    <li>Обязательно проверяем деление на ноль — иначе программа упадёт.</li>
+                    <li>После работы с <code>Scanner</code> вызываем <code>.close()</code>, чтобы освободить ресурсы.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="analogy">
+                <p><strong>Аналогия:</strong> Калькулятор — как кухонный миксер: вы кладёте ингредиенты (числа),
+                    выбираете режим (операцию), и получаете готовое блюдо (результат). Главное — не включать без крышки
+                    (делить на ноль)!</p>
+            </div>
+
+            <h2>Как запустить?</h2>
+            <ol>
+                <li>Сохраните код в файл <code>Calculator.java</code></li>
+                <li>Откройте терминал в этой папке</li>
+                <li>Выполните: <code>javac Calculator.java</code></li>
+                <li>Затем: <code>java Calculator</code></li>
+            </ol>
+
+            <h2>Идеи для улучшения (домашнее задание)</h2>
+            <ul>
+                <li>Добавьте цикл — чтобы калькулятор работал до ввода команды «exit».</li>
+                <li>Реализуйте возведение в степень или остаток от деления.</li>
+                <li>Вынесите вычисления в отдельный метод <code>calculate(double a, char op, double b)</code>.</li>
+            </ul>
+
+            <h2>Что дальше?</h2>
+            <p>→ <a href="project-temperature.html">Конвертер температуры</a><br>
+                → <a href="project-quiz.html">Викторина в консоли</a><br>
+                → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+    </footer>
+</body>
+
+</html>

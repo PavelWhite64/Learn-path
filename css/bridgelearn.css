@@ -295,3 +295,110 @@ details li {
         font-size: 1.4rem;
     }
 }
+
+/* Убрать стандартную стрелку */
+summary {
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Добавить свою иконку (например, ➕/➖) */
+details>summary {
+    cursor: pointer;
+    position: relative;
+    padding-right: 24px;
+}
+
+details>summary::after {
+    content: "➕";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+details[open]>summary::after {
+    content: "➖";
+}
+
+/* Окно IDE в стиле IntelliJ IDEA */
+.ide-window {
+    background-color: #2b2b2b;
+    /* Фон редактора Darcula */
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* Заголовок вкладки (панель инструментов) */
+.ide-header {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    background-color: #313335;
+    /* Цвет панели вкладок в Darcula */
+    border-bottom: 1px solid #3c3f41;
+    color: #a9b7c6;
+    font-size: 0.85rem;
+}
+
+/* Точки управления окном (в IDEA их нет, но для узнаваемости оставим) */
+.ide-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.ide-dot.red {
+    background-color: #ff6666;
+}
+
+.ide-dot.yellow {
+    background-color: #ffcc66;
+}
+
+.ide-dot.green {
+    background-color: #66cc66;
+}
+
+/* Название файла — как в заголовке вкладки */
+.ide-title {
+    color: #a9b7c6;
+    font-weight: 500;
+    margin-left: 8px;
+    user-select: none;
+    letter-spacing: -0.02em;
+}
+
+/* Контейнер кода */
+.ide-window pre {
+    margin: 0;
+    padding: 16px;
+    background: none;
+    border: none;
+    color: #a9b7c6;
+    /* Основной цвет текста в Darcula */
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    overflow-x: auto;
+}
+
+.ide-window code {
+    font-family: inherit;
+    background: none;
+    padding: 0;
+    white-space: pre;
+}
+
+/* Опционально: подсветка строк (как при наведении в IDEA) */
+.ide-window pre:hover {
+    background-color: rgba(60, 63, 65, 0.2);
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Константы (`final`) — BridgeLearn</title>
+  <meta name="description"
+    content="Как создавать неизменяемые переменные в Java с помощью ключевого слова final. Для начинающих в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Константы (`final`) — BridgeLearn">
+  <meta property="og:description"
+    content="Как создавать неизменяемые переменные в Java с помощью ключевого слова final. Для начинающих в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Константы (<code>final</code>)</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Константы (<code>final</code>)
+      </nav>
+
+      <p>В Java есть способ создать переменную, значение которой <strong>нельзя изменить</strong> после присваивания.
+        Такие переменные называются <strong>константами</strong>, и объявляются они с помощью ключевого слова
+        <code>final</code>.</p>
+
+      <h2>Как объявить константу?</h2>
+      <p>Просто добавьте <code>final</code> перед типом переменной:</p>
+      <pre><code>final double PI = 3.14159;
+final int MAX_USERS = 100;
+final String APP_NAME = "BridgeLearn";</code></pre>
+      <p>Попытка изменить такую переменную вызовет ошибку компиляции:</p>
+      <pre><code>PI = 3.14; // Ошибка! Cannot assign a value to final variable 'PI'</code></pre>
+
+      <h2>Зачем нужны константы?</h2>
+      <ul>
+        <li>✅ <strong>Безопасность</strong> — вы не случайно перезапишете важное значение.</li>
+        <li>✅ <strong>Читаемость</strong> — имя вроде <code>MAX_LOGIN_ATTEMPTS</code> понятнее, чем просто
+          <code>3</code>.</li>
+        <li>✅ <strong>Поддержка</strong> — если нужно изменить значение (например, увеличить лимит), править нужно в
+          одном месте.</li>
+      </ul>
+
+      <h2>Соглашение об именовании</h2>
+      <p>По общепринятому стилю (Google Java Style, Oracle), константы пишутся <strong>заглавными буквами</strong> с
+        подчёркиваниями:</p>
+      <pre><code>final int SECONDS_PER_HOUR = 3600;
+final String DEFAULT_ENCODING = "UTF-8";</code></pre>
+      <p>Это сразу сигнализирует другим разработчикам: «это значение не меняется».</p>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> <code>final</code> делает неизменяемой <em>ссылку</em>, а не объект. Например, если у
+          вас <code>final List<String> names = new ArrayList<>();</code>, вы не сможете присвоить
+          <code>names = другойСписок</code>, но сможете изменять содержимое списка: <code>names.add("Анна")</code>.</p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Обычная переменная — как стикер на банке: можно стереть надпись и написать новую.
+          Константа (<code>final</code>) — как табличка, прикрученная болтами: надпись нельзя изменить без инструментов
+          (а в Java — вообще нельзя).</p>
+      </div>
+
+      <h2>Практика: используйте константы в программе</h2>
+      <pre><code>public class ConstantsDemo {
+    public static void main(String[] args) {
+        final double RATE = 0.15;
+        final int HOURS_PER_DAY = 24;
+
+        double tax = 1000 * RATE;
+        int secondsInDay = HOURS_PER_DAY * 60 * 60;
+
+        System.out.println("Налог: " + tax);
+        System.out.println("Секунд в сутках: " + secondsInDay);
+    }
+}</code></pre>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="primitive-types.html">Примитивы: <code>int</code>, <code>double</code>, <code>boolean</code>,
+          <code>char</code></a><br>
+        → <a href="reference-types.html">Ссылочные типы: <code>String</code>, обёртки</a><br>
+        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

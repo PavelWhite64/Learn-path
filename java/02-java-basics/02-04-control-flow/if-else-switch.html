@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Условия: `if`, `else if`, `switch` — BridgeLearn</title>
+  <meta name="description"
+    content="Как писать условия в Java: if, else if, switch. Просто и с примерами для новичков в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Условия: `if`, `else if`, `switch` — BridgeLearn">
+  <meta property="og:description"
+    content="Как писать условия в Java: if, else if, switch. Просто и с примерами для новичков в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Условия: <code>if</code>, <code>else if</code>, <code>switch</code></h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Условия: <code>if</code>, <code>else if</code>, <code>switch</code>
+      </nav>
+
+      <p>Управляющие конструкции позволяют программе принимать решения. В зависимости от условия код может выполнять
+        один блок или другой. В Java для этого используются <code>if</code>, <code>else if</code> и <code>switch</code>.
+      </p>
+
+      <h2>1. Конструкция <code>if</code> — простое условие</h2>
+      <p>Выполняет блок кода, только если условие истинно (<code>true</code>):</p>
+      <pre><code>int age = 20;
+if (age >= 18) {
+    System.out.println("Вы совершеннолетний.");
+}</code></pre>
+
+      <h2>2. <code>if</code> + <code>else</code> — два варианта</h2>
+      <p>Если условие ложно — выполняется альтернативный блок:</p>
+      <pre><code>if (age >= 18) {
+    System.out.println("Доступ разрешён.");
+} else {
+    System.out.println("Доступ запрещён.");
+}</code></pre>
+
+      <h2>3. <code>else if</code> — несколько условий</h2>
+      <p>Позволяет проверить несколько вариантов подряд:</p>
+      <pre><code>int score = 85;
+
+if (score >= 90) {
+    System.out.println("Отлично!");
+} else if (score >= 70) {
+    System.out.println("Хорошо.");
+} else if (score >= 50) {
+    System.out.println("Удовлетворительно.");
+} else {
+    System.out.println("Не сдал.");
+}</code></pre>
+      <p>Проверка идёт сверху вниз — выполняется только первый подходящий блок.</p>
+
+      <h2>4. Конструкция <code>switch</code> — выбор по значению</h2>
+      <p>Используется, когда нужно сравнить переменную с несколькими конкретными значениями:</p>
+      <pre><code>int day = 3;
+switch (day) {
+    case 1:
+        System.out.println("Понедельник");
+        break;
+    case 2:
+        System.out.println("Вторник");
+        break;
+    case 3:
+        System.out.println("Среда");
+        break;
+    default:
+        System.out.println("Неизвестный день");
+}</code></pre>
+      <p>Современный Java (14+) поддерживает более краткий синтаксис без <code>break</code>:</p>
+      <pre><code>switch (day) {
+    case 1 -> System.out.println("Понедельник");
+    case 2 -> System.out.println("Вторник");
+    case 3 -> System.out.println("Среда");
+    default -> System.out.println("Неизвестный день");
+}</code></pre>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong>
+        <ul>
+          <li>В <code>if</code> условие всегда в <strong>круглых скобках</strong>.</li>
+          <li>Блок кода — в <strong>фигурных скобках</strong> (даже если одна строка — лучше не опускать).</li>
+          <li>В <code>switch</code> тип переменной может быть <code>int</code>, <code>String</code>, <code>enum</code> и
+            некоторые другие.</li>
+        </ul>
+        </p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> <code>if</code> — как развилка на дороге: «если дождь — взять зонт».
+          <code>switch</code> — как меню в ресторане: вы выбираете одно из готовых блюд.</p>
+      </div>
+
+      <h2>Практика: определите сезон по месяцу</h2>
+      <pre><code>int month = 7;
+
+if (month >= 3 && month <= 5) {
+    System.out.println("Весна");
+} else if (month >= 6 && month <= 8) {
+    System.out.println("Лето");
+} else if (month >= 9 && month <= 11) {
+    System.out.println("Осень");
+} else {
+    System.out.println("Зима");
+}</code></pre>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="loops.html">Циклы: <code>for</code>, <code>while</code>, <code>do-while</code></a><br>
+        → <a href="../operators/ternary-operator.html">Тернарный оператор</a><br>
+        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>
