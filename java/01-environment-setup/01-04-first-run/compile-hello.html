@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Скомпилировать: javac Hello.java — BridgeLearn</title>
+  <meta name="description" content="Как скомпилировать Java-файл вручную с помощью команды javac. Для новичков в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Скомпилировать: javac Hello.java — BridgeLearn">
+  <meta property="og:description" content="Как скомпилировать Java-файл вручную с помощью команды javac. Для новичков в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Скомпилировать: <code>javac Hello.java</code></h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Скомпилировать: <code>javac Hello.java</code>
+      </nav>
+
+      <p>Теперь, когда у вас есть файл <code>Hello.java</code>, его нужно превратить в формат, который понимает JVM. Этот процесс называется <strong>компиляцией</strong>, и выполняется с помощью команды <code>javac</code> (Java Compiler).</p>
+
+      <h2>Шаг 1: Откройте терминал в папке с файлом</h2>
+      <p>Перейдите в ту папку, где лежит <code>Hello.java</code>:</p>
+      <ul>
+        <li><strong>Windows:</strong> зажмите <kbd>Shift</kbd> + ПКМ в папке → «Открыть окно PowerShell здесь» или «Командная строка».</li>
+        <li><strong>macOS/Linux:</strong> откройте Terminal и используйте команду <code>cd</code>, например: <code>cd ~/java/hello</code>.</li>
+      </ul>
+
+      <h2>Шаг 2: Выполните компиляцию</h2>
+      <p>Введите команду:</p>
+      <pre><code>javac Hello.java</code></pre>
+      <p>Если всё сделано правильно — команда выполнится <strong>без ошибок</strong> и без сообщений.</p>
+      <p>Проверьте содержимое папки — появился новый файл:</p>
+      <pre><code>Hello.class</code></pre>
+      <p>Это и есть <strong>байт-код</strong> — промежуточный код, который может выполнить JVM.</p>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Если вы видите ошибку вроде «javac: command not found», значит, JDK не установлен или не добавлен в PATH. Вернитесь к статье «Проверка: <code>java -version</code>, <code>javac -version</code>».</p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Компиляция — как перевод с русского языка на международный технический жаргон. Вы написали рецепт на родном языке (<code>.java</code>), а повар-робот (JVM) понимает только стандартный формат (<code>.class</code>). <code>javac</code> — это переводчик.</p>
+      </div>
+
+      <h2>Что внутри файла .class?</h2>
+      <p>Это не текст, а бинарный файл. Открывать его в Блокноте бесполезно — он предназначен только для JVM. Но именно он позволяет запускать программу на любом устройстве, где установлена Java.</p>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="run-hello.html">Запустить: <code>java Hello</code></a><br>
+        → <a href="create-hello-java.html">Создать <code>Hello.java</code></a><br>
+        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Создать Hello.java — BridgeLearn</title>
+  <meta name="description" content="Как создать первый Java-файл Hello.java вручную. Просто и без IDE. Для новичков в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Создать Hello.java — BridgeLearn">
+  <meta property="og:description" content="Как создать первый Java-файл Hello.java вручную. Просто и без IDE. Для новичков в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Создать <code>Hello.java</code></h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Создать <code>Hello.java</code>
+      </nav>
+
+      <p>Первый шаг в любом языке программирования — написать программу «Привет, мир!». В Java это файл с именем <code>Hello.java</code>. Давайте создадим его вручную, без IDE, чтобы понять, как всё работает «под капотом».</p>
+
+      <h2>Шаг 1: Создайте папку для проекта</h2>
+      <p>Откройте проводник (или Finder на Mac) и создайте новую папку, например:</p>
+      <pre><code>C:\java-projects\hello</code></pre>
+      <p>или</p>
+      <pre><code>~/java/hello</code></pre>
+      <p>Это будет ваша рабочая директория.</p>
+
+      <h2>Шаг 2: Создайте файл Hello.java</h2>
+      <p>Откройте любой текстовый редактор (Блокнот, TextEdit, VS Code, Nano и т.д.) и введите следующий код:</p>
+      <pre><code>public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Привет, мир!");
+    }
+}</code></pre>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Имя класса (<code>Hello</code>) <strong>должно точно совпадать</strong> с именем файла (<code>Hello.java</code>), включая регистр. Иначе компилятор выдаст ошибку.</p>
+      </div>
+
+      <h2>Шаг 3: Сохраните файл</h2>
+      <p>Сохраните файл как <code>Hello.java</code> в созданную папку. Убедитесь, что:</p>
+      <ul>
+        <li>Расширение — именно <code>.java</code> (не <code>.txt</code>!)</li>
+        <li>Кодировка — <strong>UTF-8</strong> (в Блокноте: «Сохранить как» → «Кодировка: UTF-8»)</li>
+      </ul>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Файл <code>Hello.java</code> — это рецепт. А компилятор (<code>javac</code>) — повар, который превращает рецепт в готовое блюдо (байт-код). Без точного названия рецепта повар не поймёт, что готовить.</p>
+      </div>
+
+      <h2>Что дальше?</h2>
+      <p>→ <a href="compile-hello.html">Скомпилировать: <code>javac Hello.java</code></a><br>
+        → <a href="run-hello.html">Запустить: <code>java Hello</code></a><br>
+        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>
