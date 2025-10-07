@@ -402,3 +402,11 @@ details[open]>summary::after {
 .ide-window pre:hover {
     background-color: rgba(60, 63, 65, 0.2);
 }
+
+/* Навигация ссылки назад вперед */
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}

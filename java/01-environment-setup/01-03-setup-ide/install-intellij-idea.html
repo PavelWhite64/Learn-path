@@ -32,6 +32,12 @@
 
   <!-- Общий стиль -->
   <link rel="stylesheet" href="../../../css/bridgelearn.css">
+
+  <!-- Prism.js — подсветка синтаксиса -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </head>
 
 <body>
@@ -96,11 +102,20 @@
         <li>Назовите класс <code>Hello</code> и нажмите OK.</li>
         <li>В открывшемся файле введите:</li>
       </ol>
-      <pre><code>public class Hello {
+
+      <div class="ide-window">
+        <div class="ide-header">
+          <span class="ide-dot red"></span>
+          <span class="ide-dot yellow"></span>
+          <span class="ide-dot green"></span>
+          <span class="ide-title">Calculator.java</span>
+        </div>
+        <pre><code class="language-java">public class Hello {
     public static void main(String[] args) {
         System.out.println("Привет, BridgeLearn!");
     }
 }</code></pre>
+      </div>
       <ol start="8">
         <li>Нажмите зелёную стрелку ▶️ слева от метода <code>main</code> — программа запустится, и вы увидите
           приветствие внизу в консоли.</li>
@@ -113,9 +128,10 @@
       </div>
 
       <h2>Что дальше?</h2>
-      <p>→ <a href="first-run.html">Запустите Java-файл без IDE (в терминале)</a><br>
-        → <a href="../system/check-java-version.html">Проверьте, что JDK работает</a><br>
-        → <a href="../java-roadmap.html">Вернуться к дорожной карте</a></p>
+      <p>→ <a href="../01-02-install-jdk/check-java-version.html">Проверка:
+          <code>java -version, javac -version</code></a><br>
+        → <a href="../01-03-setup-ide/intellij-utf8-setup.html">Настройка кодировки
+          (UTF-8)</a></p>
     </div>
   </main>
 
