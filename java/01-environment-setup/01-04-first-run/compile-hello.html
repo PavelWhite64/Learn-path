@@ -10,7 +10,8 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Скомпилировать: javac Hello.java — BridgeLearn">
-  <meta property="og:description" content="Как скомпилировать Java-файл вручную с помощью команды javac. Для новичков в СНГ.">
+  <meta property="og:description"
+    content="Как скомпилировать Java-файл вручную с помощью команды javac. Для новичков в СНГ.">
   <meta property="og:type" content="article">
 
   <!-- Favicon -->
@@ -52,13 +53,18 @@
         Скомпилировать: <code>javac Hello.java</code>
       </nav>
 
-      <p>Теперь, когда у вас есть файл <code>Hello.java</code>, его нужно превратить в формат, который понимает JVM. Этот процесс называется <strong>компиляцией</strong>, и выполняется с помощью команды <code>javac</code> (Java Compiler).</p>
+      <p>Теперь, когда у вас есть файл <code>Hello.java</code>, его нужно превратить в формат, который понимает JVM.
+        Этот процесс называется <strong>компиляцией</strong>, и выполняется с помощью команды <code>javac</code> (Java
+        Compiler).</p>
 
       <h2>Шаг 1: Откройте терминал в папке с файлом</h2>
       <p>Перейдите в ту папку, где лежит <code>Hello.java</code>:</p>
       <ul>
-        <li><strong>Windows:</strong> зажмите <kbd>Shift</kbd> + ПКМ в папке → «Открыть окно PowerShell здесь» или «Командная строка».</li>
-        <li><strong>macOS/Linux:</strong> откройте Terminal и используйте команду <code>cd</code>, например: <code>cd ~/java/hello</code>.</li>
+        <li><strong>Windows:</strong> зажмите <kbd>Shift</kbd> + ПКМ в папке → «Открыть окно PowerShell здесь» или
+          «Командная строка».</li>
+        <li><strong>macOS/Linux:</strong> откройте Terminal и используйте команду <code>cd</code>, например:
+          <code>cd ~/java/hello</code>.
+        </li>
       </ul>
 
       <h2>Шаг 2: Выполните компиляцию</h2>
@@ -70,21 +76,30 @@
       <p>Это и есть <strong>байт-код</strong> — промежуточный код, который может выполнить JVM.</p>
 
       <div class="key-point">
-        <p><strong>Важно:</strong> Если вы видите ошибку вроде «javac: command not found», значит, JDK не установлен или не добавлен в PATH. Вернитесь к статье «Проверка: <code>java -version</code>, <code>javac -version</code>».</p>
+        <p><strong>Важно:</strong> Если вы видите ошибку вроде «javac: command not found», значит, JDK не установлен или
+          не добавлен в PATH. Вернитесь к статье «Проверка: <code>java -version</code>, <code>javac -version</code>».
+        </p>
       </div>
 
       <div class="analogy">
-        <p><strong>Аналогия:</strong> Компиляция — как перевод с русского языка на международный технический жаргон. Вы написали рецепт на родном языке (<code>.java</code>), а повар-робот (JVM) понимает только стандартный формат (<code>.class</code>). <code>javac</code> — это переводчик.</p>
+        <p><strong>Аналогия:</strong> Компиляция — как перевод с русского языка на международный технический жаргон. Вы
+          написали рецепт на родном языке (<code>.java</code>), а повар-робот (JVM) понимает только стандартный формат
+          (<code>.class</code>). <code>javac</code> — это переводчик.</p>
       </div>
 
       <h2>Что внутри файла .class?</h2>
-      <p>Это не текст, а бинарный файл. Открывать его в Блокноте бесполезно — он предназначен только для JVM. Но именно он позволяет запускать программу на любом устройстве, где установлена Java.</p>
+      <p>Это не текст, а бинарный файл. Открывать его в Блокноте бесполезно — он предназначен только для JVM. Но именно
+        он позволяет запускать программу на любом устройстве, где установлена Java.</p>
 
-      <h2>Что дальше?</h2>
-      <p>→ <a href="run-hello.html">Запустить: <code>java Hello</code></a><br>
-        → <a href="create-hello-java.html">Создать <code>Hello.java</code></a><br>
-        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
-    </div>
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../01-04-first-run/create-hello-java.html">← Создать Hello.java</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../01-04-first-run/run-hello.html">Запустить: <code>java Hello →</code></a>
+        </div>
+      </div>
   </main>
 
   <footer>

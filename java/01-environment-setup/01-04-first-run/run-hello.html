@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow">
   <title>Запустить: java Hello — BridgeLearn</title>
-  <meta name="description" content="Как запустить скомпилированную Java-программу с помощью команды java Hello. Для новичков в СНГ.">
+  <meta name="description"
+    content="Как запустить скомпилированную Java-программу с помощью команды java Hello. Для новичков в СНГ.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Запустить: java Hello — BridgeLearn">
-  <meta property="og:description" content="Как запустить скомпилированную Java-программу с помощью команды java Hello. Для новичков в СНГ.">
+  <meta property="og:description"
+    content="Как запустить скомпилированную Java-программу с помощью команды java Hello. Для новичков в СНГ.">
   <meta property="og:type" content="article">
 
   <!-- Favicon -->
@@ -52,40 +54,54 @@
         Запустить: <code>java Hello</code>
       </nav>
 
-      <p>Поздравляем! Вы уже создали файл <code>Hello.java</code> и скомпилировали его в <code>Hello.class</code>. Теперь остался последний шаг — запустить программу и увидеть результат в терминале.</p>
+      <p>Поздравляем! Вы уже создали файл <code>Hello.java</code> и скомпилировали его в <code>Hello.class</code>.
+        Теперь остался последний шаг — запустить программу и увидеть результат в терминале.</p>
 
       <h2>Как запустить Java-программу</h2>
-      <p>Убедитесь, что вы находитесь в той же папке, где лежит файл <code>Hello.class</code>. Затем выполните команду:</p>
+      <p>Убедитесь, что вы находитесь в той же папке, где лежит файл <code>Hello.class</code>. Затем выполните команду:
+      </p>
       <pre><code>java Hello</code></pre>
-      <p>Обратите внимание: вы указываете **имя класса** (<code>Hello</code>), а <strong>не имя файла</strong> и <strong>без расширения</strong> <code>.class</code>.</p>
+      <p>Обратите внимание: вы указываете **имя класса** (<code>Hello</code>), а <strong>не имя файла</strong> и
+        <strong>без расширения</strong> <code>.class</code>.
+      </p>
 
       <h2>Что должно произойти?</h2>
       <p>Если всё сделано правильно, в терминале появится:</p>
       <pre><code>Привет, мир!</code></pre>
-      <p>Это значит, что JVM успешно загрузила байт-код из <code>Hello.class</code> и выполнила метод <code>main</code>.</p>
+      <p>Это значит, что JVM успешно загрузила байт-код из <code>Hello.class</code> и выполнила метод <code>main</code>.
+      </p>
 
       <div class="key-point">
-        <p><strong>Важно:</strong> Если вы видите ошибку <code>Error: Could not find or load main class Hello</code>, проверьте:
-          <ul>
-            <li>Находитесь ли вы в правильной папке (где лежит <code>Hello.class</code>)</li>
-            <li>Правильно ли написано имя класса (регистр букв важен!)</li>
-            <li>Есть ли в классе метод <code>public static void main(String[] args)</code></li>
-          </ul>
+        <p><strong>Важно:</strong> Если вы видите ошибку <code>Error: Could not find or load main class Hello</code>,
+          проверьте:
+        <ul>
+          <li>Находитесь ли вы в правильной папке (где лежит <code>Hello.class</code>)</li>
+          <li>Правильно ли написано имя класса (регистр букв важен!)</li>
+          <li>Есть ли в классе метод <code>public static void main(String[] args)</code></li>
+        </ul>
         </p>
       </div>
 
       <div class="analogy">
-        <p><strong>Аналогия:</strong> Компиляция (<code>javac</code>) — это как печать книги. Запуск (<code>java</code>) — это когда читатель берёт эту книгу и начинает читать. Без книги — не прочитаешь. Без читателя — книга просто лежит.</p>
+        <p><strong>Аналогия:</strong> Компиляция (<code>javac</code>) — это как печать книги. Запуск (<code>java</code>)
+          — это когда читатель берёт эту книгу и начинает читать. Без книги — не прочитаешь. Без читателя — книга просто
+          лежит.</p>
       </div>
 
       <h2>Почему именно так?</h2>
-      <p>Команда <code>java</code> запускает **JVM**, которая ищет указанный класс, загружает его и ищет внутри метод <code>main</code> — точку входа в любую Java-программу. Именно с него начинается выполнение.</p>
+      <p>Команда <code>java</code> запускает **JVM**, которая ищет указанный класс, загружает его и ищет внутри метод
+        <code>main</code> — точку входа в любую Java-программу. Именно с него начинается выполнение.
+      </p>
 
-      <h2>Что дальше?</h2>
-      <p>→ <a href="common-errors.html">Типичные ошибки и как их исправить</a><br>
-        → <a href="../ide/install-intellij-idea.html">Настройте IntelliJ IDEA для удобной разработки</a><br>
-        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
-    </div>
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../01-04-first-run/compile-hello.html">← Скомпилировать:<code>javac Hello.java</code></a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../01-04-first-run/common-errors.html">Типичные ошибки и как их исправить →</a>
+        </div>
+      </div>
   </main>
 
   <footer>

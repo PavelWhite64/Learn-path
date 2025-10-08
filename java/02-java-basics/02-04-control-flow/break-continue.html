@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>`break`, `continue` — BridgeLearn</title>
+  <meta name="description" content="Как управлять циклами в Java: операторы break и continue. Для начинающих в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="`break`, `continue` — BridgeLearn">
+  <meta property="og:description"
+    content="Как управлять циклами в Java: операторы break и continue. Для начинающих в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title"><code>break</code>, <code>continue</code></h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        <code>break</code>, <code>continue</code>
+      </nav>
+
+      <p>Операторы <code>break</code> и <code>continue</code> позволяют гибко управлять выполнением циклов. Они помогают
+        досрочно завершить итерацию или выйти из цикла в зависимости от условий.</p>
+
+      <h2>1. <code>break</code> — выйти из цикла</h2>
+      <p>Оператор <code>break</code> немедленно прекращает выполнение цикла и передаёт управление следующей за ним
+        инструкции.</p>
+      <pre><code>for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        break; // выйти из цикла при i = 5
+    }
+    System.out.println(i);
+}
+// Вывод: 1 2 3 4</code></pre>
+      <p>Часто используется для поиска элемента: как только нашли — нет смысла продолжать.</p>
+
+      <h2>2. <code>continue</code> — пропустить итерацию</h2>
+      <p>Оператор <code>continue</code> прерывает текущую итерацию и переходит к следующей (проверяя условие цикла).</p>
+      <pre><code>for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue; // пропустить вывод для i = 3
+    }
+    System.out.println(i);
+}
+// Вывод: 1 2 4 5</code></pre>
+      <p>Полезен, когда нужно обработать все элементы, кроме некоторых.</p>
+
+      <h2>Работа с вложенными циклами</h2>
+      <p>По умолчанию <code>break</code> и <code>continue</code> влияют только на **самый внутренний** цикл. Чтобы выйти
+        из внешнего цикла, используются <strong>метки (labels)</strong> (редко, но бывает нужно):</p>
+      <pre><code>outer:
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        if (i == 2 && j == 2) {
+            break outer; // выйти из обоих циклов
+        }
+        System.out.println(i + "," + j);
+    }
+}</code></pre>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Не злоупотребляйте <code>break</code> и <code>continue</code> — особенно в сложных
+          циклах. Иногда лучше переписать логику с помощью флагов или вынести в метод, чтобы код оставался читаемым.</p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong>
+          <code>break</code> — как экстренная остановка эскалатора: всё прекращается сразу.
+          <code>continue</code> — как пропустить одну ступеньку: эскалатор идёт дальше, но вы на этой ступени не стоите.
+        </p>
+      </div>
+
+      <h2>Практика: пропустить чётные числа, остановиться на 9</h2>
+      <pre><code>for (int n = 1; n <= 15; n++) {
+    if (n % 2 == 0) {
+        continue; // пропустить чётные
+    }
+    if (n == 9) {
+        break; // остановиться на 9
+    }
+    System.out.println(n);
+}
+// Вывод: 1 3 5 7</code></pre>
+
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../02-04-control-flow/loops.html">← Циклы: `for`, `while`, `do-while`</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../02-05-methods/methods-declaration-params-return.html">Объявление,
+            параметры, возврат →</a>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

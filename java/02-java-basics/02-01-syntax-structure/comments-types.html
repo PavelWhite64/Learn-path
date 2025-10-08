@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Виды комментариев — BridgeLearn</title>
+  <meta name="description"
+    content="Как писать комментарии в Java: однострочные, многострочные и документирующие. Для начинающих в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Виды комментариев — BridgeLearn">
+  <meta property="og:description"
+    content="Как писать комментарии в Java: однострочные, многострочные и документирующие. Для начинающих в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Виды комментариев</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Виды комментариев
+      </nav>
+
+      <p>Комментарии — это пояснения в коде, которые игнорируются компилятором. Они нужны, чтобы вы или другие
+        разработчики могли быстро понять, что делает тот или иной участок программы. В Java существует три вида
+        комментариев.</p>
+
+      <h2>1. Однострочный комментарий — <code>//</code></h2>
+      <p>Всё, что идёт после <code>//</code> до конца строки, считается комментарием.</p>
+      <pre><code>// Это однострочный комментарий
+int age = 25; // Возраст пользователя</code></pre>
+      <p>Самый часто используемый тип — идеален для кратких пояснений.</p>
+
+      <h2>2. Многострочный комментарий — <code>/* ... */</code></h2>
+      <p>Всё между <code>/*</code> и <code>*/</code> игнорируется, даже если занимает несколько строк.</p>
+      <pre><code>/*
+ * Этот блок кода временно отключён.
+ * Он будет переписан в следующей версии.
+ */
+// calculateOldTax();</code></pre>
+      <p>Часто используется для отключения целых участков кода или написания длинных пояснений.</p>
+
+      <h2>3. Документирующий комментарий — <code>/** ... */</code></h2>
+      <p>Особый вид комментария, который используется для генерации документации (например, через инструмент
+        <code>javadoc</code>).
+      </p>
+      <pre><code>/**
+ * Выводит приветствие в консоль.
+ * @param name имя пользователя
+ */
+public static void greet(String name) {
+    System.out.println("Привет, " + name + "!");
+}</code></pre>
+      <p>Такие комментарии поддерживают специальные теги: <code>@param</code>, <code>@return</code>,
+        <code>@throws</code> и др.
+      </p>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Комментарии — не замена хорошему коду. Лучше писать понятные имена переменных и
+          методов, чем заваливать код пояснениями. Но когда логика сложная — комментарий спасает часы отладки.</p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Комментарии — как заметки на полях учебника. Они не входят в текст лекции, но
+          помогают понять, что именно преподаватель имел в виду.</p>
+      </div>
+
+      <h2>Практика: добавьте комментарии в Hello.java</h2>
+      <pre><code>/**
+ * Простая программа-приветствие.
+ * Точка входа в приложение.
+ */
+public class Hello {
+    // Главный метод — запускается при старте программы
+    public static void main(String[] args) {
+        System.out.println("Привет, BridgeLearn!"); // Вывод в консоль
+    }
+}</code></pre>
+
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../02-01-syntax-structure/class-main-packages.html">← Класс, метод <code>main</code>, пакеты,
+            импорты</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../02-02-data-types-variables/primitive-types.html">Примитивы (`int`, `double`, `boolean`, `char`)
+            →</a>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

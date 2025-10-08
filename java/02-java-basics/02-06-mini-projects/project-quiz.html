@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow">
+    <title>Консольная викторина — BridgeLearn</title>
+    <meta name="description"
+        content="Создайте интерактивную викторину в консоли на Java. Практика условий, ввода и логики для новичков в СНГ.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Консольная викторина — BridgeLearn">
+    <meta property="og:description"
+        content="Создайте интерактивную викторину в консоли на Java. Практика условий, ввода и логики для новичков в СНГ.">
+    <meta property="og:type" content="article">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+    <!-- Шрифт Inter -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Общий стиль -->
+    <link rel="stylesheet" href="../../../css/bridgelearn.css">
+
+    <!-- Prism.js — подсветка синтаксиса -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+            </a>
+            <h1 id="page-title">Консольная викторина</h1>
+        </div>
+    </header>
+
+    <main aria-labelledby="page-title">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <a href="../../../">Главная</a>
+                <span aria-hidden="true"> → </span>
+                <a href="../../java-roadmap.html">Java для карьеры</a>
+                <span aria-hidden="true"> → </span>
+                Консольная викторина
+            </nav>
+
+            <p>Консольная викторина — отличный способ применить всё, что вы уже знаете: переменные, условия, циклы и
+                работу с пользовательским вводом. Программа будет задавать вопросы, принимать ответы и в конце
+                показывать результат.</p>
+
+            <h2>Что будет делать наша викторина?</h2>
+            <ul>
+                <li>Задавать 3 вопроса с выбором одного варианта (A, B, C)</li>
+                <li>Считать правильные ответы</li>
+                <li>Выводить итоговый счёт и поздравление</li>
+            </ul>
+
+            <div class="ide-window">
+                <div class="ide-header">
+                    <span class="ide-dot red"></span>
+                    <span class="ide-dot yellow"></span>
+                    <span class="ide-dot green"></span>
+                    <span class="ide-title">Quiz.java</span>
+                </div>
+                <pre><code class="language-java">import java.util.Scanner;
+
+public class Quiz {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int score = 0;
+
+        System.out.println("🌟 Добро пожаловать в викторину!");
+        System.out.println("Выберите один вариант ответа (A, B или C).\n");
+
+        // Вопрос 1
+        System.out.println("1. Какой оператор используется для сравнения значений?");
+        System.out.println("A) =\nB) ==\nC) ===");
+        String answer1 = scanner.nextLine().trim().toUpperCase();
+        if (answer1.equals("B")) {
+            score++;
+            System.out.println("✅ Верно!\n");
+        } else {
+            System.out.println("❌ Неверно. Правильный ответ: B\n");
+        }
+
+        // Вопрос 2
+        System.out.println("2. Какой тип данных хранит true/false?");
+        System.out.println("A) int\nB) String\nC) boolean");
+        String answer2 = scanner.nextLine().trim().toUpperCase();
+        if (answer2.equals("C")) {
+            score++;
+            System.out.println("✅ Верно!\n");
+        } else {
+            System.out.println("❌ Неверно. Правильный ответ: C\n");
+        }
+
+        // Вопрос 3
+        System.out.println("3. Какой метод является точкой входа в программу?");
+        System.out.println("A) start()\nB) main()\nC) run()");
+        String answer3 = scanner.nextLine().trim().toUpperCase();
+        if (answer3.equals("B")) {
+            score++;
+            System.out.println("✅ Верно!\n");
+        } else {
+            System.out.println("❌ Неверно. Правильный ответ: B\n");
+        }
+
+        // Итог
+        System.out.println("🎉 Ваш результат: " + score + " из 3");
+        if (score == 3) {
+            System.out.println("Отлично! Вы — Java-гуру!");
+        } else if (score >= 2) {
+            System.out.println("Хорошо! Почти идеально.");
+        } else {
+            System.out.println("Повторите основы — у вас всё получится!");
+        }
+
+        scanner.close();
+    }
+}</code></pre>
+            </div>
+
+            <div class="key-point">
+                <p><strong>Важно:</strong>
+                <ul>
+                    <li>Используем <code>.trim().toUpperCase()</code>, чтобы игнорировать пробелы и регистр («b» и «B» —
+                        одинаково).</li>
+                    <li>Сравниваем строки через <code>.equals()</code>, а не <code>==</code> — это частая ошибка
+                        новичков!</li>
+                    <li>Не забывайте закрывать <code>Scanner</code> в конце.</li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="analogy">
+                <p><strong>Аналогия:</strong> Викторина — как экзамен в автошколе: вы отвечаете на вопросы, а система
+                    сразу говорит, правильно ли вы помните правила.</p>
+            </div>
+
+            <h2>Как запустить?</h2>
+            <ol>
+                <li>Сохраните код в файл <code>Quiz.java</code></li>
+                <li>В терминале: <code>javac Quiz.java</code></li>
+                <li>Затем: <code>java Quiz</code></li>
+            </ol>
+
+            <h2>Идеи для улучшения</h2>
+            <ul>
+                <li>Добавьте больше вопросов из массива или списка.</li>
+                <li>Сделайте рандомный порядок вопросов.</li>
+                <li>Разрешите вводить «a», «б» или даже «1» — сделайте парсер ответов.</li>
+                <li>Сохраняйте рекорды в файл (позже, на уровне коллекций).</li>
+            </ul>
+
+            <h2></h2>
+            <div class="universal-nav">
+                <div class="universal-nav__group universal-nav__back">
+                    <a href="../02-06-mini-projects/project-temperature.html">← Конвертер температуры</a>
+                </div>
+                <div class="universal-nav__group universal-nav__forward">
+                    <a href="#">Поля, методы, конструкторы →</a>
+                </div>
+            </div>
+    </main>
+
+    <footer>
+        <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+    </footer>
+</body>
+
+</html>

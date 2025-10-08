@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Приоритет операций — BridgeLearn</title>
+  <meta name="description"
+    content="Как Java определяет порядок выполнения операций. Скобки, приоритет и ассоциативность. Для начинающих в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Приоритет операций — BridgeLearn">
+  <meta property="og:description"
+    content="Как Java определяет порядок выполнения операций. Скобки, приоритет и ассоциативность. Для начинающих в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Приоритет операций</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Приоритет операций
+      </nav>
+
+      <p>Когда в одном выражении участвует несколько операторов, Java должна решить, в каком порядке их выполнять. За
+        это отвечает <strong>приоритет операций</strong> — набор правил, похожий на математический порядок действий.</p>
+
+      <h2>Пример без скобок</h2>
+      <pre><code>int result = 10 + 5 * 2;</code></pre>
+      <p>Что будет: <code>(10 + 5) * 2 = 30</code> или <code>10 + (5 * 2) = 20</code>?</p>
+      <p>Правильный ответ — <strong>20</strong>, потому что оператор <code>*</code> имеет <strong>более высокий
+          приоритет</strong>, чем <code>+</code>.</p>
+
+      <h2>Основные правила приоритета (от высшего к низшему)</h2>
+      <ol>
+        <li><strong>Скобки</strong> <code>()</code> — всегда выполняются первыми.</li>
+        <li><strong>Унарные операторы</strong>: <code>!</code>, <code>-x</code>, <code>++</code>, <code>--</code></li>
+        <li><strong>Арифметические</strong>: <code>*</code>, <code>/</code>, <code>%</code> → потом <code>+</code>,
+          <code>-</code>
+        </li>
+        <li><strong>Сравнения</strong>: <code><</code>, <code>></code>, <code><=</code>, <code>>=</code></li>
+        <li><strong>Равенство</strong>: <code>==</code>, <code>!=</code></li>
+        <li><strong>Логические И / ИЛИ</strong>: <code>&amp;&amp;</code> → потом <code>||</code></li>
+        <li><strong>Присваивание</strong>: <code>=</code>, <code>+=</code>, <code>-=</code> и др.</li>
+      </ol>
+
+      <h2>Ассоциативность</h2>
+      <p>Если операторы имеют одинаковый приоритет, Java выполняет их <strong>слева направо</strong> (кроме унарных и
+        присваивания):</p>
+      <pre><code>int a = 10 - 4 - 2; // (10 - 4) - 2 = 4, а не 10 - (4 - 2) = 8</code></pre>
+      <p>А вот присваивание — <strong>справа налево</strong>:</p>
+      <pre><code>int x, y, z;
+x = y = z = 5; // сначала z = 5, потом y = z, потом x = y</code></pre>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Не полагайтесь на память о приоритете. Если выражение неочевидно — <strong>ставьте
+            скобки</strong>. Это делает код понятнее и предотвращает ошибки.</p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Приоритет операций — как правила дорожного движения. Без них все ехали бы как
+          хотят, и постоянно происходили аварии. Скобки — как дорожный знак «уступить»: вы сами указываете, что важно.
+        </p>
+      </div>
+
+      <h2>Практика: разберите выражение</h2>
+      <pre><code>boolean flag = 5 > 3 && 2 + 2 == 4 || !true;</code></pre>
+      <p>Порядок вычисления:</p>
+      <ol>
+        <li><code>5 > 3</code> → <code>true</code></li>
+        <li><code>2 + 2</code> → <code>4</code>, затем <code>4 == 4</code> → <code>true</code></li>
+        <li><code>!true</code> → <code>false</code></li>
+        <li><code>true && true</code> → <code>true</code></li>
+        <li><code>true || false</code> → <code>true</code></li>
+      </ol>
+      <p>Итог: <code>flag = true</code>.</p>
+
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../02-03-operators-expressions/arithmetic-logical-comparison.html">← Арифметические,
+            логические, сравнения</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../02-03-operators-expressions/ternary-operator.html">Тернарный оператор →</a>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

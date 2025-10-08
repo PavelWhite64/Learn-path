@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Тернарный оператор — BridgeLearn</title>
+  <meta name="description"
+    content="Как писать короткие условия в одну строку с помощью тернарного оператора в Java. Для начинающих в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Тернарный оператор — BridgeLearn">
+  <meta property="og:description"
+    content="Как писать короткие условия в одну строку с помощью тернарного оператора в Java. Для начинающих в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Тернарный оператор</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Тернарный оператор
+      </nav>
+
+      <p>Тернарный оператор — это краткая форма записи условия <code>if-else</code> в одну строку. Он удобен, когда
+        нужно присвоить значение переменной в зависимости от условия.</p>
+
+      <h2>Синтаксис</h2>
+      <pre><code>условие ? значение_если_true : значение_если_false</code></pre>
+      <p>Пример:</p>
+      <pre><code>int age = 20;
+String status = (age >= 18) ? "Совершеннолетний" : "Несовершеннолетний";</code></pre>
+      <p>Если <code>age >= 18</code> — <code>status</code> станет <code>"Совершеннолетний"</code>, иначе —
+        <code>"Несовершеннолетний"</code>.
+      </p>
+
+      <h2>Когда использовать?</h2>
+      <p>Тернарный оператор уместен, когда:</p>
+      <ul>
+        <li>Условие простое и легко читается.</li>
+        <li>Обе ветки возвращают значение одного типа.</li>
+        <li>Вы присваиваете результат переменной или используете его в выражении.</li>
+      </ul>
+      <p>Не используйте тернарный оператор для сложной логики — это ухудшит читаемость.</p>
+
+      <h2>Примеры</h2>
+      <pre><code>// Минимум из двух чисел
+int a = 10, b = 15;
+int min = (a < b) ? a : b;
+
+// Приветствие в зависимости от времени суток
+boolean isMorning = true;
+String greeting = isMorning ? "Доброе утро!" : "Здравствуйте!";
+
+// Вывод в консоль
+System.out.println( score >= 60 ? "Сдал" : "Не сдал" );</code></pre>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Тернарный оператор — это <em>выражение</em>, а не <em>инструкция</em>. Он
+          <strong>всегда возвращает значение</strong>. Поэтому его нельзя использовать вместо <code>if</code>, если вы
+          не присваиваете результат.
+        </p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Тернарный оператор — как выбор кофе: «Если есть молоко — латте, иначе — эспрессо».
+          Всё решение умещается в одном предложении.</p>
+      </div>
+
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../02-03-operators-expressions/operator-precedence.html">← Приоритет
+            операций</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../02-04-control-flow/if-else-switch.html">Условия: `if`, `else if`,
+            `switch` →</a>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow">
+    <title>Конвертер температуры — BridgeLearn</title>
+    <meta name="description"
+        content="Создайте консольный конвертер температуры (Цельсий ↔ Фаренгейт) на Java. Практика для новичков в СНГ.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Конвертер температуры — BridgeLearn">
+    <meta property="og:description"
+        content="Создайте консольный конвертер температуры (Цельсий ↔ Фаренгейт) на Java. Практика для новичков в СНГ.">
+    <meta property="og:type" content="article">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+    <!-- Шрифт Inter -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Общий стиль -->
+    <link rel="stylesheet" href="../../../css/bridgelearn.css">
+
+    <!-- Prism.js — подсветка синтаксиса -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+            </a>
+            <h1 id="page-title">Конвертер температуры</h1>
+        </div>
+    </header>
+
+    <main aria-labelledby="page-title">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <a href="../../../">Главная</a>
+                <span aria-hidden="true"> → </span>
+                <a href="../../java-roadmap.html">Java для карьеры</a>
+                <span aria-hidden="true"> → </span>
+                Конвертер температуры
+            </nav>
+
+            <p>Конвертер температуры — отличный мини-проект для закрепления основ Java: работы с числами, условиями и
+                пользовательским вводом. Программа будет переводить градусы между шкалами Цельсия и Фаренгейта — как в
+                реальных приложениях погоды.</p>
+
+            <h2>Формулы конвертации</h2>
+            <ul>
+                <li><strong>Цельсий → Фаренгейт:</strong> <code>F = C × 9/5 + 32</code></li>
+                <li><strong>Фаренгейт → Цельсий:</strong> <code>C = (F − 32) × 5/9</code></li>
+            </ul>
+
+            <h2>Полный код программы</h2>
+
+            <div class="ide-window">
+                <div class="ide-header">
+                    <span class="ide-dot red"></span>
+                    <span class="ide-dot yellow"></span>
+                    <span class="ide-dot green"></span>
+                    <span class="ide-title">TemperatureConverter.java</span>
+                </div>
+                <pre><code class="language-java">import java.util.Scanner;
+
+public class TemperatureConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Выберите направление конвертации:");
+        System.out.println("1. Цельсий → Фаренгейт");
+        System.out.println("2. Фаренгейт → Цельсий");
+        System.out.print("Ваш выбор (1 или 2): ");
+        int choice = scanner.nextInt();
+
+        System.out.print("Введите температуру: ");
+        double temp = scanner.nextDouble();
+
+        double result;
+        if (choice == 1) {
+            result = celsiusToFahrenheit(temp);
+            System.out.printf("%.1f°C = %.1f°F%n", temp, result);
+        } else if (choice == 2) {
+            result = fahrenheitToCelsius(temp);
+            System.out.printf("%.1f°F = %.1f°C%n", temp, result);
+        } else {
+            System.out.println("Ошибка: выберите 1 или 2.");
+        }
+
+        scanner.close();
+    }
+
+    // Метод: Цельсий → Фаренгейт
+    public static double celsiusToFahrenheit(double celsius) {
+        return celsius * 9.0 / 5.0 + 32;
+    }
+
+    // Метод: Фаренгейт → Цельсий
+    public static double fahrenheitToCelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 5.0 / 9.0;
+    }
+}</code></pre>
+            </div>
+
+            <div class="key-point">
+                <p><strong>Важно:</strong></p>
+                <ul>
+                    <li>Используем <code>9.0 / 5.0</code>, а не <code>9 / 5</code>, чтобы избежать целочисленного
+                        деления.</li>
+                    <li>Методы вынесены отдельно — это делает код чище и повторно используемым.</li>
+                    <li><code>printf</code> с <code>%.1f</code> округляет результат до одного знака после запятой.</li>
+                </ul>
+            </div>
+
+            <div class="analogy">
+                <p><strong>Аналогия:</strong> Конвертер температуры — как переводчик между двумя языками: один говорит
+                    «20 градусов», другой слышит «68 градусов». Смысл тот же, а единицы — разные.</p>
+            </div>
+
+            <h2>Как запустить?</h2>
+            <ol>
+                <li>Сохраните код в файл <code>TemperatureConverter.java</code></li>
+                <li>В терминале: <code>javac TemperatureConverter.java</code></li>
+                <li>Затем: <code>java TemperatureConverter</code></li>
+            </ol>
+
+            <h2>Идеи для улучшения</h2>
+            <ul>
+                <li>Добавьте поддержку Кельвинов.</li>
+                <li>Реализуйте цикл — чтобы можно было конвертировать много раз без перезапуска.</li>
+                <li>Сделайте проверку ввода: если пользователь ввёл букву вместо числа — обработайте ошибку.</li>
+            </ul>
+
+            <h2></h2>
+            <div class="universal-nav">
+                <div class="universal-nav__group universal-nav__back">
+                    <a href="../02-06-mini-projects/project-calculator.html">← Калькулятор</a>
+                </div>
+                <div class="universal-nav__group universal-nav__forward">
+                    <a href="../02-06-mini-projects/project-quiz.html">Консольная викторина →</a>
+                </div>
+            </div>
+    </main>
+
+    <footer>
+        <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+    </footer>
+</body>
+
+</html>

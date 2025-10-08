@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Циклы: `for`, `while`, `do-while` — BridgeLearn</title>
+  <meta name="description"
+    content="Как повторять действия в Java: циклы for, while и do-while. Просто и с примерами для новичков в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Циклы: `for`, `while`, `do-while` — BridgeLearn">
+  <meta property="og:description"
+    content="Как повторять действия в Java: циклы for, while и do-while. Просто и с примерами для новичков в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Циклы: <code>for</code>, <code>while</code>, <code>do-while</code></h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Циклы: <code>for</code>, <code>while</code>, <code>do-while</code>
+      </nav>
+
+      <p>Циклы позволяют выполнять один и тот же блок кода несколько раз — пока не будет выполнено определённое условие
+        или не пройдены все элементы. В Java есть три основных вида циклов: <code>for</code>, <code>while</code> и
+        <code>do-while</code>.
+      </p>
+
+      <h2>1. Цикл <code>for</code> — когда известно количество повторов</h2>
+      <p>Используется, если вы заранее знаете, сколько раз нужно выполнить действие (например, 10 раз или для каждого
+        элемента массива).</p>
+      <pre><code>for (int i = 0; i < 5; i++) {
+    System.out.println("Итерация: " + i);
+}</code></pre>
+      <p>Структура:</p>
+      <ul>
+        <li><code>int i = 0</code> — инициализация (выполняется один раз)</li>
+        <li><code>i < 5</code> — условие продолжения</li>
+        <li><code>i++</code> — изменение счётчика после каждой итерации</li>
+      </ul>
+
+      <h2>2. Цикл <code>while</code> — пока условие истинно</h2>
+      <p>Выполняется, пока условие остаётся <code>true</code>. Количество итераций может быть неизвестно заранее.</p>
+      <pre><code>int count = 3;
+while (count > 0) {
+    System.out.println("Осталось: " + count);
+    count--;
+}</code></pre>
+      <p>Важно: не забудьте изменять переменную внутри цикла — иначе получите бесконечный цикл!</p>
+
+      <h2>3. Цикл <code>do-while</code> — выполнить хотя бы один раз</h2>
+      <p>Отличается от <code>while</code> тем, что тело цикла выполняется **минимум один раз**, даже если условие
+        изначально ложно.</p>
+      <pre><code>int attempts = 0;
+do {
+    System.out.println("Попытка №" + (attempts + 1));
+    attempts++;
+} while (attempts < 3);</code></pre>
+      <p>Полезен, например, для ввода данных: сначала запросить, потом проверить.</p>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong>
+        <ul>
+          <li>Все три цикла взаимозаменяемы — выбор зависит от читаемости.</li>
+          <li>Бесконечный цикл можно прервать с помощью <code>break</code>.</li>
+          <li>Команда <code>continue</code> пропускает остаток текущей итерации и переходит к следующей.</li>
+        </ul>
+        </p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong>
+          <code>for</code> — как пройти все 10 этажей дома по одному.
+          <code>while</code> — как ждать автобус: «пока не приедет — стоять».
+          <code>do-while</code> — как позвонить другу: «позвонить хотя бы раз, даже если он не отвечает».
+        </p>
+      </div>
+
+      <h2>Практика: таблица умножения</h2>
+      <pre><code>for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= 5; j++) {
+        System.out.print(i * j + "\t");
+    }
+    System.out.println();
+}</code></pre>
+
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../02-04-control-flow/if-else-switch.html">← Условия: `if`, `else if`,
+            `switch`</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../02-04-control-flow/break-continue.html">`break`, `continue` →</a>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>

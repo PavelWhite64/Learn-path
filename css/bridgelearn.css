@@ -1,297 +1,432 @@
 /* ===== ЦВЕТОВЫЕ ПЕРЕМЕННЫЕ ===== */
 :root {
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
-    --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
-    --bg: #ffffff;
-    --surface: #ffffff;
-    --text: #0f172a;
-    --text-secondary: #475569;
-    --text-tertiary: #94a3b8;
-    --primary: #4f46e5;
-    --primary-dark: #4338ca;
-    --border: #e2e8f0;
-    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --border: #e2e8f0;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  /* IDE colors — light mode */
+  --ide-bg: #ffffff;
+  --ide-header-bg: #f5f5f5;
+  --ide-text: #000000;
+  --ide-header-text: #333333;
+  --ide-dot-red: #ff6666;
+  --ide-dot-yellow: #ffcc66;
+  --ide-dot-green: #66cc66;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #0f172a;
-        --surface: #1e293b;
-        --text: #f1f5f9;
-        --text-secondary: #cbd5e1;
-        --text-tertiary: #94a3b8;
-        --primary: #818cf8;
-        --primary-dark: #6366f1;
-        --border: #334155;
-        --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --text: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-tertiary: #94a3b8;
+    --primary: #818cf8;
+    --primary-dark: #6366f1;
+    --border: #334155;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    /* IDE colors — dark mode (Darcula) */
+    --ide-bg: #2b2b2b;
+    --ide-header-bg: #313335;
+    --ide-text: #a9b7c6;
+    --ide-header-text: #a9b7c6;
+    --ide-dot-red: #ff6666;
+    --ide-dot-yellow: #ffcc66;
+    --ide-dot-green: #66cc66;
+  }
 }
 
 /* ===== БАЗОВЫЕ СТИЛИ ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-sans);
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ===== ШАПКА ===== */
 header {
-    background: var(--surface);
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .header-content {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }
 
 .back-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 h1 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin: 0;
-    color: var(--primary);
-    text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--primary);
+  text-align: center;
 }
 
 /* ===== ЗАГОЛОВКИ ===== */
 h2 {
-    font-size: 1.4rem;
-    margin: 1.8rem 0 1rem;
-    color: var(--primary);
+  font-size: 1.4rem;
+  margin: 1.8rem 0 1rem;
+  color: var(--primary);
 }
 
 h3 {
-    font-size: 1.25rem;
-    margin: 1.5rem 0 1rem;
-    color: var(--text);
-    font-weight: 700;
+  font-size: 1.25rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--text);
+  font-weight: 700;
 }
 
 /* ===== КОНТЕНТ ===== */
 .container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    flex: 1;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  flex: 1;
 }
 
 p,
 ul {
-    margin-bottom: 1.2rem;
-    color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  color: var(--text-secondary);
 }
 
 ul {
-    padding-left: 1.4rem;
+  padding-left: 1.4rem;
 }
 
 li {
-    margin-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
 }
 
 code {
-    background: var(--border);
-    padding: 0.15em 0.4em;
-    border-radius: 4px;
-    font-family: var(--font-mono);
-    font-size: 0.95em;
+  background: var(--border);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  color: var(--text);
+}
+
+pre {
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.2rem 0;
+  border: 1px solid var(--border);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* ===== БЛОКИ ===== */
 .key-point,
 .analogy,
 .summary-box {
-    padding: 1.2rem;
-    margin: 1.5rem 0;
-    border-radius: 12px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 12px;
 }
 
 .key-point {
-    background: rgba(79, 70, 229, 0.05);
-    border-left: 4px solid var(--primary);
-    border-radius: 0 8px 8px 0;
+  background: rgba(79, 70, 229, 0.05);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 8px 8px 0;
 }
 
 .analogy {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    font-style: italic;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-style: italic;
 }
 
 .summary-box {
-    background: rgba(79, 70, 229, 0.05);
-    border: 1px solid var(--border);
+  background: rgba(79, 70, 229, 0.05);
+  border: 1px solid var(--border);
 }
 
 /* ===== ССЫЛКИ ===== */
 a {
-    color: var(--primary);
-    text-decoration: none;
+  color: var(--primary);
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ===== ФУТЕР ===== */
 footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border);
-    margin-top: auto;
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
 }
 
 /* ===== ХЛЕБНЫЕ КРОШКИ ===== */
 .breadcrumbs {
-    margin: 1rem 0;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-secondary);
-    font-size: 0.95rem;
+  margin: 1rem 0;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
 }
 
 .breadcrumbs a {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 /* ===== АДАПТИВ ===== */
 @media (max-width: 768px) {
-    header {
-        padding: 1.25rem 1.5rem;
-    }
+  header {
+    padding: 1.25rem 1.5rem;
+  }
 
-    h1 {
-        font-size: 1.8rem;
-    }
+  h1 {
+    font-size: 1.8rem;
+  }
 
-    h2 {
-        font-size: 1.3rem;
-    }
+  h2 {
+    font-size: 1.3rem;
+  }
 
-    h3 {
-        font-size: 1.15rem;
-    }
+  h3 {
+    font-size: 1.15rem;
+  }
 
-    .container {
-        padding: 0 1.25rem;
-    }
+  .container {
+    padding: 0 1.25rem;
+  }
 }
 
-/* ===== СТИЛИ ДЛЯ ДОРОЖНОЙ КАРТЫ (roadmap) ===== */
-/* Шапка с иконкой и центрированным текстом */
+/* ===== СТИЛИ ДЛЯ ДОРОЖНОЙ КАРТЫ ===== */
 header h1 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 0.8rem;
-    color: var(--primary);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 header p {
-    text-align: center;
-    color: var(--text-secondary);
-    max-width: 650px;
-    margin: 0 auto;
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto;
 }
 
-/* Контейнер для roadmap (шире обычного) */
 .roadmap-container {
-    max-width: 900px;
+  max-width: 900px;
 }
 
-/* Блоки этапов */
 .topic {
-    background: var(--surface);
-    border-radius: 16px;
-    padding: 1.8rem;
-    margin-bottom: 2rem;
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
 }
 
 .topic h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.2rem;
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* Сворачиваемые блоки */
 details {
-    margin-bottom: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-bottom: 1px dashed var(--border);
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px dashed var(--border);
 }
 
 details:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 summary {
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
-    padding: 0.4rem 0;
+  list-style: none;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  padding: 0.4rem 0;
 }
 
-/* Списки внутри details */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary::after {
+  content: "➕";
+  float: right;
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+
+details[open] > summary::after {
+  content: "➖";
+}
+
 details ul {
-    padding-left: 1.8rem;
-    margin-top: 0.6rem;
-    color: var(--text-secondary);
+  padding-left: 1.8rem;
+  margin-top: 0.6rem;
+  color: var(--text-secondary);
 }
 
 details li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Адаптив для roadmap */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.9rem;
-    }
+/* ===== ОКНО IDE (ИНТЕЛЛИДЖЕЙ) ===== */
+.ide-window {
+  background-color: var(--ide-bg);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  font-family: var(--font-mono);
+}
 
-    .topic {
-        padding: 1.5rem;
-    }
+.ide-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: var(--ide-header-bg);
+  border-bottom: 1px solid var(--border);
+  color: var(--ide-header-text);
+  font-size: 0.85rem;
+}
 
-    .topic h2 {
-        font-size: 1.4rem;
-    }
+.ide-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.ide-dot.red { background-color: var(--ide-dot-red); }
+.ide-dot.yellow { background-color: var(--ide-dot-yellow); }
+.ide-dot.green { background-color: var(--ide-dot-green); }
+
+.ide-title {
+  color: var(--ide-header-text);
+  font-weight: 500;
+  margin-left: 8px;
+  user-select: none;
+  letter-spacing: -0.02em;
+}
+
+.ide-window pre {
+  margin: 0;
+  padding: 16px;
+  background: none;
+  border: none;
+  color: var(--ide-text);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  overflow-x: auto;
+}
+
+.ide-window code {
+  font-family: var(--font-mono);
+  background: none;
+  padding: 0;
+  white-space: pre;
+  color: var(--ide-text);
+}
+
+/* ===== УНИВЕРСАЛЬНАЯ НАВИГАЦИЯ ===== */
+.universal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.universal-nav__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.universal-nav__back a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.universal-nav__forward a {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.universal-nav__back a:hover,
+.universal-nav__forward a:hover {
+  text-decoration: underline;
+}
+
+.universal-nav__forward {
+  text-align: right;
+  min-width: max-content;
+}
+
+@media (max-width: 600px) {
+  .universal-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .universal-nav__forward {
+    text-align: left;
+  }
 }

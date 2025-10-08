@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow">
   <title>Переменные окружения (`PATH`, `JAVA_HOME`) — BridgeLearn</title>
-  <meta name="description" content="Что такое PATH и JAVA_HOME, зачем они нужны и как их проверить. Для новичков в СНГ.">
+  <meta name="description"
+    content="Что такое PATH и JAVA_HOME, зачем они нужны и как их проверить. Для новичков в СНГ.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Переменные окружения (`PATH`, `JAVA_HOME`) — BridgeLearn">
-  <meta property="og:description" content="Что такое PATH и JAVA_HOME, зачем они нужны и как их проверить. Для новичков в СНГ.">
+  <meta property="og:description"
+    content="Что такое PATH и JAVA_HOME, зачем они нужны и как их проверить. Для новичков в СНГ.">
   <meta property="og:type" content="article">
 
   <!-- Favicon -->
@@ -52,22 +54,32 @@
         Переменные окружения (<code>PATH</code>, <code>JAVA_HOME</code>)
       </nav>
 
-      <p>Когда вы устанавливаете JDK, система должна «знать», где его искать. За это отвечают <strong>переменные окружения</strong> — специальные настройки операционной системы. Две из них критически важны для Java: <code>PATH</code> и <code>JAVA_HOME</code>.</p>
+      <p>Когда вы устанавливаете JDK, система должна «знать», где его искать. За это отвечают <strong>переменные
+          окружения</strong> — специальные настройки операционной системы. Две из них критически важны для Java:
+        <code>PATH</code> и <code>JAVA_HOME</code>.
+      </p>
 
       <h2>Что такое <code>PATH</code>?</h2>
-      <p><code>PATH</code> — это список папок, в которых система ищет исполняемые файлы (команды), когда вы что-то вводите в терминале.</p>
-      <p>Например, когда вы пишете <code>java -version</code>, ОС ищет файл <code>java.exe</code> (Windows) или <code>java</code> (macOS/Linux) в папках, перечисленных в <code>PATH</code>.</p>
-      <p>Если JDK установлен правильно (через <code>.msi</code>, <code>.pkg</code> или пакетный менеджер), он автоматически добавляет свои команды (<code>java</code>, <code>javac</code>) в <code>PATH</code>.</p>
+      <p><code>PATH</code> — это список папок, в которых система ищет исполняемые файлы (команды), когда вы что-то
+        вводите в терминале.</p>
+      <p>Например, когда вы пишете <code>java -version</code>, ОС ищет файл <code>java.exe</code> (Windows) или
+        <code>java</code> (macOS/Linux) в папках, перечисленных в <code>PATH</code>.
+      </p>
+      <p>Если JDK установлен правильно (через <code>.msi</code>, <code>.pkg</code> или пакетный менеджер), он
+        автоматически добавляет свои команды (<code>java</code>, <code>javac</code>) в <code>PATH</code>.</p>
 
       <h2>Что такое <code>JAVA_HOME</code>?</h2>
-      <p><code>JAVA_HOME</code> — это переменная, которая указывает на <strong>корневую папку установленного JDK</strong> (например, <code>C:\Program Files\Eclipse Adoptium\jdk-17.0.12-hotspot</code>).</p>
-      <p>Она <strong>не нужна для запуска простых программ</strong>, но требуется многим инструментам:  
-        — Maven, Gradle  
-        — IntelliJ IDEA, VS Code (иногда)  
+      <p><code>JAVA_HOME</code> — это переменная, которая указывает на <strong>корневую папку установленного
+          JDK</strong> (например, <code>C:\Program Files\Eclipse Adoptium\jdk-17.0.12-hotspot</code>).</p>
+      <p>Она <strong>не нужна для запуска простых программ</strong>, но требуется многим инструментам:
+        — Maven, Gradle
+        — IntelliJ IDEA, VS Code (иногда)
         — Spring Boot, Tomcat, Jenkins и другим серверам</p>
 
       <div class="key-point">
-        <p><strong>Важно:</strong> При установке через официальный установщик (<code>.msi</code> / <code>.pkg</code>) переменная <code>JAVA_HOME</code> часто <strong>не настраивается автоматически</strong>. Её нужно задать вручную — особенно если вы планируете использовать сборщики или фреймворки.</p>
+        <p><strong>Важно:</strong> При установке через официальный установщик (<code>.msi</code> / <code>.pkg</code>)
+          переменная <code>JAVA_HOME</code> часто <strong>не настраивается автоматически</strong>. Её нужно задать
+          вручную — особенно если вы планируете использовать сборщики или фреймворки.</p>
       </div>
 
       <h2>Как проверить переменные?</h2>
@@ -86,23 +98,33 @@ $env:JAVA_HOME    # Windows (PowerShell)</code></pre>
       <p>Если вывод пустой — переменная не задана.</p>
 
       <div class="analogy">
-        <p><strong>Аналогия:</strong> <code>PATH</code> — как список адресов, по которым курьер ищет кафе с вашим заказом. <code>JAVA_HOME</code> — это точный адрес кухни этого кафе. Курьеру (терминалу) достаточно знать район (<code>PATH</code>), но менеджеру (Maven) нужен точный адрес (<code>JAVA_HOME</code>).</p>
+        <p><strong>Аналогия:</strong> <code>PATH</code> — как список адресов, по которым курьер ищет кафе с вашим
+          заказом. <code>JAVA_HOME</code> — это точный адрес кухни этого кафе. Курьеру (терминалу) достаточно знать
+          район (<code>PATH</code>), но менеджеру (Maven) нужен точный адрес (<code>JAVA_HOME</code>).</p>
       </div>
 
       <h2>Нужно ли настраивать вручную?</h2>
       <p>Если вы:
-        <ul>
-          <li>Только учитесь и запускаете простые программы через <code>javac</code> / <code>java</code> — <strong>не нужно</strong>.</li>
-          <li>Планируете использовать Spring Boot, Maven, Gradle или CI/CD — <strong>рекомендуется задать <code>JAVA_HOME</code></strong>.</li>
-        </ul>
+      <ul>
+        <li>Только учитесь и запускаете простые программы через <code>javac</code> / <code>java</code> — <strong>не
+            нужно</strong>.</li>
+        <li>Планируете использовать Spring Boot, Maven, Gradle или CI/CD — <strong>рекомендуется задать
+            <code>JAVA_HOME</code></strong>.</li>
+      </ul>
       </p>
-      <p>Как настроить <code>JAVA_HOME</code> вручную — отдельная тема (см. документацию вашей ОС). Но для старта — достаточно, чтобы работали команды <code>java</code> и <code>javac</code>.</p>
+      <p>Как настроить <code>JAVA_HOME</code> вручную — отдельная тема (см. документацию вашей ОС). Но для старта —
+        достаточно, чтобы работали команды <code>java</code> и <code>javac</code>.</p>
 
-      <h2>Что дальше?</h2>
-      <p>→ <a href="terminal-basics.html">Базовые команды терминала</a><br>
-        → <a href="../system/check-java-version.html">Проверьте, что JDK работает</a><br>
-        → <a href="../../java-roadmap.html">Вернуться к дорожной карте</a></p>
-    </div>
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../01-05-terminal-basics/terminal-basics.html">← Базовые команды (`cd`, `ls`, `mkdir`, `cat`)</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../01-05-terminal-basics/why-no-gui.html">Работа без GUI: зачем это нужно? →</a>
+          →</a>
+        </div>
+      </div>
   </main>
 
   <footer>

@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow">
   <title>Mac: .pkg или через Homebrew — BridgeLearn</title>
-  <meta name="description" content="Как установить JDK на Mac: через .pkg-установщик или Homebrew. Просто и безопасно для новичков.">
+  <meta name="description"
+    content="Как установить JDK на Mac: через .pkg-установщик или Homebrew. Просто и безопасно для новичков.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Mac: .pkg или через Homebrew — BridgeLearn">
-  <meta property="og:description" content="Как установить JDK на Mac: через .pkg-установщик или Homebrew. Просто и безопасно для новичков.">
+  <meta property="og:description"
+    content="Как установить JDK на Mac: через .pkg-установщик или Homebrew. Просто и безопасно для новичков.">
   <meta property="og:type" content="article">
 
   <!-- Favicon -->
@@ -52,36 +54,48 @@
         Mac: .pkg или через Homebrew
       </nav>
 
-      <p>На macOS вы можете установить JDK двумя надёжными способами: через официальный <code>.pkg</code>-установщик или с помощью пакетного менеджера <strong>Homebrew</strong>. Оба варианта бесплатны, безопасны и подходят для обучения в 2025 году.</p>
+      <p>На macOS вы можете установить JDK двумя надёжными способами: через официальный <code>.pkg</code>-установщик или
+        с помощью пакетного менеджера <strong>Homebrew</strong>. Оба варианта бесплатны, безопасны и подходят для
+        обучения в 2025 году.</p>
 
       <h2>Способ 1: Установка через .pkg (официальный установщик)</h2>
       <p>Это самый простой путь для новичков:</p>
       <ol>
-        <li>Перейдите на <a href="https://adoptium.net/temurin/releases/" target="_blank" rel="noopener">официальный сайт Eclipse Temurin</a>.</li>
+        <li>Перейдите на <a href="https://adoptium.net/temurin/releases/" target="_blank" rel="noopener">официальный
+            сайт Eclipse Temurin</a>.</li>
         <li>Выберите версию <strong>Java 17</strong> или <strong>Java 21</strong> (LTS).</li>
         <li>В разделе «Operating System» выберите <strong>macOS</strong>.</li>
         <li>Скачайте файл с расширением <code>.pkg</code>.</li>
         <li>Дважды кликните по файлу и следуйте инструкциям установщика.</li>
       </ol>
-      <p>После завершения JDK будет установлен в <code>/Library/Java/JavaVirtualMachines/</code>, а команды <code>java</code> и <code>javac</code> — доступны в терминале.</p>
+      <p>После завершения JDK будет установлен в <code>/Library/Java/JavaVirtualMachines/</code>, а команды
+        <code>java</code> и <code>javac</code> — доступны в терминале.
+      </p>
 
       <h2>Способ 2: Установка через Homebrew</h2>
-      <p>Если вы уже используете <strong>Homebrew</strong> (популярный пакетный менеджер для macOS), установка займёт одну команду:</p>
+      <p>Если вы уже используете <strong>Homebrew</strong> (популярный пакетный менеджер для macOS), установка займёт
+        одну команду:</p>
       <ol>
-        <li>Убедитесь, что Homebrew установлен. Если нет — установите с <a href="https://brew.sh/" target="_blank" rel="noopener">brew.sh</a>.</li>
+        <li>Убедитесь, что Homebrew установлен. Если нет — установите с <a href="https://brew.sh/" target="_blank"
+            rel="noopener">brew.sh</a>.</li>
         <li>Откройте <strong>Terminal</strong> и выполните:</li>
       </ol>
       <pre><code>brew install temurin</code></pre>
       <p>Эта команда установит последнюю LTS-версию Temurin (обычно Java 21). Если нужна Java 17 — используйте:</p>
       <pre><code>brew install temurin17</code></pre>
-      <p>Homebrew автоматически добавит JDK в PATH, и вы сразу сможете использовать <code>java</code> и <code>javac</code>.</p>
+      <p>Homebrew автоматически добавит JDK в PATH, и вы сразу сможете использовать <code>java</code> и
+        <code>javac</code>.
+      </p>
 
       <div class="key-point">
-        <p><strong>Важно:</strong> После установки любого способа закройте и снова откройте Terminal — иначе система может не увидеть новые команды.</p>
+        <p><strong>Важно:</strong> После установки любого способа закройте и снова откройте Terminal — иначе система
+          может не увидеть новые команды.</p>
       </div>
 
       <div class="analogy">
-        <p><strong>Аналогия:</strong> Установка через <code>.pkg</code> — как поставить приложение из App Store: просто и наглядно. Установка через Homebrew — как использовать командную строку для опытных пользователей: быстро, точно и легко обновляется.</p>
+        <p><strong>Аналогия:</strong> Установка через <code>.pkg</code> — как поставить приложение из App Store: просто
+          и наглядно. Установка через Homebrew — как использовать командную строку для опытных пользователей: быстро,
+          точно и легко обновляется.</p>
       </div>
 
       <h2>Как проверить, что всё работает?</h2>
@@ -90,11 +104,17 @@
       <pre><code>javac -version</code></pre>
       <p>Если вы видите версию вроде <code>Temurin-21.0.2</code> — поздравляем! JDK установлен успешно.</p>
 
-      <h2>Что дальше?</h2>
-      <p>→ <a href="what-is-jdk.html">Что такое JVM, JRE, JDK — простыми словами</a><br>
-        → <a href="first-run.html">Создайте и запустите свой первый Java-файл</a><br>
-        → <a href="../java-roadmap.html">Вернуться к дорожной карте</a></p>
-    </div>
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../01-02-install-jdk/dowload-eclipse.html">← Где скачать: Eclipse Temurin
+            (Adoptium) — официально, бесплатно, без вирусов.</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../01-02-install-jdk/check-java-version.html">Проверка:
+            <code>java -version, javac -version</code> →</a>
+        </div>
+      </div>
   </main>
 
   <footer>

@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow">
   <title>Проверка: `java -version`, `javac -version` — BridgeLearn</title>
-  <meta name="description" content="Как проверить, что JDK установлен правильно: команды java и javac в терминале. Для новичков в СНГ.">
+  <meta name="description"
+    content="Как проверить, что JDK установлен правильно: команды java и javac в терминале. Для новичков в СНГ.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Проверка: `java -version`, `javac -version` — BridgeLearn">
-  <meta property="og:description" content="Как проверить, что JDK установлен правильно: команды java и javac в терминале. Для новичков в СНГ.">
+  <meta property="og:description"
+    content="Как проверить, что JDK установлен правильно: команды java и javac в терминале. Для новичков в СНГ.">
   <meta property="og:type" content="article">
 
   <!-- Favicon -->
@@ -52,21 +54,27 @@
         Проверка: <code>java -version</code>, <code>javac -version</code>
       </nav>
 
-      <p>После установки JDK важно убедиться, что система «видит» команды <code>java</code> и <code>javac</code>. Это означает, что переменная окружения <code>PATH</code> настроена правильно — и вы готовы писать код.</p>
+      <p>После установки JDK важно убедиться, что система «видит» команды <code>java</code> и <code>javac</code>. Это
+        означает, что переменная окружения <code>PATH</code> настроена правильно — и вы готовы писать код.</p>
 
       <h2>Как проверить установку?</h2>
       <p>Откройте терминал (или командную строку) и выполните две команды:</p>
 
       <h3>1. Проверка запуска Java:</h3>
       <pre><code>java -version</code></pre>
-      <p>Эта команда показывает, какая версия <strong>JVM</strong> установлена и может ли система запускать Java-программы.</p>
+      <p>Эта команда показывает, какая версия <strong>JVM</strong> установлена и может ли система запускать
+        Java-программы.</p>
 
       <h3>2. Проверка компилятора:</h3>
       <pre><code>javac -version</code></pre>
-      <p>Эта команда проверяет наличие <strong>компилятора Java</strong>. Без него вы не сможете превратить файл <code>.java</code> в исполняемый байт-код.</p>
+      <p>Эта команда проверяет наличие <strong>компилятора Java</strong>. Без него вы не сможете превратить файл
+        <code>.java</code> в исполняемый байт-код.
+      </p>
 
       <div class="key-point">
-        <p><strong>Важно:</strong> Обе команды должны работать <strong>без ошибок</strong>. Если вы видите «команда не найдена» — JDK либо не установлен, либо не добавлен в PATH. В этом случае вернитесь к инструкции по установке для вашей ОС.</p>
+        <p><strong>Важно:</strong> Обе команды должны работать <strong>без ошибок</strong>. Если вы видите «команда не
+          найдена» — JDK либо не установлен, либо не добавлен в PATH. В этом случае вернитесь к инструкции по установке
+          для вашей ОС.</p>
       </div>
 
       <h2>Что считать успешным результатом?</h2>
@@ -78,24 +86,36 @@ OpenJDK 64-Bit Server VM Temurin-17.0.12+7 (build 17.0.12+7-LTS, mixed mode)</co
 
       <pre><code>$ javac -version
 javac 17.0.12</code></pre>
-      <p>Главное — чтобы в выводе фигурировало название дистрибутива (<code>Temurin</code>) и версия (<code>17</code> или <code>21</code>).</p>
+      <p>Главное — чтобы в выводе фигурировало название дистрибутива (<code>Temurin</code>) и версия (<code>17</code>
+        или <code>21</code>).</p>
 
       <div class="analogy">
-        <p><strong>Аналогия:</strong> Команды <code>java</code> и <code>javac</code> — как проверка, есть ли бензин в машине и работает ли двигатель. Даже если вы только купили авто, сначала нужно убедиться, что оно заводится.</p>
+        <p><strong>Аналогия:</strong> Команды <code>java</code> и <code>javac</code> — как проверка, есть ли бензин в
+          машине и работает ли двигатель. Даже если вы только купили авто, сначала нужно убедиться, что оно заводится.
+        </p>
       </div>
 
       <h2>Что делать, если команды не работают?</h2>
       <ul>
         <li>Убедитесь, что вы установили именно <strong>JDK</strong>, а не JRE.</li>
-        <li>Если вы использовали архив (<code>.zip</code>, <code>.tar.gz</code>), возможно, PATH не настроен — лучше переустановить через <code>.msi</code> (Windows), <code>.pkg</code> или Homebrew (macOS), или пакетный менеджер (Linux).</li>
+        <li>Если вы использовали архив (<code>.zip</code>, <code>.tar.gz</code>), возможно, PATH не настроен — лучше
+          переустановить через <code>.msi</code> (Windows), <code>.pkg</code> или Homebrew (macOS), или пакетный
+          менеджер (Linux).</li>
         <li>Закройте и снова откройте терминал — изменения в PATH применяются только в новых сессиях.</li>
       </ul>
 
-      <h2>Что дальше?</h2>
-      <p>→ <a href="first-run.html">Создайте и запустите свой первый Java-файл</a><br>
-        → <a href="what-is-jdk.html">Что такое JVM, JRE, JDK — простыми словами</a><br>
-        → <a href="../java-roadmap.html">Вернуться к дорожной карте</a></p>
-    </div>
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../01-02-install-jdk/install-jdk-windows.html">← Пошаговая установка: Windows</a>
+          <a href="../01-02-install-jdk/install-jdk-mac.html">← Пошаговая установка: Mac</a>
+          <a href="../01-02-install-jdk/install-jdk-linux.html">← Пошаговая установка: Linux</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../01-03-setup-ide/install-intellij-idea.html">Скачать,
+            установить, создать первый проект →</a>
+        </div>
+      </div>
   </main>
 
   <footer>

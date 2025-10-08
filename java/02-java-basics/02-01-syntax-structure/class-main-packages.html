@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+  <title>Класс, метод `main`, пакеты, импорты — BridgeLearn</title>
+  <meta name="description" content="Структура Java-программы: класс, main, пакеты и импорты. Для начинающих в СНГ.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Класс, метод `main`, пакеты, импорты — BridgeLearn">
+  <meta property="og:description"
+    content="Структура Java-программы: класс, main, пакеты и импорты. Для начинающих в СНГ.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon.png">
+
+  <!-- Шрифт Inter -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Общий стиль -->
+  <link rel="stylesheet" href="../../../css/bridgelearn.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../../java-roadmap.html" class="back-link" aria-label="Вернуться к дорожной карте Java">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Java для карьеры
+      </a>
+      <h1 id="page-title">Класс, метод <code>main</code>, пакеты, импорты</h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="../../../">Главная</a>
+        <span aria-hidden="true"> → </span>
+        <a href="../../java-roadmap.html">Java для карьеры</a>
+        <span aria-hidden="true"> → </span>
+        Класс, метод <code>main</code>, пакеты, импорты
+      </nav>
+
+      <p>Любая Java-программа строится по строгим правилам. Даже самая простая программа «Привет, мир!» должна содержать
+        <strong>класс</strong> и <strong>метод <code>main</code></strong>. Кроме того, в реальных проектах используются
+        <strong>пакеты</strong> и <strong>импорты</strong>. Давайте разберём каждую часть.
+      </p>
+
+      <h2>1. Класс — основа всего</h2>
+      <p>В Java всё — объект, а объекты создаются на основе <strong>классов</strong>. Даже если вы пишете простой
+        скрипт, он должен быть внутри класса.</p>
+      <pre><code>public class Hello {
+    // тело класса
+}</code></pre>
+      <p>Правила:</p>
+      <ul>
+        <li>Имя класса должно совпадать с именем файла (<code>Hello.java</code> → класс <code>Hello</code>).</li>
+        <li>Класс объявляется с ключевым словом <code>class</code>.</li>
+        <li>Модификатор <code>public</code> означает, что класс доступен из других частей программы.</li>
+      </ul>
+
+      <h2>2. Метод <code>main</code> — точка входа</h2>
+      <p>Это метод, с которого начинается выполнение программы. Без него JVM не знает, с чего начать.</p>
+      <pre><code>public static void main(String[] args) {
+    System.out.println("Привет, мир!");
+}</code></pre>
+      <p>Разберём по словам:</p>
+      <ul>
+        <li><code>public</code> — метод виден извне.</li>
+        <li><code>static</code> — метод принадлежит классу, а не объекту (чтобы его можно было вызвать без создания
+          экземпляра).</li>
+        <li><code>void</code> — метод ничего не возвращает.</li>
+        <li><code>main</code> — имя метода (обязательное).</li>
+        <li><code>String[] args</code> — массив аргументов командной строки (можно оставить, даже если не используете).
+        </li>
+      </ul>
+
+      <h2>3. Пакеты — как папки для классов</h2>
+      <p>Пакеты группируют связанные классы и предотвращают конфликты имён.</p>
+      <pre><code>package com.mycompany.app;</code></pre>
+      <p>Эта строка должна быть первой в файле (до <code>import</code> и <code>class</code>). В файловой системе пакет
+        соответствует структуре папок:</p>
+      <pre><code>com/mycompany/app/Hello.java</code></pre>
+
+      <h2>4. Импорты — подключение других классов</h2>
+      <p>Чтобы использовать класс из другого пакета (например, <code>ArrayList</code> или <code>Scanner</code>), его
+        нужно импортировать:</p>
+      <pre><code>import java.util.Scanner;
+import java.util.ArrayList;</code></pre>
+      <p>Некоторые классы (из пакета <code>java.lang</code>, например <code>String</code>, <code>System</code>)
+        импортировать <strong>не нужно</strong> — они доступны по умолчанию.</p>
+
+      <div class="key-point">
+        <p><strong>Важно:</strong> Порядок в файле строгий:
+          <br>1. <code>package</code> (если есть)<br>
+          2. <code>import</code> (если есть)<br>
+          3. Объявление <code>class</code><br>
+          Нарушение порядка вызовет ошибку компиляции.
+        </p>
+      </div>
+
+      <div class="analogy">
+        <p><strong>Аналогия:</strong> Класс — как дом. Метод <code>main</code> — входная дверь. Пакет — адрес дома
+          (город/улица/дом). Импорты — телефонная книга: чтобы позвонить соседу, нужно знать его номер (имя класса).</p>
+      </div>
+
+      <h2>Полный пример программы</h2>
+      <pre><code>package hello;
+
+import java.time.LocalDateTime;
+
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Привет!");
+        System.out.println("Сейчас: " + LocalDateTime.now());
+    }
+}</code></pre>
+
+      <h2></h2>
+      <div class="universal-nav">
+        <div class="universal-nav__group universal-nav__back">
+          <a href="../../01-environment-setup/01-05-terminal-basics/why-no-gui.html">← Работа без GUI: зачем это
+            нужно?</a>
+        </div>
+        <div class="universal-nav__group universal-nav__forward">
+          <a href="../02-01-syntax-structure/comments-types.html">Виды комментариев →</a>
+          →</a>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <p>BridgeLearn — свободный доступ к знаниям. Всё бесплатно. Всё легально.</p>
+  </footer>
+</body>
+
+</html>
